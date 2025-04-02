@@ -1,72 +1,50 @@
 package plaza_sdk
 
 import (
-  "github.com/ethereum/go-ethereum/common"
-  "github.com/ethereum/go-ethereum/accounts/abi/bind"
-  "math/big"
-  "log"
-  "os"
-  "strings"
-  "github.com/ethereum/go-ethereum/accounts/abi"
-  "github.com/ethereum/go-ethereum/ethclient"
+	"math/big"
+
+	"github.com/ethereum/go-ethereum/accounts/abi/bind"
+	"github.com/ethereum/go-ethereum/common"
+	"github.com/ethereum/go-ethereum/ethclient"
+
+	AuctionContract "github.com/Convexity-Research/plaza-sdk/contracts"
 )
 
-func NewAuction(address common.Address, client *ethclient.Client) (*Auction, error) {
-	byteValue, err := os.ReadFile("./abi/Auction.json")
-	if err != nil {
-    return nil, err
-	}
+type Auction struct {
+	Auth     *bind.TransactOpts
+	Contract *AuctionContract.PlazaSdk
+	Address  common.Address
+	Client   *ethclient.Client
+}
 
-	parsedABI, err := abi.JSON(strings.NewReader(string(byteValue)))
+func NewAuction(auth *bind.TransactOpts, address common.Address, client *ethclient.Client) (*Auction, error) {
+	instance, err := AuctionContract.NewPlazaSdk(address, client)
 	if err != nil {
-    return nil, err
+		return nil, err
 	}
 
 	return &Auction{
-    Address: address,
-    ABI:     parsedABI,
-    Client:  client,
+		Auth:     auth,
+		Contract: instance,
+		Address:  address,
+		Client:   client,
 	}, nil
 }
 
-type Auction struct {
-  Address common.Address
-  ABI     abi.ABI
-  Client  *ethclient.Client
+func (a *Auction) Bid(buyReserveAmount *big.Int, sellCouponAmount *big.Int) error {
+	_, err := a.Contract.Bid(a.Auth, buyReserveAmount, sellCouponAmount)
+	if err != nil {
+		return err
+	}
+
+	return nil
 }
 
-func (a *Auction) Bid(auth *bind.TransactOpts, buyReserveAmount *big.Int, sellCouponAmount *big.Int) (*bind.TransactOpts, error) {
-  input, err := a.ABI.Pack("bid", buyReserveAmount, sellCouponAmount)
-  if err != nil {
-    return nil, err
-  }
-  return bind.NewTransactor(auth, input)
-}
+func (a *Auction) ClaimBid(bidIndex *big.Int) error {
+	_, err := a.Contract.ClaimBid(a.Auth, bidIndex)
+	if err != nil {
+		return err
+	}
 
-func Bid(auctionAddress string, buyReserveAmount *big.Int, sellCouponAmount *big.Int) (*big.Int, error) {
-  auction, err := NewAuction(common.HexToAddress(auctionAddress), ethClient)
-  if err != nil {
-    return nil, err
-  }
-
-  tx, err := auction.Bid(auth, buyReserveAmount, sellCouponAmount)
-  if err != nil {
-    return nil, err
-  }
-  log.Printf("Transaction sent: %s", tx.Hash().Hex())
-  return tx.Hash().Big(), nil
-}
-
-func ClaimBid(auctionAddress string, bidIndex *big.Int) error {
-  auction, err := NewAuction(common.HexToAddress(auctionAddress), ethClient)
-  if err != nil {
-    return err
-  }
-
-  tx, err := auction.Bid(auth, bidIndex)
-  if err != nil {
-    return err
-  }
-  log.Printf("ClaimBid transaction sent: %s", tx.Hash().Hex())
-  return nil
+	return nil
 }

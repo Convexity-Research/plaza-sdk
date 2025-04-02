@@ -2,41 +2,36 @@ package plaza_sdk
 
 import (
 	"math/big"
-	"os"
-	"strings"
 
-	"github.com/ethereum/go-ethereum/accounts/abi"
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
 	"github.com/ethereum/go-ethereum/common"
 	"github.com/ethereum/go-ethereum/ethclient"
+
+	BalancerRouter "github.com/Convexity-Research/plaza-sdk/contracts"
 )
 
 type Router struct {
+  Auth *bind.TransactOpts
+  Contract *BalancerRouter.PlazaSdk
 	Address common.Address
-	ABI     abi.ABI
 	Client  *ethclient.Client
 }
 
-func NewRouter(address common.Address, client *ethclient.Client) (*Router, error) {
-	byteValue, err := os.ReadFile("./abi/BalancerRouter.json")
-	if err != nil {
-		return nil, err
-	}
-
-	parsedABI, err := abi.JSON(strings.NewReader(string(byteValue)))
-	if err != nil {
-		return nil, err
-	}
+func NewRouter(auth *bind.TransactOpts, address common.Address, client *ethclient.Client) (*Router, error) {
+	instance, err := BalancerRouter.NewPlazaSdk(address, client)
+  if err != nil {
+    return nil, err
+  }
 
 	return &Router{
+    Auth: auth,
+    Contract: instance,
 		Address: address,
-		ABI:     parsedABI,
 		Client:  client,
 	}, nil
 }
 
 func (r *Router) JoinBalancerAndPlaza(
-	auth *bind.TransactOpts,
 	balancerPoolId [32]byte,
 	plazaPool common.Address,
 	assets []common.Address,
@@ -46,7 +41,7 @@ func (r *Router) JoinBalancerAndPlaza(
 	minPlazaTokens *big.Int,
 	deadline *big.Int,
 ) error {
-	_, err := r.Client.TransactContract(auth, r.ABI, r.Address, "joinBalancerAndPlaza",
+  _, err := r.Contract.JoinBalancerAndPlaza(r.Auth,
 		balancerPoolId,
 		plazaPool,
 		assets,
@@ -56,11 +51,15 @@ func (r *Router) JoinBalancerAndPlaza(
 		minPlazaTokens,
 		deadline,
 	)
-	return err
+
+  if err != nil {
+    return err
+  }
+
+	return nil
 }
 
 func (r *Router) ExitPlazaAndBalancer(
-	auth *bind.TransactOpts,
 	balancerPoolId [32]byte,
 	plazaPool common.Address,
 	assets []common.Address,
@@ -70,7 +69,7 @@ func (r *Router) ExitPlazaAndBalancer(
 	plazaTokenType uint8,
 	minBalancerPoolTokenOut *big.Int,
 ) error {
-	_, err := r.Client.TransactContract(auth, r.ABI, r.Address, "exitPlazaAndBalancer",
+  _, err := r.Contract.ExitPlazaAndBalancer(r.Auth,
 		balancerPoolId,
 		plazaPool,
 		assets,
@@ -80,5 +79,10 @@ func (r *Router) ExitPlazaAndBalancer(
 		plazaTokenType,
 		minBalancerPoolTokenOut,
 	)
-	return err
+
+  if err != nil {
+    return err
+  }
+
+	return nil
 }
