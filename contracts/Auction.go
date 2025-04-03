@@ -1,7 +1,7 @@
 // Code generated - DO NOT EDIT.
 // This file is a generated binding and any manual changes will be lost.
 
-package plaza_sdk
+package contracts
 
 import (
 	"errors"
@@ -29,113 +29,113 @@ var (
 	_ = abi.ConvertType
 )
 
-// PlazaSdkMetaData contains all meta data concerning the PlazaSdk contract.
-var PlazaSdkMetaData = &bind.MetaData{
+// AuctionMetaData contains all meta data concerning the Auction contract.
+var AuctionMetaData = &bind.MetaData{
 	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"AccessDenied\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"target\",\"type\":\"address\"}],\"type\":\"error\",\"name\":\"AddressEmptyCode\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"type\":\"error\",\"name\":\"AddressInsufficientBalance\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"AlreadyClaimed\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"AuctionAlreadyEnded\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"AuctionFailed\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"AuctionHasEnded\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"AuctionStillOngoing\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"AuctionSucceededOrOngoing\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"BidAmountTooHigh\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"BidAmountTooLow\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\"}],\"type\":\"error\",\"name\":\"ERC1967InvalidImplementation\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"ERC1967NonPayable\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"EnforcedPause\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"ExpectedPause\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"FailedInnerCall\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"InvalidInitialization\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"InvalidSellAmount\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"NotInitializing\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"NothingToClaim\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"token\",\"type\":\"address\"}],\"type\":\"error\",\"name\":\"SafeERC20FailedOperation\"},{\"inputs\":[],\"type\":\"error\",\"name\":\"UUPSUnauthorizedCallContext\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"slot\",\"type\":\"bytes32\"}],\"type\":\"error\",\"name\":\"UUPSUnsupportedProxiableUUID\"},{\"inputs\":[{\"internalType\":\"enumAuction.State\",\"name\":\"state\",\"type\":\"uint8\",\"indexed\":false},{\"internalType\":\"uint256\",\"name\":\"totalSellReserveAmount\",\"type\":\"uint256\",\"indexed\":false},{\"internalType\":\"uint256\",\"name\":\"totalBuyCouponAmount\",\"type\":\"uint256\",\"indexed\":false}],\"type\":\"event\",\"name\":\"AuctionEnded\",\"anonymous\":false},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bidIndex\",\"type\":\"uint256\",\"indexed\":true},{\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\",\"indexed\":true},{\"internalType\":\"uint256\",\"name\":\"sellCouponAmount\",\"type\":\"uint256\",\"indexed\":false}],\"type\":\"event\",\"name\":\"BidClaimed\",\"anonymous\":false},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bidIndex\",\"type\":\"uint256\",\"indexed\":true},{\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\",\"indexed\":true},{\"internalType\":\"uint256\",\"name\":\"buyReserveAmount\",\"type\":\"uint256\",\"indexed\":false},{\"internalType\":\"uint256\",\"name\":\"sellCouponAmount\",\"type\":\"uint256\",\"indexed\":false}],\"type\":\"event\",\"name\":\"BidPlaced\",\"anonymous\":false},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bidIndex\",\"type\":\"uint256\",\"indexed\":true},{\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\",\"indexed\":true},{\"internalType\":\"uint256\",\"name\":\"buyReserveAmount\",\"type\":\"uint256\",\"indexed\":false},{\"internalType\":\"uint256\",\"name\":\"sellCouponAmount\",\"type\":\"uint256\",\"indexed\":false}],\"type\":\"event\",\"name\":\"BidReduced\",\"anonymous\":false},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\",\"indexed\":true},{\"internalType\":\"uint256\",\"name\":\"couponAmount\",\"type\":\"uint256\",\"indexed\":false}],\"type\":\"event\",\"name\":\"BidRefundAllocated\",\"anonymous\":false},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bidIndex\",\"type\":\"uint256\",\"indexed\":true},{\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\",\"indexed\":true},{\"internalType\":\"uint256\",\"name\":\"buyReserveAmount\",\"type\":\"uint256\",\"indexed\":false},{\"internalType\":\"uint256\",\"name\":\"sellCouponAmount\",\"type\":\"uint256\",\"indexed\":false}],\"type\":\"event\",\"name\":\"BidRemoved\",\"anonymous\":false},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bidIndex\",\"type\":\"uint256\",\"indexed\":true},{\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\",\"indexed\":true},{\"internalType\":\"uint256\",\"name\":\"sellCouponAmount\",\"type\":\"uint256\",\"indexed\":false}],\"type\":\"event\",\"name\":\"FailedAuctionBidRefundClaimed\",\"anonymous\":false},{\"inputs\":[{\"internalType\":\"uint64\",\"name\":\"version\",\"type\":\"uint64\",\"indexed\":false}],\"type\":\"event\",\"name\":\"Initialized\",\"anonymous\":false},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\",\"indexed\":true},{\"internalType\":\"uint256\",\"name\":\"sellCouponAmount\",\"type\":\"uint256\",\"indexed\":false}],\"type\":\"event\",\"name\":\"LosingBidRefundClaimed\",\"anonymous\":false},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\",\"indexed\":false}],\"type\":\"event\",\"name\":\"Paused\",\"anonymous\":false},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\",\"indexed\":false}],\"type\":\"event\",\"name\":\"Unpaused\",\"anonymous\":false},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"implementation\",\"type\":\"address\",\"indexed\":true}],\"type\":\"event\",\"name\":\"Upgraded\",\"anonymous\":false},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"MAX_BID_AMOUNT\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"UPGRADE_INTERFACE_VERSION\",\"outputs\":[{\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"beneficiary\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}]},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"buyReserveAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"sellCouponAmount\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"bid\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"bidCount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"bids\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"bidder\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"buyReserveAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"sellCouponAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"nextBidIndex\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"prevBidIndex\",\"type\":\"uint256\"},{\"internalType\":\"bool\",\"name\":\"claimed\",\"type\":\"bool\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"buyCouponToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}]},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bidIndex\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"claimBid\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"bidIndex\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"claimRefund\"},{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"claimRefund\"},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"currentCouponAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"endAuction\"},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"endTime\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"highestBidIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_pool\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_buyCouponToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_sellReserveToken\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_totalBuyCouponAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_endTime\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_maxBids\",\"type\":\"uint256\"},{\"internalType\":\"address\",\"name\":\"_beneficiary\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_poolSaleLimit\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"initialize\"},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"lastBidIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"lowestBidIndex\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"maxBids\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"pause\"},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"paused\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}]},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"pendingRefunds\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"pool\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"poolSaleLimit\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"proxiableUUID\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"sellReserveToken\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"slotSize\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"state\",\"outputs\":[{\"internalType\":\"enumAuction.State\",\"name\":\"\",\"type\":\"uint8\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"totalBuyCouponAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[],\"stateMutability\":\"view\",\"type\":\"function\",\"name\":\"totalSellReserveAmount\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}]},{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\",\"name\":\"unpause\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newImplementation\",\"type\":\"address\"},{\"internalType\":\"bytes\",\"name\":\"data\",\"type\":\"bytes\"}],\"stateMutability\":\"payable\",\"type\":\"function\",\"name\":\"upgradeToAndCall\"}]",
 }
 
-// PlazaSdkABI is the input ABI used to generate the binding from.
-// Deprecated: Use PlazaSdkMetaData.ABI instead.
-var PlazaSdkABI = PlazaSdkMetaData.ABI
+// AuctionABI is the input ABI used to generate the binding from.
+// Deprecated: Use AuctionMetaData.ABI instead.
+var AuctionABI = AuctionMetaData.ABI
 
-// PlazaSdk is an auto generated Go binding around an Ethereum contract.
-type PlazaSdk struct {
-	PlazaSdkCaller     // Read-only binding to the contract
-	PlazaSdkTransactor // Write-only binding to the contract
-	PlazaSdkFilterer   // Log filterer for contract events
+// Auction is an auto generated Go binding around an Ethereum contract.
+type Auction struct {
+	AuctionCaller     // Read-only binding to the contract
+	AuctionTransactor // Write-only binding to the contract
+	AuctionFilterer   // Log filterer for contract events
 }
 
-// PlazaSdkCaller is an auto generated read-only Go binding around an Ethereum contract.
-type PlazaSdkCaller struct {
+// AuctionCaller is an auto generated read-only Go binding around an Ethereum contract.
+type AuctionCaller struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// PlazaSdkTransactor is an auto generated write-only Go binding around an Ethereum contract.
-type PlazaSdkTransactor struct {
+// AuctionTransactor is an auto generated write-only Go binding around an Ethereum contract.
+type AuctionTransactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// PlazaSdkFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
-type PlazaSdkFilterer struct {
+// AuctionFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
+type AuctionFilterer struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// PlazaSdkSession is an auto generated Go binding around an Ethereum contract,
+// AuctionSession is an auto generated Go binding around an Ethereum contract,
 // with pre-set call and transact options.
-type PlazaSdkSession struct {
-	Contract     *PlazaSdk         // Generic contract binding to set the session for
+type AuctionSession struct {
+	Contract     *Auction          // Generic contract binding to set the session for
 	CallOpts     bind.CallOpts     // Call options to use throughout this session
 	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
 
-// PlazaSdkCallerSession is an auto generated read-only Go binding around an Ethereum contract,
+// AuctionCallerSession is an auto generated read-only Go binding around an Ethereum contract,
 // with pre-set call options.
-type PlazaSdkCallerSession struct {
-	Contract *PlazaSdkCaller // Generic contract caller binding to set the session for
-	CallOpts bind.CallOpts   // Call options to use throughout this session
+type AuctionCallerSession struct {
+	Contract *AuctionCaller // Generic contract caller binding to set the session for
+	CallOpts bind.CallOpts  // Call options to use throughout this session
 }
 
-// PlazaSdkTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
+// AuctionTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
 // with pre-set transact options.
-type PlazaSdkTransactorSession struct {
-	Contract     *PlazaSdkTransactor // Generic contract transactor binding to set the session for
-	TransactOpts bind.TransactOpts   // Transaction auth options to use throughout this session
+type AuctionTransactorSession struct {
+	Contract     *AuctionTransactor // Generic contract transactor binding to set the session for
+	TransactOpts bind.TransactOpts  // Transaction auth options to use throughout this session
 }
 
-// PlazaSdkRaw is an auto generated low-level Go binding around an Ethereum contract.
-type PlazaSdkRaw struct {
-	Contract *PlazaSdk // Generic contract binding to access the raw methods on
+// AuctionRaw is an auto generated low-level Go binding around an Ethereum contract.
+type AuctionRaw struct {
+	Contract *Auction // Generic contract binding to access the raw methods on
 }
 
-// PlazaSdkCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
-type PlazaSdkCallerRaw struct {
-	Contract *PlazaSdkCaller // Generic read-only contract binding to access the raw methods on
+// AuctionCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
+type AuctionCallerRaw struct {
+	Contract *AuctionCaller // Generic read-only contract binding to access the raw methods on
 }
 
-// PlazaSdkTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
-type PlazaSdkTransactorRaw struct {
-	Contract *PlazaSdkTransactor // Generic write-only contract binding to access the raw methods on
+// AuctionTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
+type AuctionTransactorRaw struct {
+	Contract *AuctionTransactor // Generic write-only contract binding to access the raw methods on
 }
 
-// NewPlazaSdk creates a new instance of PlazaSdk, bound to a specific deployed contract.
-func NewPlazaSdk(address common.Address, backend bind.ContractBackend) (*PlazaSdk, error) {
-	contract, err := bindPlazaSdk(address, backend, backend, backend)
+// NewAuction creates a new instance of Auction, bound to a specific deployed contract.
+func NewAuction(address common.Address, backend bind.ContractBackend) (*Auction, error) {
+	contract, err := bindAuction(address, backend, backend, backend)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdk{PlazaSdkCaller: PlazaSdkCaller{contract: contract}, PlazaSdkTransactor: PlazaSdkTransactor{contract: contract}, PlazaSdkFilterer: PlazaSdkFilterer{contract: contract}}, nil
+	return &Auction{AuctionCaller: AuctionCaller{contract: contract}, AuctionTransactor: AuctionTransactor{contract: contract}, AuctionFilterer: AuctionFilterer{contract: contract}}, nil
 }
 
-// NewPlazaSdkCaller creates a new read-only instance of PlazaSdk, bound to a specific deployed contract.
-func NewPlazaSdkCaller(address common.Address, caller bind.ContractCaller) (*PlazaSdkCaller, error) {
-	contract, err := bindPlazaSdk(address, caller, nil, nil)
+// NewAuctionCaller creates a new read-only instance of Auction, bound to a specific deployed contract.
+func NewAuctionCaller(address common.Address, caller bind.ContractCaller) (*AuctionCaller, error) {
+	contract, err := bindAuction(address, caller, nil, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkCaller{contract: contract}, nil
+	return &AuctionCaller{contract: contract}, nil
 }
 
-// NewPlazaSdkTransactor creates a new write-only instance of PlazaSdk, bound to a specific deployed contract.
-func NewPlazaSdkTransactor(address common.Address, transactor bind.ContractTransactor) (*PlazaSdkTransactor, error) {
-	contract, err := bindPlazaSdk(address, nil, transactor, nil)
+// NewAuctionTransactor creates a new write-only instance of Auction, bound to a specific deployed contract.
+func NewAuctionTransactor(address common.Address, transactor bind.ContractTransactor) (*AuctionTransactor, error) {
+	contract, err := bindAuction(address, nil, transactor, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkTransactor{contract: contract}, nil
+	return &AuctionTransactor{contract: contract}, nil
 }
 
-// NewPlazaSdkFilterer creates a new log filterer instance of PlazaSdk, bound to a specific deployed contract.
-func NewPlazaSdkFilterer(address common.Address, filterer bind.ContractFilterer) (*PlazaSdkFilterer, error) {
-	contract, err := bindPlazaSdk(address, nil, nil, filterer)
+// NewAuctionFilterer creates a new log filterer instance of Auction, bound to a specific deployed contract.
+func NewAuctionFilterer(address common.Address, filterer bind.ContractFilterer) (*AuctionFilterer, error) {
+	contract, err := bindAuction(address, nil, nil, filterer)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkFilterer{contract: contract}, nil
+	return &AuctionFilterer{contract: contract}, nil
 }
 
-// bindPlazaSdk binds a generic wrapper to an already deployed contract.
-func bindPlazaSdk(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := PlazaSdkMetaData.GetAbi()
+// bindAuction binds a generic wrapper to an already deployed contract.
+func bindAuction(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
+	parsed, err := AuctionMetaData.GetAbi()
 	if err != nil {
 		return nil, err
 	}
@@ -146,46 +146,46 @@ func bindPlazaSdk(address common.Address, caller bind.ContractCaller, transactor
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_PlazaSdk *PlazaSdkRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
-	return _PlazaSdk.Contract.PlazaSdkCaller.contract.Call(opts, result, method, params...)
+func (_Auction *AuctionRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+	return _Auction.Contract.AuctionCaller.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_PlazaSdk *PlazaSdkRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.PlazaSdkTransactor.contract.Transfer(opts)
+func (_Auction *AuctionRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Auction.Contract.AuctionTransactor.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_PlazaSdk *PlazaSdkRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.PlazaSdkTransactor.contract.Transact(opts, method, params...)
+func (_Auction *AuctionRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _Auction.Contract.AuctionTransactor.contract.Transact(opts, method, params...)
 }
 
 // Call invokes the (constant) contract method with params as input values and
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_PlazaSdk *PlazaSdkCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
-	return _PlazaSdk.Contract.contract.Call(opts, result, method, params...)
+func (_Auction *AuctionCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+	return _Auction.Contract.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_PlazaSdk *PlazaSdkTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.contract.Transfer(opts)
+func (_Auction *AuctionTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Auction.Contract.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_PlazaSdk *PlazaSdkTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.contract.Transact(opts, method, params...)
+func (_Auction *AuctionTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _Auction.Contract.contract.Transact(opts, method, params...)
 }
 
 // MAXBIDAMOUNT is a free data retrieval call binding the contract method 0xed0f8888.
 //
 // Solidity: function MAX_BID_AMOUNT() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) MAXBIDAMOUNT(opts *bind.CallOpts) (*big.Int, error) {
+func (_Auction *AuctionCaller) MAXBIDAMOUNT(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "MAX_BID_AMOUNT")
+	err := _Auction.contract.Call(opts, &out, "MAX_BID_AMOUNT")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -200,23 +200,23 @@ func (_PlazaSdk *PlazaSdkCaller) MAXBIDAMOUNT(opts *bind.CallOpts) (*big.Int, er
 // MAXBIDAMOUNT is a free data retrieval call binding the contract method 0xed0f8888.
 //
 // Solidity: function MAX_BID_AMOUNT() view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) MAXBIDAMOUNT() (*big.Int, error) {
-	return _PlazaSdk.Contract.MAXBIDAMOUNT(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) MAXBIDAMOUNT() (*big.Int, error) {
+	return _Auction.Contract.MAXBIDAMOUNT(&_Auction.CallOpts)
 }
 
 // MAXBIDAMOUNT is a free data retrieval call binding the contract method 0xed0f8888.
 //
 // Solidity: function MAX_BID_AMOUNT() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) MAXBIDAMOUNT() (*big.Int, error) {
-	return _PlazaSdk.Contract.MAXBIDAMOUNT(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) MAXBIDAMOUNT() (*big.Int, error) {
+	return _Auction.Contract.MAXBIDAMOUNT(&_Auction.CallOpts)
 }
 
 // UPGRADEINTERFACEVERSION is a free data retrieval call binding the contract method 0xad3cb1cc.
 //
 // Solidity: function UPGRADE_INTERFACE_VERSION() view returns(string)
-func (_PlazaSdk *PlazaSdkCaller) UPGRADEINTERFACEVERSION(opts *bind.CallOpts) (string, error) {
+func (_Auction *AuctionCaller) UPGRADEINTERFACEVERSION(opts *bind.CallOpts) (string, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "UPGRADE_INTERFACE_VERSION")
+	err := _Auction.contract.Call(opts, &out, "UPGRADE_INTERFACE_VERSION")
 
 	if err != nil {
 		return *new(string), err
@@ -231,23 +231,23 @@ func (_PlazaSdk *PlazaSdkCaller) UPGRADEINTERFACEVERSION(opts *bind.CallOpts) (s
 // UPGRADEINTERFACEVERSION is a free data retrieval call binding the contract method 0xad3cb1cc.
 //
 // Solidity: function UPGRADE_INTERFACE_VERSION() view returns(string)
-func (_PlazaSdk *PlazaSdkSession) UPGRADEINTERFACEVERSION() (string, error) {
-	return _PlazaSdk.Contract.UPGRADEINTERFACEVERSION(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) UPGRADEINTERFACEVERSION() (string, error) {
+	return _Auction.Contract.UPGRADEINTERFACEVERSION(&_Auction.CallOpts)
 }
 
 // UPGRADEINTERFACEVERSION is a free data retrieval call binding the contract method 0xad3cb1cc.
 //
 // Solidity: function UPGRADE_INTERFACE_VERSION() view returns(string)
-func (_PlazaSdk *PlazaSdkCallerSession) UPGRADEINTERFACEVERSION() (string, error) {
-	return _PlazaSdk.Contract.UPGRADEINTERFACEVERSION(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) UPGRADEINTERFACEVERSION() (string, error) {
+	return _Auction.Contract.UPGRADEINTERFACEVERSION(&_Auction.CallOpts)
 }
 
 // Beneficiary is a free data retrieval call binding the contract method 0x38af3eed.
 //
 // Solidity: function beneficiary() view returns(address)
-func (_PlazaSdk *PlazaSdkCaller) Beneficiary(opts *bind.CallOpts) (common.Address, error) {
+func (_Auction *AuctionCaller) Beneficiary(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "beneficiary")
+	err := _Auction.contract.Call(opts, &out, "beneficiary")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -262,23 +262,23 @@ func (_PlazaSdk *PlazaSdkCaller) Beneficiary(opts *bind.CallOpts) (common.Addres
 // Beneficiary is a free data retrieval call binding the contract method 0x38af3eed.
 //
 // Solidity: function beneficiary() view returns(address)
-func (_PlazaSdk *PlazaSdkSession) Beneficiary() (common.Address, error) {
-	return _PlazaSdk.Contract.Beneficiary(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) Beneficiary() (common.Address, error) {
+	return _Auction.Contract.Beneficiary(&_Auction.CallOpts)
 }
 
 // Beneficiary is a free data retrieval call binding the contract method 0x38af3eed.
 //
 // Solidity: function beneficiary() view returns(address)
-func (_PlazaSdk *PlazaSdkCallerSession) Beneficiary() (common.Address, error) {
-	return _PlazaSdk.Contract.Beneficiary(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) Beneficiary() (common.Address, error) {
+	return _Auction.Contract.Beneficiary(&_Auction.CallOpts)
 }
 
 // BidCount is a free data retrieval call binding the contract method 0xb40a5627.
 //
 // Solidity: function bidCount() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) BidCount(opts *bind.CallOpts) (*big.Int, error) {
+func (_Auction *AuctionCaller) BidCount(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "bidCount")
+	err := _Auction.contract.Call(opts, &out, "bidCount")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -293,21 +293,21 @@ func (_PlazaSdk *PlazaSdkCaller) BidCount(opts *bind.CallOpts) (*big.Int, error)
 // BidCount is a free data retrieval call binding the contract method 0xb40a5627.
 //
 // Solidity: function bidCount() view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) BidCount() (*big.Int, error) {
-	return _PlazaSdk.Contract.BidCount(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) BidCount() (*big.Int, error) {
+	return _Auction.Contract.BidCount(&_Auction.CallOpts)
 }
 
 // BidCount is a free data retrieval call binding the contract method 0xb40a5627.
 //
 // Solidity: function bidCount() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) BidCount() (*big.Int, error) {
-	return _PlazaSdk.Contract.BidCount(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) BidCount() (*big.Int, error) {
+	return _Auction.Contract.BidCount(&_Auction.CallOpts)
 }
 
 // Bids is a free data retrieval call binding the contract method 0x4423c5f1.
 //
 // Solidity: function bids(uint256 ) view returns(address bidder, uint256 buyReserveAmount, uint256 sellCouponAmount, uint256 nextBidIndex, uint256 prevBidIndex, bool claimed)
-func (_PlazaSdk *PlazaSdkCaller) Bids(opts *bind.CallOpts, arg0 *big.Int) (struct {
+func (_Auction *AuctionCaller) Bids(opts *bind.CallOpts, arg0 *big.Int) (struct {
 	Bidder           common.Address
 	BuyReserveAmount *big.Int
 	SellCouponAmount *big.Int
@@ -316,7 +316,7 @@ func (_PlazaSdk *PlazaSdkCaller) Bids(opts *bind.CallOpts, arg0 *big.Int) (struc
 	Claimed          bool
 }, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "bids", arg0)
+	err := _Auction.contract.Call(opts, &out, "bids", arg0)
 
 	outstruct := new(struct {
 		Bidder           common.Address
@@ -344,7 +344,7 @@ func (_PlazaSdk *PlazaSdkCaller) Bids(opts *bind.CallOpts, arg0 *big.Int) (struc
 // Bids is a free data retrieval call binding the contract method 0x4423c5f1.
 //
 // Solidity: function bids(uint256 ) view returns(address bidder, uint256 buyReserveAmount, uint256 sellCouponAmount, uint256 nextBidIndex, uint256 prevBidIndex, bool claimed)
-func (_PlazaSdk *PlazaSdkSession) Bids(arg0 *big.Int) (struct {
+func (_Auction *AuctionSession) Bids(arg0 *big.Int) (struct {
 	Bidder           common.Address
 	BuyReserveAmount *big.Int
 	SellCouponAmount *big.Int
@@ -352,13 +352,13 @@ func (_PlazaSdk *PlazaSdkSession) Bids(arg0 *big.Int) (struct {
 	PrevBidIndex     *big.Int
 	Claimed          bool
 }, error) {
-	return _PlazaSdk.Contract.Bids(&_PlazaSdk.CallOpts, arg0)
+	return _Auction.Contract.Bids(&_Auction.CallOpts, arg0)
 }
 
 // Bids is a free data retrieval call binding the contract method 0x4423c5f1.
 //
 // Solidity: function bids(uint256 ) view returns(address bidder, uint256 buyReserveAmount, uint256 sellCouponAmount, uint256 nextBidIndex, uint256 prevBidIndex, bool claimed)
-func (_PlazaSdk *PlazaSdkCallerSession) Bids(arg0 *big.Int) (struct {
+func (_Auction *AuctionCallerSession) Bids(arg0 *big.Int) (struct {
 	Bidder           common.Address
 	BuyReserveAmount *big.Int
 	SellCouponAmount *big.Int
@@ -366,15 +366,15 @@ func (_PlazaSdk *PlazaSdkCallerSession) Bids(arg0 *big.Int) (struct {
 	PrevBidIndex     *big.Int
 	Claimed          bool
 }, error) {
-	return _PlazaSdk.Contract.Bids(&_PlazaSdk.CallOpts, arg0)
+	return _Auction.Contract.Bids(&_Auction.CallOpts, arg0)
 }
 
 // BuyCouponToken is a free data retrieval call binding the contract method 0x119fdb0f.
 //
 // Solidity: function buyCouponToken() view returns(address)
-func (_PlazaSdk *PlazaSdkCaller) BuyCouponToken(opts *bind.CallOpts) (common.Address, error) {
+func (_Auction *AuctionCaller) BuyCouponToken(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "buyCouponToken")
+	err := _Auction.contract.Call(opts, &out, "buyCouponToken")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -389,23 +389,23 @@ func (_PlazaSdk *PlazaSdkCaller) BuyCouponToken(opts *bind.CallOpts) (common.Add
 // BuyCouponToken is a free data retrieval call binding the contract method 0x119fdb0f.
 //
 // Solidity: function buyCouponToken() view returns(address)
-func (_PlazaSdk *PlazaSdkSession) BuyCouponToken() (common.Address, error) {
-	return _PlazaSdk.Contract.BuyCouponToken(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) BuyCouponToken() (common.Address, error) {
+	return _Auction.Contract.BuyCouponToken(&_Auction.CallOpts)
 }
 
 // BuyCouponToken is a free data retrieval call binding the contract method 0x119fdb0f.
 //
 // Solidity: function buyCouponToken() view returns(address)
-func (_PlazaSdk *PlazaSdkCallerSession) BuyCouponToken() (common.Address, error) {
-	return _PlazaSdk.Contract.BuyCouponToken(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) BuyCouponToken() (common.Address, error) {
+	return _Auction.Contract.BuyCouponToken(&_Auction.CallOpts)
 }
 
 // CurrentCouponAmount is a free data retrieval call binding the contract method 0xa9b001d9.
 //
 // Solidity: function currentCouponAmount() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) CurrentCouponAmount(opts *bind.CallOpts) (*big.Int, error) {
+func (_Auction *AuctionCaller) CurrentCouponAmount(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "currentCouponAmount")
+	err := _Auction.contract.Call(opts, &out, "currentCouponAmount")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -420,23 +420,23 @@ func (_PlazaSdk *PlazaSdkCaller) CurrentCouponAmount(opts *bind.CallOpts) (*big.
 // CurrentCouponAmount is a free data retrieval call binding the contract method 0xa9b001d9.
 //
 // Solidity: function currentCouponAmount() view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) CurrentCouponAmount() (*big.Int, error) {
-	return _PlazaSdk.Contract.CurrentCouponAmount(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) CurrentCouponAmount() (*big.Int, error) {
+	return _Auction.Contract.CurrentCouponAmount(&_Auction.CallOpts)
 }
 
 // CurrentCouponAmount is a free data retrieval call binding the contract method 0xa9b001d9.
 //
 // Solidity: function currentCouponAmount() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) CurrentCouponAmount() (*big.Int, error) {
-	return _PlazaSdk.Contract.CurrentCouponAmount(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) CurrentCouponAmount() (*big.Int, error) {
+	return _Auction.Contract.CurrentCouponAmount(&_Auction.CallOpts)
 }
 
 // EndTime is a free data retrieval call binding the contract method 0x3197cbb6.
 //
 // Solidity: function endTime() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) EndTime(opts *bind.CallOpts) (*big.Int, error) {
+func (_Auction *AuctionCaller) EndTime(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "endTime")
+	err := _Auction.contract.Call(opts, &out, "endTime")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -451,23 +451,23 @@ func (_PlazaSdk *PlazaSdkCaller) EndTime(opts *bind.CallOpts) (*big.Int, error) 
 // EndTime is a free data retrieval call binding the contract method 0x3197cbb6.
 //
 // Solidity: function endTime() view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) EndTime() (*big.Int, error) {
-	return _PlazaSdk.Contract.EndTime(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) EndTime() (*big.Int, error) {
+	return _Auction.Contract.EndTime(&_Auction.CallOpts)
 }
 
 // EndTime is a free data retrieval call binding the contract method 0x3197cbb6.
 //
 // Solidity: function endTime() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) EndTime() (*big.Int, error) {
-	return _PlazaSdk.Contract.EndTime(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) EndTime() (*big.Int, error) {
+	return _Auction.Contract.EndTime(&_Auction.CallOpts)
 }
 
 // HighestBidIndex is a free data retrieval call binding the contract method 0xead6f9ab.
 //
 // Solidity: function highestBidIndex() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) HighestBidIndex(opts *bind.CallOpts) (*big.Int, error) {
+func (_Auction *AuctionCaller) HighestBidIndex(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "highestBidIndex")
+	err := _Auction.contract.Call(opts, &out, "highestBidIndex")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -482,23 +482,23 @@ func (_PlazaSdk *PlazaSdkCaller) HighestBidIndex(opts *bind.CallOpts) (*big.Int,
 // HighestBidIndex is a free data retrieval call binding the contract method 0xead6f9ab.
 //
 // Solidity: function highestBidIndex() view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) HighestBidIndex() (*big.Int, error) {
-	return _PlazaSdk.Contract.HighestBidIndex(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) HighestBidIndex() (*big.Int, error) {
+	return _Auction.Contract.HighestBidIndex(&_Auction.CallOpts)
 }
 
 // HighestBidIndex is a free data retrieval call binding the contract method 0xead6f9ab.
 //
 // Solidity: function highestBidIndex() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) HighestBidIndex() (*big.Int, error) {
-	return _PlazaSdk.Contract.HighestBidIndex(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) HighestBidIndex() (*big.Int, error) {
+	return _Auction.Contract.HighestBidIndex(&_Auction.CallOpts)
 }
 
 // LastBidIndex is a free data retrieval call binding the contract method 0x26885d09.
 //
 // Solidity: function lastBidIndex() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) LastBidIndex(opts *bind.CallOpts) (*big.Int, error) {
+func (_Auction *AuctionCaller) LastBidIndex(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "lastBidIndex")
+	err := _Auction.contract.Call(opts, &out, "lastBidIndex")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -513,23 +513,23 @@ func (_PlazaSdk *PlazaSdkCaller) LastBidIndex(opts *bind.CallOpts) (*big.Int, er
 // LastBidIndex is a free data retrieval call binding the contract method 0x26885d09.
 //
 // Solidity: function lastBidIndex() view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) LastBidIndex() (*big.Int, error) {
-	return _PlazaSdk.Contract.LastBidIndex(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) LastBidIndex() (*big.Int, error) {
+	return _Auction.Contract.LastBidIndex(&_Auction.CallOpts)
 }
 
 // LastBidIndex is a free data retrieval call binding the contract method 0x26885d09.
 //
 // Solidity: function lastBidIndex() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) LastBidIndex() (*big.Int, error) {
-	return _PlazaSdk.Contract.LastBidIndex(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) LastBidIndex() (*big.Int, error) {
+	return _Auction.Contract.LastBidIndex(&_Auction.CallOpts)
 }
 
 // LowestBidIndex is a free data retrieval call binding the contract method 0xec1e4873.
 //
 // Solidity: function lowestBidIndex() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) LowestBidIndex(opts *bind.CallOpts) (*big.Int, error) {
+func (_Auction *AuctionCaller) LowestBidIndex(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "lowestBidIndex")
+	err := _Auction.contract.Call(opts, &out, "lowestBidIndex")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -544,23 +544,23 @@ func (_PlazaSdk *PlazaSdkCaller) LowestBidIndex(opts *bind.CallOpts) (*big.Int, 
 // LowestBidIndex is a free data retrieval call binding the contract method 0xec1e4873.
 //
 // Solidity: function lowestBidIndex() view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) LowestBidIndex() (*big.Int, error) {
-	return _PlazaSdk.Contract.LowestBidIndex(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) LowestBidIndex() (*big.Int, error) {
+	return _Auction.Contract.LowestBidIndex(&_Auction.CallOpts)
 }
 
 // LowestBidIndex is a free data retrieval call binding the contract method 0xec1e4873.
 //
 // Solidity: function lowestBidIndex() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) LowestBidIndex() (*big.Int, error) {
-	return _PlazaSdk.Contract.LowestBidIndex(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) LowestBidIndex() (*big.Int, error) {
+	return _Auction.Contract.LowestBidIndex(&_Auction.CallOpts)
 }
 
 // MaxBids is a free data retrieval call binding the contract method 0x9f235ccd.
 //
 // Solidity: function maxBids() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) MaxBids(opts *bind.CallOpts) (*big.Int, error) {
+func (_Auction *AuctionCaller) MaxBids(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "maxBids")
+	err := _Auction.contract.Call(opts, &out, "maxBids")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -575,23 +575,23 @@ func (_PlazaSdk *PlazaSdkCaller) MaxBids(opts *bind.CallOpts) (*big.Int, error) 
 // MaxBids is a free data retrieval call binding the contract method 0x9f235ccd.
 //
 // Solidity: function maxBids() view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) MaxBids() (*big.Int, error) {
-	return _PlazaSdk.Contract.MaxBids(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) MaxBids() (*big.Int, error) {
+	return _Auction.Contract.MaxBids(&_Auction.CallOpts)
 }
 
 // MaxBids is a free data retrieval call binding the contract method 0x9f235ccd.
 //
 // Solidity: function maxBids() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) MaxBids() (*big.Int, error) {
-	return _PlazaSdk.Contract.MaxBids(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) MaxBids() (*big.Int, error) {
+	return _Auction.Contract.MaxBids(&_Auction.CallOpts)
 }
 
 // Paused is a free data retrieval call binding the contract method 0x5c975abb.
 //
 // Solidity: function paused() view returns(bool)
-func (_PlazaSdk *PlazaSdkCaller) Paused(opts *bind.CallOpts) (bool, error) {
+func (_Auction *AuctionCaller) Paused(opts *bind.CallOpts) (bool, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "paused")
+	err := _Auction.contract.Call(opts, &out, "paused")
 
 	if err != nil {
 		return *new(bool), err
@@ -606,23 +606,23 @@ func (_PlazaSdk *PlazaSdkCaller) Paused(opts *bind.CallOpts) (bool, error) {
 // Paused is a free data retrieval call binding the contract method 0x5c975abb.
 //
 // Solidity: function paused() view returns(bool)
-func (_PlazaSdk *PlazaSdkSession) Paused() (bool, error) {
-	return _PlazaSdk.Contract.Paused(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) Paused() (bool, error) {
+	return _Auction.Contract.Paused(&_Auction.CallOpts)
 }
 
 // Paused is a free data retrieval call binding the contract method 0x5c975abb.
 //
 // Solidity: function paused() view returns(bool)
-func (_PlazaSdk *PlazaSdkCallerSession) Paused() (bool, error) {
-	return _PlazaSdk.Contract.Paused(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) Paused() (bool, error) {
+	return _Auction.Contract.Paused(&_Auction.CallOpts)
 }
 
 // PendingRefunds is a free data retrieval call binding the contract method 0xb613b114.
 //
 // Solidity: function pendingRefunds(address ) view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) PendingRefunds(opts *bind.CallOpts, arg0 common.Address) (*big.Int, error) {
+func (_Auction *AuctionCaller) PendingRefunds(opts *bind.CallOpts, arg0 common.Address) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "pendingRefunds", arg0)
+	err := _Auction.contract.Call(opts, &out, "pendingRefunds", arg0)
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -637,23 +637,23 @@ func (_PlazaSdk *PlazaSdkCaller) PendingRefunds(opts *bind.CallOpts, arg0 common
 // PendingRefunds is a free data retrieval call binding the contract method 0xb613b114.
 //
 // Solidity: function pendingRefunds(address ) view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) PendingRefunds(arg0 common.Address) (*big.Int, error) {
-	return _PlazaSdk.Contract.PendingRefunds(&_PlazaSdk.CallOpts, arg0)
+func (_Auction *AuctionSession) PendingRefunds(arg0 common.Address) (*big.Int, error) {
+	return _Auction.Contract.PendingRefunds(&_Auction.CallOpts, arg0)
 }
 
 // PendingRefunds is a free data retrieval call binding the contract method 0xb613b114.
 //
 // Solidity: function pendingRefunds(address ) view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) PendingRefunds(arg0 common.Address) (*big.Int, error) {
-	return _PlazaSdk.Contract.PendingRefunds(&_PlazaSdk.CallOpts, arg0)
+func (_Auction *AuctionCallerSession) PendingRefunds(arg0 common.Address) (*big.Int, error) {
+	return _Auction.Contract.PendingRefunds(&_Auction.CallOpts, arg0)
 }
 
 // Pool is a free data retrieval call binding the contract method 0x16f0115b.
 //
 // Solidity: function pool() view returns(address)
-func (_PlazaSdk *PlazaSdkCaller) Pool(opts *bind.CallOpts) (common.Address, error) {
+func (_Auction *AuctionCaller) Pool(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "pool")
+	err := _Auction.contract.Call(opts, &out, "pool")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -668,23 +668,23 @@ func (_PlazaSdk *PlazaSdkCaller) Pool(opts *bind.CallOpts) (common.Address, erro
 // Pool is a free data retrieval call binding the contract method 0x16f0115b.
 //
 // Solidity: function pool() view returns(address)
-func (_PlazaSdk *PlazaSdkSession) Pool() (common.Address, error) {
-	return _PlazaSdk.Contract.Pool(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) Pool() (common.Address, error) {
+	return _Auction.Contract.Pool(&_Auction.CallOpts)
 }
 
 // Pool is a free data retrieval call binding the contract method 0x16f0115b.
 //
 // Solidity: function pool() view returns(address)
-func (_PlazaSdk *PlazaSdkCallerSession) Pool() (common.Address, error) {
-	return _PlazaSdk.Contract.Pool(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) Pool() (common.Address, error) {
+	return _Auction.Contract.Pool(&_Auction.CallOpts)
 }
 
 // PoolSaleLimit is a free data retrieval call binding the contract method 0xc8c4e0fd.
 //
 // Solidity: function poolSaleLimit() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) PoolSaleLimit(opts *bind.CallOpts) (*big.Int, error) {
+func (_Auction *AuctionCaller) PoolSaleLimit(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "poolSaleLimit")
+	err := _Auction.contract.Call(opts, &out, "poolSaleLimit")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -699,23 +699,23 @@ func (_PlazaSdk *PlazaSdkCaller) PoolSaleLimit(opts *bind.CallOpts) (*big.Int, e
 // PoolSaleLimit is a free data retrieval call binding the contract method 0xc8c4e0fd.
 //
 // Solidity: function poolSaleLimit() view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) PoolSaleLimit() (*big.Int, error) {
-	return _PlazaSdk.Contract.PoolSaleLimit(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) PoolSaleLimit() (*big.Int, error) {
+	return _Auction.Contract.PoolSaleLimit(&_Auction.CallOpts)
 }
 
 // PoolSaleLimit is a free data retrieval call binding the contract method 0xc8c4e0fd.
 //
 // Solidity: function poolSaleLimit() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) PoolSaleLimit() (*big.Int, error) {
-	return _PlazaSdk.Contract.PoolSaleLimit(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) PoolSaleLimit() (*big.Int, error) {
+	return _Auction.Contract.PoolSaleLimit(&_Auction.CallOpts)
 }
 
 // ProxiableUUID is a free data retrieval call binding the contract method 0x52d1902d.
 //
 // Solidity: function proxiableUUID() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkCaller) ProxiableUUID(opts *bind.CallOpts) ([32]byte, error) {
+func (_Auction *AuctionCaller) ProxiableUUID(opts *bind.CallOpts) ([32]byte, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "proxiableUUID")
+	err := _Auction.contract.Call(opts, &out, "proxiableUUID")
 
 	if err != nil {
 		return *new([32]byte), err
@@ -730,23 +730,23 @@ func (_PlazaSdk *PlazaSdkCaller) ProxiableUUID(opts *bind.CallOpts) ([32]byte, e
 // ProxiableUUID is a free data retrieval call binding the contract method 0x52d1902d.
 //
 // Solidity: function proxiableUUID() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkSession) ProxiableUUID() ([32]byte, error) {
-	return _PlazaSdk.Contract.ProxiableUUID(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) ProxiableUUID() ([32]byte, error) {
+	return _Auction.Contract.ProxiableUUID(&_Auction.CallOpts)
 }
 
 // ProxiableUUID is a free data retrieval call binding the contract method 0x52d1902d.
 //
 // Solidity: function proxiableUUID() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkCallerSession) ProxiableUUID() ([32]byte, error) {
-	return _PlazaSdk.Contract.ProxiableUUID(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) ProxiableUUID() ([32]byte, error) {
+	return _Auction.Contract.ProxiableUUID(&_Auction.CallOpts)
 }
 
 // SellReserveToken is a free data retrieval call binding the contract method 0xde365a1b.
 //
 // Solidity: function sellReserveToken() view returns(address)
-func (_PlazaSdk *PlazaSdkCaller) SellReserveToken(opts *bind.CallOpts) (common.Address, error) {
+func (_Auction *AuctionCaller) SellReserveToken(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "sellReserveToken")
+	err := _Auction.contract.Call(opts, &out, "sellReserveToken")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -761,23 +761,23 @@ func (_PlazaSdk *PlazaSdkCaller) SellReserveToken(opts *bind.CallOpts) (common.A
 // SellReserveToken is a free data retrieval call binding the contract method 0xde365a1b.
 //
 // Solidity: function sellReserveToken() view returns(address)
-func (_PlazaSdk *PlazaSdkSession) SellReserveToken() (common.Address, error) {
-	return _PlazaSdk.Contract.SellReserveToken(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) SellReserveToken() (common.Address, error) {
+	return _Auction.Contract.SellReserveToken(&_Auction.CallOpts)
 }
 
 // SellReserveToken is a free data retrieval call binding the contract method 0xde365a1b.
 //
 // Solidity: function sellReserveToken() view returns(address)
-func (_PlazaSdk *PlazaSdkCallerSession) SellReserveToken() (common.Address, error) {
-	return _PlazaSdk.Contract.SellReserveToken(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) SellReserveToken() (common.Address, error) {
+	return _Auction.Contract.SellReserveToken(&_Auction.CallOpts)
 }
 
 // SlotSize is a free data retrieval call binding the contract method 0x628a0cf8.
 //
 // Solidity: function slotSize() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) SlotSize(opts *bind.CallOpts) (*big.Int, error) {
+func (_Auction *AuctionCaller) SlotSize(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "slotSize")
+	err := _Auction.contract.Call(opts, &out, "slotSize")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -792,23 +792,23 @@ func (_PlazaSdk *PlazaSdkCaller) SlotSize(opts *bind.CallOpts) (*big.Int, error)
 // SlotSize is a free data retrieval call binding the contract method 0x628a0cf8.
 //
 // Solidity: function slotSize() view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) SlotSize() (*big.Int, error) {
-	return _PlazaSdk.Contract.SlotSize(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) SlotSize() (*big.Int, error) {
+	return _Auction.Contract.SlotSize(&_Auction.CallOpts)
 }
 
 // SlotSize is a free data retrieval call binding the contract method 0x628a0cf8.
 //
 // Solidity: function slotSize() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) SlotSize() (*big.Int, error) {
-	return _PlazaSdk.Contract.SlotSize(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) SlotSize() (*big.Int, error) {
+	return _Auction.Contract.SlotSize(&_Auction.CallOpts)
 }
 
 // State is a free data retrieval call binding the contract method 0xc19d93fb.
 //
 // Solidity: function state() view returns(uint8)
-func (_PlazaSdk *PlazaSdkCaller) State(opts *bind.CallOpts) (uint8, error) {
+func (_Auction *AuctionCaller) State(opts *bind.CallOpts) (uint8, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "state")
+	err := _Auction.contract.Call(opts, &out, "state")
 
 	if err != nil {
 		return *new(uint8), err
@@ -823,23 +823,23 @@ func (_PlazaSdk *PlazaSdkCaller) State(opts *bind.CallOpts) (uint8, error) {
 // State is a free data retrieval call binding the contract method 0xc19d93fb.
 //
 // Solidity: function state() view returns(uint8)
-func (_PlazaSdk *PlazaSdkSession) State() (uint8, error) {
-	return _PlazaSdk.Contract.State(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) State() (uint8, error) {
+	return _Auction.Contract.State(&_Auction.CallOpts)
 }
 
 // State is a free data retrieval call binding the contract method 0xc19d93fb.
 //
 // Solidity: function state() view returns(uint8)
-func (_PlazaSdk *PlazaSdkCallerSession) State() (uint8, error) {
-	return _PlazaSdk.Contract.State(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) State() (uint8, error) {
+	return _Auction.Contract.State(&_Auction.CallOpts)
 }
 
 // TotalBuyCouponAmount is a free data retrieval call binding the contract method 0xdcc8eaf6.
 //
 // Solidity: function totalBuyCouponAmount() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) TotalBuyCouponAmount(opts *bind.CallOpts) (*big.Int, error) {
+func (_Auction *AuctionCaller) TotalBuyCouponAmount(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "totalBuyCouponAmount")
+	err := _Auction.contract.Call(opts, &out, "totalBuyCouponAmount")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -854,23 +854,23 @@ func (_PlazaSdk *PlazaSdkCaller) TotalBuyCouponAmount(opts *bind.CallOpts) (*big
 // TotalBuyCouponAmount is a free data retrieval call binding the contract method 0xdcc8eaf6.
 //
 // Solidity: function totalBuyCouponAmount() view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) TotalBuyCouponAmount() (*big.Int, error) {
-	return _PlazaSdk.Contract.TotalBuyCouponAmount(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) TotalBuyCouponAmount() (*big.Int, error) {
+	return _Auction.Contract.TotalBuyCouponAmount(&_Auction.CallOpts)
 }
 
 // TotalBuyCouponAmount is a free data retrieval call binding the contract method 0xdcc8eaf6.
 //
 // Solidity: function totalBuyCouponAmount() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) TotalBuyCouponAmount() (*big.Int, error) {
-	return _PlazaSdk.Contract.TotalBuyCouponAmount(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) TotalBuyCouponAmount() (*big.Int, error) {
+	return _Auction.Contract.TotalBuyCouponAmount(&_Auction.CallOpts)
 }
 
 // TotalSellReserveAmount is a free data retrieval call binding the contract method 0x26191ffa.
 //
 // Solidity: function totalSellReserveAmount() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) TotalSellReserveAmount(opts *bind.CallOpts) (*big.Int, error) {
+func (_Auction *AuctionCaller) TotalSellReserveAmount(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "totalSellReserveAmount")
+	err := _Auction.contract.Call(opts, &out, "totalSellReserveAmount")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -885,209 +885,209 @@ func (_PlazaSdk *PlazaSdkCaller) TotalSellReserveAmount(opts *bind.CallOpts) (*b
 // TotalSellReserveAmount is a free data retrieval call binding the contract method 0x26191ffa.
 //
 // Solidity: function totalSellReserveAmount() view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) TotalSellReserveAmount() (*big.Int, error) {
-	return _PlazaSdk.Contract.TotalSellReserveAmount(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionSession) TotalSellReserveAmount() (*big.Int, error) {
+	return _Auction.Contract.TotalSellReserveAmount(&_Auction.CallOpts)
 }
 
 // TotalSellReserveAmount is a free data retrieval call binding the contract method 0x26191ffa.
 //
 // Solidity: function totalSellReserveAmount() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) TotalSellReserveAmount() (*big.Int, error) {
-	return _PlazaSdk.Contract.TotalSellReserveAmount(&_PlazaSdk.CallOpts)
+func (_Auction *AuctionCallerSession) TotalSellReserveAmount() (*big.Int, error) {
+	return _Auction.Contract.TotalSellReserveAmount(&_Auction.CallOpts)
 }
 
 // Bid is a paid mutator transaction binding the contract method 0x598647f8.
 //
 // Solidity: function bid(uint256 buyReserveAmount, uint256 sellCouponAmount) returns(uint256)
-func (_PlazaSdk *PlazaSdkTransactor) Bid(opts *bind.TransactOpts, buyReserveAmount *big.Int, sellCouponAmount *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "bid", buyReserveAmount, sellCouponAmount)
+func (_Auction *AuctionTransactor) Bid(opts *bind.TransactOpts, buyReserveAmount *big.Int, sellCouponAmount *big.Int) (*types.Transaction, error) {
+	return _Auction.contract.Transact(opts, "bid", buyReserveAmount, sellCouponAmount)
 }
 
 // Bid is a paid mutator transaction binding the contract method 0x598647f8.
 //
 // Solidity: function bid(uint256 buyReserveAmount, uint256 sellCouponAmount) returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) Bid(buyReserveAmount *big.Int, sellCouponAmount *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Bid(&_PlazaSdk.TransactOpts, buyReserveAmount, sellCouponAmount)
+func (_Auction *AuctionSession) Bid(buyReserveAmount *big.Int, sellCouponAmount *big.Int) (*types.Transaction, error) {
+	return _Auction.Contract.Bid(&_Auction.TransactOpts, buyReserveAmount, sellCouponAmount)
 }
 
 // Bid is a paid mutator transaction binding the contract method 0x598647f8.
 //
 // Solidity: function bid(uint256 buyReserveAmount, uint256 sellCouponAmount) returns(uint256)
-func (_PlazaSdk *PlazaSdkTransactorSession) Bid(buyReserveAmount *big.Int, sellCouponAmount *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Bid(&_PlazaSdk.TransactOpts, buyReserveAmount, sellCouponAmount)
+func (_Auction *AuctionTransactorSession) Bid(buyReserveAmount *big.Int, sellCouponAmount *big.Int) (*types.Transaction, error) {
+	return _Auction.Contract.Bid(&_Auction.TransactOpts, buyReserveAmount, sellCouponAmount)
 }
 
 // ClaimBid is a paid mutator transaction binding the contract method 0x21113057.
 //
 // Solidity: function claimBid(uint256 bidIndex) returns()
-func (_PlazaSdk *PlazaSdkTransactor) ClaimBid(opts *bind.TransactOpts, bidIndex *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "claimBid", bidIndex)
+func (_Auction *AuctionTransactor) ClaimBid(opts *bind.TransactOpts, bidIndex *big.Int) (*types.Transaction, error) {
+	return _Auction.contract.Transact(opts, "claimBid", bidIndex)
 }
 
 // ClaimBid is a paid mutator transaction binding the contract method 0x21113057.
 //
 // Solidity: function claimBid(uint256 bidIndex) returns()
-func (_PlazaSdk *PlazaSdkSession) ClaimBid(bidIndex *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.ClaimBid(&_PlazaSdk.TransactOpts, bidIndex)
+func (_Auction *AuctionSession) ClaimBid(bidIndex *big.Int) (*types.Transaction, error) {
+	return _Auction.Contract.ClaimBid(&_Auction.TransactOpts, bidIndex)
 }
 
 // ClaimBid is a paid mutator transaction binding the contract method 0x21113057.
 //
 // Solidity: function claimBid(uint256 bidIndex) returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) ClaimBid(bidIndex *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.ClaimBid(&_PlazaSdk.TransactOpts, bidIndex)
+func (_Auction *AuctionTransactorSession) ClaimBid(bidIndex *big.Int) (*types.Transaction, error) {
+	return _Auction.Contract.ClaimBid(&_Auction.TransactOpts, bidIndex)
 }
 
 // ClaimRefund is a paid mutator transaction binding the contract method 0x5b7baf64.
 //
 // Solidity: function claimRefund(uint256 bidIndex) returns()
-func (_PlazaSdk *PlazaSdkTransactor) ClaimRefund(opts *bind.TransactOpts, bidIndex *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "claimRefund", bidIndex)
+func (_Auction *AuctionTransactor) ClaimRefund(opts *bind.TransactOpts, bidIndex *big.Int) (*types.Transaction, error) {
+	return _Auction.contract.Transact(opts, "claimRefund", bidIndex)
 }
 
 // ClaimRefund is a paid mutator transaction binding the contract method 0x5b7baf64.
 //
 // Solidity: function claimRefund(uint256 bidIndex) returns()
-func (_PlazaSdk *PlazaSdkSession) ClaimRefund(bidIndex *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.ClaimRefund(&_PlazaSdk.TransactOpts, bidIndex)
+func (_Auction *AuctionSession) ClaimRefund(bidIndex *big.Int) (*types.Transaction, error) {
+	return _Auction.Contract.ClaimRefund(&_Auction.TransactOpts, bidIndex)
 }
 
 // ClaimRefund is a paid mutator transaction binding the contract method 0x5b7baf64.
 //
 // Solidity: function claimRefund(uint256 bidIndex) returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) ClaimRefund(bidIndex *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.ClaimRefund(&_PlazaSdk.TransactOpts, bidIndex)
+func (_Auction *AuctionTransactorSession) ClaimRefund(bidIndex *big.Int) (*types.Transaction, error) {
+	return _Auction.Contract.ClaimRefund(&_Auction.TransactOpts, bidIndex)
 }
 
 // ClaimRefund0 is a paid mutator transaction binding the contract method 0xb5545a3c.
 //
 // Solidity: function claimRefund() returns()
-func (_PlazaSdk *PlazaSdkTransactor) ClaimRefund0(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "claimRefund0")
+func (_Auction *AuctionTransactor) ClaimRefund0(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Auction.contract.Transact(opts, "claimRefund0")
 }
 
 // ClaimRefund0 is a paid mutator transaction binding the contract method 0xb5545a3c.
 //
 // Solidity: function claimRefund() returns()
-func (_PlazaSdk *PlazaSdkSession) ClaimRefund0() (*types.Transaction, error) {
-	return _PlazaSdk.Contract.ClaimRefund0(&_PlazaSdk.TransactOpts)
+func (_Auction *AuctionSession) ClaimRefund0() (*types.Transaction, error) {
+	return _Auction.Contract.ClaimRefund0(&_Auction.TransactOpts)
 }
 
 // ClaimRefund0 is a paid mutator transaction binding the contract method 0xb5545a3c.
 //
 // Solidity: function claimRefund() returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) ClaimRefund0() (*types.Transaction, error) {
-	return _PlazaSdk.Contract.ClaimRefund0(&_PlazaSdk.TransactOpts)
+func (_Auction *AuctionTransactorSession) ClaimRefund0() (*types.Transaction, error) {
+	return _Auction.Contract.ClaimRefund0(&_Auction.TransactOpts)
 }
 
 // EndAuction is a paid mutator transaction binding the contract method 0xfe67a54b.
 //
 // Solidity: function endAuction() returns()
-func (_PlazaSdk *PlazaSdkTransactor) EndAuction(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "endAuction")
+func (_Auction *AuctionTransactor) EndAuction(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Auction.contract.Transact(opts, "endAuction")
 }
 
 // EndAuction is a paid mutator transaction binding the contract method 0xfe67a54b.
 //
 // Solidity: function endAuction() returns()
-func (_PlazaSdk *PlazaSdkSession) EndAuction() (*types.Transaction, error) {
-	return _PlazaSdk.Contract.EndAuction(&_PlazaSdk.TransactOpts)
+func (_Auction *AuctionSession) EndAuction() (*types.Transaction, error) {
+	return _Auction.Contract.EndAuction(&_Auction.TransactOpts)
 }
 
 // EndAuction is a paid mutator transaction binding the contract method 0xfe67a54b.
 //
 // Solidity: function endAuction() returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) EndAuction() (*types.Transaction, error) {
-	return _PlazaSdk.Contract.EndAuction(&_PlazaSdk.TransactOpts)
+func (_Auction *AuctionTransactorSession) EndAuction() (*types.Transaction, error) {
+	return _Auction.Contract.EndAuction(&_Auction.TransactOpts)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0x8aabdb8b.
 //
 // Solidity: function initialize(address _pool, address _buyCouponToken, address _sellReserveToken, uint256 _totalBuyCouponAmount, uint256 _endTime, uint256 _maxBids, address _beneficiary, uint256 _poolSaleLimit) returns()
-func (_PlazaSdk *PlazaSdkTransactor) Initialize(opts *bind.TransactOpts, _pool common.Address, _buyCouponToken common.Address, _sellReserveToken common.Address, _totalBuyCouponAmount *big.Int, _endTime *big.Int, _maxBids *big.Int, _beneficiary common.Address, _poolSaleLimit *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "initialize", _pool, _buyCouponToken, _sellReserveToken, _totalBuyCouponAmount, _endTime, _maxBids, _beneficiary, _poolSaleLimit)
+func (_Auction *AuctionTransactor) Initialize(opts *bind.TransactOpts, _pool common.Address, _buyCouponToken common.Address, _sellReserveToken common.Address, _totalBuyCouponAmount *big.Int, _endTime *big.Int, _maxBids *big.Int, _beneficiary common.Address, _poolSaleLimit *big.Int) (*types.Transaction, error) {
+	return _Auction.contract.Transact(opts, "initialize", _pool, _buyCouponToken, _sellReserveToken, _totalBuyCouponAmount, _endTime, _maxBids, _beneficiary, _poolSaleLimit)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0x8aabdb8b.
 //
 // Solidity: function initialize(address _pool, address _buyCouponToken, address _sellReserveToken, uint256 _totalBuyCouponAmount, uint256 _endTime, uint256 _maxBids, address _beneficiary, uint256 _poolSaleLimit) returns()
-func (_PlazaSdk *PlazaSdkSession) Initialize(_pool common.Address, _buyCouponToken common.Address, _sellReserveToken common.Address, _totalBuyCouponAmount *big.Int, _endTime *big.Int, _maxBids *big.Int, _beneficiary common.Address, _poolSaleLimit *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Initialize(&_PlazaSdk.TransactOpts, _pool, _buyCouponToken, _sellReserveToken, _totalBuyCouponAmount, _endTime, _maxBids, _beneficiary, _poolSaleLimit)
+func (_Auction *AuctionSession) Initialize(_pool common.Address, _buyCouponToken common.Address, _sellReserveToken common.Address, _totalBuyCouponAmount *big.Int, _endTime *big.Int, _maxBids *big.Int, _beneficiary common.Address, _poolSaleLimit *big.Int) (*types.Transaction, error) {
+	return _Auction.Contract.Initialize(&_Auction.TransactOpts, _pool, _buyCouponToken, _sellReserveToken, _totalBuyCouponAmount, _endTime, _maxBids, _beneficiary, _poolSaleLimit)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0x8aabdb8b.
 //
 // Solidity: function initialize(address _pool, address _buyCouponToken, address _sellReserveToken, uint256 _totalBuyCouponAmount, uint256 _endTime, uint256 _maxBids, address _beneficiary, uint256 _poolSaleLimit) returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) Initialize(_pool common.Address, _buyCouponToken common.Address, _sellReserveToken common.Address, _totalBuyCouponAmount *big.Int, _endTime *big.Int, _maxBids *big.Int, _beneficiary common.Address, _poolSaleLimit *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Initialize(&_PlazaSdk.TransactOpts, _pool, _buyCouponToken, _sellReserveToken, _totalBuyCouponAmount, _endTime, _maxBids, _beneficiary, _poolSaleLimit)
+func (_Auction *AuctionTransactorSession) Initialize(_pool common.Address, _buyCouponToken common.Address, _sellReserveToken common.Address, _totalBuyCouponAmount *big.Int, _endTime *big.Int, _maxBids *big.Int, _beneficiary common.Address, _poolSaleLimit *big.Int) (*types.Transaction, error) {
+	return _Auction.Contract.Initialize(&_Auction.TransactOpts, _pool, _buyCouponToken, _sellReserveToken, _totalBuyCouponAmount, _endTime, _maxBids, _beneficiary, _poolSaleLimit)
 }
 
 // Pause is a paid mutator transaction binding the contract method 0x8456cb59.
 //
 // Solidity: function pause() returns()
-func (_PlazaSdk *PlazaSdkTransactor) Pause(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "pause")
+func (_Auction *AuctionTransactor) Pause(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Auction.contract.Transact(opts, "pause")
 }
 
 // Pause is a paid mutator transaction binding the contract method 0x8456cb59.
 //
 // Solidity: function pause() returns()
-func (_PlazaSdk *PlazaSdkSession) Pause() (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Pause(&_PlazaSdk.TransactOpts)
+func (_Auction *AuctionSession) Pause() (*types.Transaction, error) {
+	return _Auction.Contract.Pause(&_Auction.TransactOpts)
 }
 
 // Pause is a paid mutator transaction binding the contract method 0x8456cb59.
 //
 // Solidity: function pause() returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) Pause() (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Pause(&_PlazaSdk.TransactOpts)
+func (_Auction *AuctionTransactorSession) Pause() (*types.Transaction, error) {
+	return _Auction.Contract.Pause(&_Auction.TransactOpts)
 }
 
 // Unpause is a paid mutator transaction binding the contract method 0x3f4ba83a.
 //
 // Solidity: function unpause() returns()
-func (_PlazaSdk *PlazaSdkTransactor) Unpause(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "unpause")
+func (_Auction *AuctionTransactor) Unpause(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Auction.contract.Transact(opts, "unpause")
 }
 
 // Unpause is a paid mutator transaction binding the contract method 0x3f4ba83a.
 //
 // Solidity: function unpause() returns()
-func (_PlazaSdk *PlazaSdkSession) Unpause() (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Unpause(&_PlazaSdk.TransactOpts)
+func (_Auction *AuctionSession) Unpause() (*types.Transaction, error) {
+	return _Auction.Contract.Unpause(&_Auction.TransactOpts)
 }
 
 // Unpause is a paid mutator transaction binding the contract method 0x3f4ba83a.
 //
 // Solidity: function unpause() returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) Unpause() (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Unpause(&_PlazaSdk.TransactOpts)
+func (_Auction *AuctionTransactorSession) Unpause() (*types.Transaction, error) {
+	return _Auction.Contract.Unpause(&_Auction.TransactOpts)
 }
 
 // UpgradeToAndCall is a paid mutator transaction binding the contract method 0x4f1ef286.
 //
 // Solidity: function upgradeToAndCall(address newImplementation, bytes data) payable returns()
-func (_PlazaSdk *PlazaSdkTransactor) UpgradeToAndCall(opts *bind.TransactOpts, newImplementation common.Address, data []byte) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "upgradeToAndCall", newImplementation, data)
+func (_Auction *AuctionTransactor) UpgradeToAndCall(opts *bind.TransactOpts, newImplementation common.Address, data []byte) (*types.Transaction, error) {
+	return _Auction.contract.Transact(opts, "upgradeToAndCall", newImplementation, data)
 }
 
 // UpgradeToAndCall is a paid mutator transaction binding the contract method 0x4f1ef286.
 //
 // Solidity: function upgradeToAndCall(address newImplementation, bytes data) payable returns()
-func (_PlazaSdk *PlazaSdkSession) UpgradeToAndCall(newImplementation common.Address, data []byte) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.UpgradeToAndCall(&_PlazaSdk.TransactOpts, newImplementation, data)
+func (_Auction *AuctionSession) UpgradeToAndCall(newImplementation common.Address, data []byte) (*types.Transaction, error) {
+	return _Auction.Contract.UpgradeToAndCall(&_Auction.TransactOpts, newImplementation, data)
 }
 
 // UpgradeToAndCall is a paid mutator transaction binding the contract method 0x4f1ef286.
 //
 // Solidity: function upgradeToAndCall(address newImplementation, bytes data) payable returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) UpgradeToAndCall(newImplementation common.Address, data []byte) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.UpgradeToAndCall(&_PlazaSdk.TransactOpts, newImplementation, data)
+func (_Auction *AuctionTransactorSession) UpgradeToAndCall(newImplementation common.Address, data []byte) (*types.Transaction, error) {
+	return _Auction.Contract.UpgradeToAndCall(&_Auction.TransactOpts, newImplementation, data)
 }
 
-// PlazaSdkAuctionEndedIterator is returned from FilterAuctionEnded and is used to iterate over the raw logs and unpacked data for AuctionEnded events raised by the PlazaSdk contract.
-type PlazaSdkAuctionEndedIterator struct {
-	Event *PlazaSdkAuctionEnded // Event containing the contract specifics and raw log
+// AuctionAuctionEndedIterator is returned from FilterAuctionEnded and is used to iterate over the raw logs and unpacked data for AuctionEnded events raised by the Auction contract.
+type AuctionAuctionEndedIterator struct {
+	Event *AuctionAuctionEnded // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1101,7 +1101,7 @@ type PlazaSdkAuctionEndedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkAuctionEndedIterator) Next() bool {
+func (it *AuctionAuctionEndedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1110,7 +1110,7 @@ func (it *PlazaSdkAuctionEndedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkAuctionEnded)
+			it.Event = new(AuctionAuctionEnded)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1125,7 +1125,7 @@ func (it *PlazaSdkAuctionEndedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkAuctionEnded)
+		it.Event = new(AuctionAuctionEnded)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1141,19 +1141,19 @@ func (it *PlazaSdkAuctionEndedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkAuctionEndedIterator) Error() error {
+func (it *AuctionAuctionEndedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkAuctionEndedIterator) Close() error {
+func (it *AuctionAuctionEndedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkAuctionEnded represents a AuctionEnded event raised by the PlazaSdk contract.
-type PlazaSdkAuctionEnded struct {
+// AuctionAuctionEnded represents a AuctionEnded event raised by the Auction contract.
+type AuctionAuctionEnded struct {
 	State                  uint8
 	TotalSellReserveAmount *big.Int
 	TotalBuyCouponAmount   *big.Int
@@ -1163,21 +1163,21 @@ type PlazaSdkAuctionEnded struct {
 // FilterAuctionEnded is a free log retrieval operation binding the contract event 0xbd6e0990969f60d91021509c9d5849868677e6886c512d34298688a9cd5e458c.
 //
 // Solidity: event AuctionEnded(uint8 state, uint256 totalSellReserveAmount, uint256 totalBuyCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) FilterAuctionEnded(opts *bind.FilterOpts) (*PlazaSdkAuctionEndedIterator, error) {
+func (_Auction *AuctionFilterer) FilterAuctionEnded(opts *bind.FilterOpts) (*AuctionAuctionEndedIterator, error) {
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "AuctionEnded")
+	logs, sub, err := _Auction.contract.FilterLogs(opts, "AuctionEnded")
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkAuctionEndedIterator{contract: _PlazaSdk.contract, event: "AuctionEnded", logs: logs, sub: sub}, nil
+	return &AuctionAuctionEndedIterator{contract: _Auction.contract, event: "AuctionEnded", logs: logs, sub: sub}, nil
 }
 
 // WatchAuctionEnded is a free log subscription operation binding the contract event 0xbd6e0990969f60d91021509c9d5849868677e6886c512d34298688a9cd5e458c.
 //
 // Solidity: event AuctionEnded(uint8 state, uint256 totalSellReserveAmount, uint256 totalBuyCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) WatchAuctionEnded(opts *bind.WatchOpts, sink chan<- *PlazaSdkAuctionEnded) (event.Subscription, error) {
+func (_Auction *AuctionFilterer) WatchAuctionEnded(opts *bind.WatchOpts, sink chan<- *AuctionAuctionEnded) (event.Subscription, error) {
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "AuctionEnded")
+	logs, sub, err := _Auction.contract.WatchLogs(opts, "AuctionEnded")
 	if err != nil {
 		return nil, err
 	}
@@ -1187,8 +1187,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchAuctionEnded(opts *bind.WatchOpts, sink 
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkAuctionEnded)
-				if err := _PlazaSdk.contract.UnpackLog(event, "AuctionEnded", log); err != nil {
+				event := new(AuctionAuctionEnded)
+				if err := _Auction.contract.UnpackLog(event, "AuctionEnded", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1212,18 +1212,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchAuctionEnded(opts *bind.WatchOpts, sink 
 // ParseAuctionEnded is a log parse operation binding the contract event 0xbd6e0990969f60d91021509c9d5849868677e6886c512d34298688a9cd5e458c.
 //
 // Solidity: event AuctionEnded(uint8 state, uint256 totalSellReserveAmount, uint256 totalBuyCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) ParseAuctionEnded(log types.Log) (*PlazaSdkAuctionEnded, error) {
-	event := new(PlazaSdkAuctionEnded)
-	if err := _PlazaSdk.contract.UnpackLog(event, "AuctionEnded", log); err != nil {
+func (_Auction *AuctionFilterer) ParseAuctionEnded(log types.Log) (*AuctionAuctionEnded, error) {
+	event := new(AuctionAuctionEnded)
+	if err := _Auction.contract.UnpackLog(event, "AuctionEnded", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkBidClaimedIterator is returned from FilterBidClaimed and is used to iterate over the raw logs and unpacked data for BidClaimed events raised by the PlazaSdk contract.
-type PlazaSdkBidClaimedIterator struct {
-	Event *PlazaSdkBidClaimed // Event containing the contract specifics and raw log
+// AuctionBidClaimedIterator is returned from FilterBidClaimed and is used to iterate over the raw logs and unpacked data for BidClaimed events raised by the Auction contract.
+type AuctionBidClaimedIterator struct {
+	Event *AuctionBidClaimed // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1237,7 +1237,7 @@ type PlazaSdkBidClaimedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkBidClaimedIterator) Next() bool {
+func (it *AuctionBidClaimedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1246,7 +1246,7 @@ func (it *PlazaSdkBidClaimedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkBidClaimed)
+			it.Event = new(AuctionBidClaimed)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1261,7 +1261,7 @@ func (it *PlazaSdkBidClaimedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkBidClaimed)
+		it.Event = new(AuctionBidClaimed)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1277,19 +1277,19 @@ func (it *PlazaSdkBidClaimedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkBidClaimedIterator) Error() error {
+func (it *AuctionBidClaimedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkBidClaimedIterator) Close() error {
+func (it *AuctionBidClaimedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkBidClaimed represents a BidClaimed event raised by the PlazaSdk contract.
-type PlazaSdkBidClaimed struct {
+// AuctionBidClaimed represents a BidClaimed event raised by the Auction contract.
+type AuctionBidClaimed struct {
 	BidIndex         *big.Int
 	Bidder           common.Address
 	SellCouponAmount *big.Int
@@ -1299,7 +1299,7 @@ type PlazaSdkBidClaimed struct {
 // FilterBidClaimed is a free log retrieval operation binding the contract event 0xe68daa9f0be9a647eb4b9d00ba8932ad8171b86ec8cd767d14fd2ae946af3d21.
 //
 // Solidity: event BidClaimed(uint256 indexed bidIndex, address indexed bidder, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) FilterBidClaimed(opts *bind.FilterOpts, bidIndex []*big.Int, bidder []common.Address) (*PlazaSdkBidClaimedIterator, error) {
+func (_Auction *AuctionFilterer) FilterBidClaimed(opts *bind.FilterOpts, bidIndex []*big.Int, bidder []common.Address) (*AuctionBidClaimedIterator, error) {
 
 	var bidIndexRule []interface{}
 	for _, bidIndexItem := range bidIndex {
@@ -1310,17 +1310,17 @@ func (_PlazaSdk *PlazaSdkFilterer) FilterBidClaimed(opts *bind.FilterOpts, bidIn
 		bidderRule = append(bidderRule, bidderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "BidClaimed", bidIndexRule, bidderRule)
+	logs, sub, err := _Auction.contract.FilterLogs(opts, "BidClaimed", bidIndexRule, bidderRule)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkBidClaimedIterator{contract: _PlazaSdk.contract, event: "BidClaimed", logs: logs, sub: sub}, nil
+	return &AuctionBidClaimedIterator{contract: _Auction.contract, event: "BidClaimed", logs: logs, sub: sub}, nil
 }
 
 // WatchBidClaimed is a free log subscription operation binding the contract event 0xe68daa9f0be9a647eb4b9d00ba8932ad8171b86ec8cd767d14fd2ae946af3d21.
 //
 // Solidity: event BidClaimed(uint256 indexed bidIndex, address indexed bidder, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) WatchBidClaimed(opts *bind.WatchOpts, sink chan<- *PlazaSdkBidClaimed, bidIndex []*big.Int, bidder []common.Address) (event.Subscription, error) {
+func (_Auction *AuctionFilterer) WatchBidClaimed(opts *bind.WatchOpts, sink chan<- *AuctionBidClaimed, bidIndex []*big.Int, bidder []common.Address) (event.Subscription, error) {
 
 	var bidIndexRule []interface{}
 	for _, bidIndexItem := range bidIndex {
@@ -1331,7 +1331,7 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchBidClaimed(opts *bind.WatchOpts, sink ch
 		bidderRule = append(bidderRule, bidderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "BidClaimed", bidIndexRule, bidderRule)
+	logs, sub, err := _Auction.contract.WatchLogs(opts, "BidClaimed", bidIndexRule, bidderRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1341,8 +1341,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchBidClaimed(opts *bind.WatchOpts, sink ch
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkBidClaimed)
-				if err := _PlazaSdk.contract.UnpackLog(event, "BidClaimed", log); err != nil {
+				event := new(AuctionBidClaimed)
+				if err := _Auction.contract.UnpackLog(event, "BidClaimed", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1366,18 +1366,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchBidClaimed(opts *bind.WatchOpts, sink ch
 // ParseBidClaimed is a log parse operation binding the contract event 0xe68daa9f0be9a647eb4b9d00ba8932ad8171b86ec8cd767d14fd2ae946af3d21.
 //
 // Solidity: event BidClaimed(uint256 indexed bidIndex, address indexed bidder, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) ParseBidClaimed(log types.Log) (*PlazaSdkBidClaimed, error) {
-	event := new(PlazaSdkBidClaimed)
-	if err := _PlazaSdk.contract.UnpackLog(event, "BidClaimed", log); err != nil {
+func (_Auction *AuctionFilterer) ParseBidClaimed(log types.Log) (*AuctionBidClaimed, error) {
+	event := new(AuctionBidClaimed)
+	if err := _Auction.contract.UnpackLog(event, "BidClaimed", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkBidPlacedIterator is returned from FilterBidPlaced and is used to iterate over the raw logs and unpacked data for BidPlaced events raised by the PlazaSdk contract.
-type PlazaSdkBidPlacedIterator struct {
-	Event *PlazaSdkBidPlaced // Event containing the contract specifics and raw log
+// AuctionBidPlacedIterator is returned from FilterBidPlaced and is used to iterate over the raw logs and unpacked data for BidPlaced events raised by the Auction contract.
+type AuctionBidPlacedIterator struct {
+	Event *AuctionBidPlaced // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1391,7 +1391,7 @@ type PlazaSdkBidPlacedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkBidPlacedIterator) Next() bool {
+func (it *AuctionBidPlacedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1400,7 +1400,7 @@ func (it *PlazaSdkBidPlacedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkBidPlaced)
+			it.Event = new(AuctionBidPlaced)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1415,7 +1415,7 @@ func (it *PlazaSdkBidPlacedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkBidPlaced)
+		it.Event = new(AuctionBidPlaced)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1431,19 +1431,19 @@ func (it *PlazaSdkBidPlacedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkBidPlacedIterator) Error() error {
+func (it *AuctionBidPlacedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkBidPlacedIterator) Close() error {
+func (it *AuctionBidPlacedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkBidPlaced represents a BidPlaced event raised by the PlazaSdk contract.
-type PlazaSdkBidPlaced struct {
+// AuctionBidPlaced represents a BidPlaced event raised by the Auction contract.
+type AuctionBidPlaced struct {
 	BidIndex         *big.Int
 	Bidder           common.Address
 	BuyReserveAmount *big.Int
@@ -1454,7 +1454,7 @@ type PlazaSdkBidPlaced struct {
 // FilterBidPlaced is a free log retrieval operation binding the contract event 0x51db8e23b3f4479b162fd48823b8402895442b8f6cfd94f66239391881ec7b6f.
 //
 // Solidity: event BidPlaced(uint256 indexed bidIndex, address indexed bidder, uint256 buyReserveAmount, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) FilterBidPlaced(opts *bind.FilterOpts, bidIndex []*big.Int, bidder []common.Address) (*PlazaSdkBidPlacedIterator, error) {
+func (_Auction *AuctionFilterer) FilterBidPlaced(opts *bind.FilterOpts, bidIndex []*big.Int, bidder []common.Address) (*AuctionBidPlacedIterator, error) {
 
 	var bidIndexRule []interface{}
 	for _, bidIndexItem := range bidIndex {
@@ -1465,17 +1465,17 @@ func (_PlazaSdk *PlazaSdkFilterer) FilterBidPlaced(opts *bind.FilterOpts, bidInd
 		bidderRule = append(bidderRule, bidderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "BidPlaced", bidIndexRule, bidderRule)
+	logs, sub, err := _Auction.contract.FilterLogs(opts, "BidPlaced", bidIndexRule, bidderRule)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkBidPlacedIterator{contract: _PlazaSdk.contract, event: "BidPlaced", logs: logs, sub: sub}, nil
+	return &AuctionBidPlacedIterator{contract: _Auction.contract, event: "BidPlaced", logs: logs, sub: sub}, nil
 }
 
 // WatchBidPlaced is a free log subscription operation binding the contract event 0x51db8e23b3f4479b162fd48823b8402895442b8f6cfd94f66239391881ec7b6f.
 //
 // Solidity: event BidPlaced(uint256 indexed bidIndex, address indexed bidder, uint256 buyReserveAmount, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) WatchBidPlaced(opts *bind.WatchOpts, sink chan<- *PlazaSdkBidPlaced, bidIndex []*big.Int, bidder []common.Address) (event.Subscription, error) {
+func (_Auction *AuctionFilterer) WatchBidPlaced(opts *bind.WatchOpts, sink chan<- *AuctionBidPlaced, bidIndex []*big.Int, bidder []common.Address) (event.Subscription, error) {
 
 	var bidIndexRule []interface{}
 	for _, bidIndexItem := range bidIndex {
@@ -1486,7 +1486,7 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchBidPlaced(opts *bind.WatchOpts, sink cha
 		bidderRule = append(bidderRule, bidderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "BidPlaced", bidIndexRule, bidderRule)
+	logs, sub, err := _Auction.contract.WatchLogs(opts, "BidPlaced", bidIndexRule, bidderRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1496,8 +1496,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchBidPlaced(opts *bind.WatchOpts, sink cha
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkBidPlaced)
-				if err := _PlazaSdk.contract.UnpackLog(event, "BidPlaced", log); err != nil {
+				event := new(AuctionBidPlaced)
+				if err := _Auction.contract.UnpackLog(event, "BidPlaced", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1521,18 +1521,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchBidPlaced(opts *bind.WatchOpts, sink cha
 // ParseBidPlaced is a log parse operation binding the contract event 0x51db8e23b3f4479b162fd48823b8402895442b8f6cfd94f66239391881ec7b6f.
 //
 // Solidity: event BidPlaced(uint256 indexed bidIndex, address indexed bidder, uint256 buyReserveAmount, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) ParseBidPlaced(log types.Log) (*PlazaSdkBidPlaced, error) {
-	event := new(PlazaSdkBidPlaced)
-	if err := _PlazaSdk.contract.UnpackLog(event, "BidPlaced", log); err != nil {
+func (_Auction *AuctionFilterer) ParseBidPlaced(log types.Log) (*AuctionBidPlaced, error) {
+	event := new(AuctionBidPlaced)
+	if err := _Auction.contract.UnpackLog(event, "BidPlaced", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkBidReducedIterator is returned from FilterBidReduced and is used to iterate over the raw logs and unpacked data for BidReduced events raised by the PlazaSdk contract.
-type PlazaSdkBidReducedIterator struct {
-	Event *PlazaSdkBidReduced // Event containing the contract specifics and raw log
+// AuctionBidReducedIterator is returned from FilterBidReduced and is used to iterate over the raw logs and unpacked data for BidReduced events raised by the Auction contract.
+type AuctionBidReducedIterator struct {
+	Event *AuctionBidReduced // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1546,7 +1546,7 @@ type PlazaSdkBidReducedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkBidReducedIterator) Next() bool {
+func (it *AuctionBidReducedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1555,7 +1555,7 @@ func (it *PlazaSdkBidReducedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkBidReduced)
+			it.Event = new(AuctionBidReduced)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1570,7 +1570,7 @@ func (it *PlazaSdkBidReducedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkBidReduced)
+		it.Event = new(AuctionBidReduced)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1586,19 +1586,19 @@ func (it *PlazaSdkBidReducedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkBidReducedIterator) Error() error {
+func (it *AuctionBidReducedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkBidReducedIterator) Close() error {
+func (it *AuctionBidReducedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkBidReduced represents a BidReduced event raised by the PlazaSdk contract.
-type PlazaSdkBidReduced struct {
+// AuctionBidReduced represents a BidReduced event raised by the Auction contract.
+type AuctionBidReduced struct {
 	BidIndex         *big.Int
 	Bidder           common.Address
 	BuyReserveAmount *big.Int
@@ -1609,7 +1609,7 @@ type PlazaSdkBidReduced struct {
 // FilterBidReduced is a free log retrieval operation binding the contract event 0x938f570a90ec62a7633da171c778b26404bb32a25e03756d49d4b79ecc4b785b.
 //
 // Solidity: event BidReduced(uint256 indexed bidIndex, address indexed bidder, uint256 buyReserveAmount, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) FilterBidReduced(opts *bind.FilterOpts, bidIndex []*big.Int, bidder []common.Address) (*PlazaSdkBidReducedIterator, error) {
+func (_Auction *AuctionFilterer) FilterBidReduced(opts *bind.FilterOpts, bidIndex []*big.Int, bidder []common.Address) (*AuctionBidReducedIterator, error) {
 
 	var bidIndexRule []interface{}
 	for _, bidIndexItem := range bidIndex {
@@ -1620,17 +1620,17 @@ func (_PlazaSdk *PlazaSdkFilterer) FilterBidReduced(opts *bind.FilterOpts, bidIn
 		bidderRule = append(bidderRule, bidderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "BidReduced", bidIndexRule, bidderRule)
+	logs, sub, err := _Auction.contract.FilterLogs(opts, "BidReduced", bidIndexRule, bidderRule)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkBidReducedIterator{contract: _PlazaSdk.contract, event: "BidReduced", logs: logs, sub: sub}, nil
+	return &AuctionBidReducedIterator{contract: _Auction.contract, event: "BidReduced", logs: logs, sub: sub}, nil
 }
 
 // WatchBidReduced is a free log subscription operation binding the contract event 0x938f570a90ec62a7633da171c778b26404bb32a25e03756d49d4b79ecc4b785b.
 //
 // Solidity: event BidReduced(uint256 indexed bidIndex, address indexed bidder, uint256 buyReserveAmount, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) WatchBidReduced(opts *bind.WatchOpts, sink chan<- *PlazaSdkBidReduced, bidIndex []*big.Int, bidder []common.Address) (event.Subscription, error) {
+func (_Auction *AuctionFilterer) WatchBidReduced(opts *bind.WatchOpts, sink chan<- *AuctionBidReduced, bidIndex []*big.Int, bidder []common.Address) (event.Subscription, error) {
 
 	var bidIndexRule []interface{}
 	for _, bidIndexItem := range bidIndex {
@@ -1641,7 +1641,7 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchBidReduced(opts *bind.WatchOpts, sink ch
 		bidderRule = append(bidderRule, bidderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "BidReduced", bidIndexRule, bidderRule)
+	logs, sub, err := _Auction.contract.WatchLogs(opts, "BidReduced", bidIndexRule, bidderRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1651,8 +1651,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchBidReduced(opts *bind.WatchOpts, sink ch
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkBidReduced)
-				if err := _PlazaSdk.contract.UnpackLog(event, "BidReduced", log); err != nil {
+				event := new(AuctionBidReduced)
+				if err := _Auction.contract.UnpackLog(event, "BidReduced", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1676,18 +1676,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchBidReduced(opts *bind.WatchOpts, sink ch
 // ParseBidReduced is a log parse operation binding the contract event 0x938f570a90ec62a7633da171c778b26404bb32a25e03756d49d4b79ecc4b785b.
 //
 // Solidity: event BidReduced(uint256 indexed bidIndex, address indexed bidder, uint256 buyReserveAmount, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) ParseBidReduced(log types.Log) (*PlazaSdkBidReduced, error) {
-	event := new(PlazaSdkBidReduced)
-	if err := _PlazaSdk.contract.UnpackLog(event, "BidReduced", log); err != nil {
+func (_Auction *AuctionFilterer) ParseBidReduced(log types.Log) (*AuctionBidReduced, error) {
+	event := new(AuctionBidReduced)
+	if err := _Auction.contract.UnpackLog(event, "BidReduced", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkBidRefundAllocatedIterator is returned from FilterBidRefundAllocated and is used to iterate over the raw logs and unpacked data for BidRefundAllocated events raised by the PlazaSdk contract.
-type PlazaSdkBidRefundAllocatedIterator struct {
-	Event *PlazaSdkBidRefundAllocated // Event containing the contract specifics and raw log
+// AuctionBidRefundAllocatedIterator is returned from FilterBidRefundAllocated and is used to iterate over the raw logs and unpacked data for BidRefundAllocated events raised by the Auction contract.
+type AuctionBidRefundAllocatedIterator struct {
+	Event *AuctionBidRefundAllocated // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1701,7 +1701,7 @@ type PlazaSdkBidRefundAllocatedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkBidRefundAllocatedIterator) Next() bool {
+func (it *AuctionBidRefundAllocatedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1710,7 +1710,7 @@ func (it *PlazaSdkBidRefundAllocatedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkBidRefundAllocated)
+			it.Event = new(AuctionBidRefundAllocated)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1725,7 +1725,7 @@ func (it *PlazaSdkBidRefundAllocatedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkBidRefundAllocated)
+		it.Event = new(AuctionBidRefundAllocated)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1741,19 +1741,19 @@ func (it *PlazaSdkBidRefundAllocatedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkBidRefundAllocatedIterator) Error() error {
+func (it *AuctionBidRefundAllocatedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkBidRefundAllocatedIterator) Close() error {
+func (it *AuctionBidRefundAllocatedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkBidRefundAllocated represents a BidRefundAllocated event raised by the PlazaSdk contract.
-type PlazaSdkBidRefundAllocated struct {
+// AuctionBidRefundAllocated represents a BidRefundAllocated event raised by the Auction contract.
+type AuctionBidRefundAllocated struct {
 	Bidder       common.Address
 	CouponAmount *big.Int
 	Raw          types.Log // Blockchain specific contextual infos
@@ -1762,31 +1762,31 @@ type PlazaSdkBidRefundAllocated struct {
 // FilterBidRefundAllocated is a free log retrieval operation binding the contract event 0x1ab15874f0b1e2a964800d35f4bdd4a8e9c9f102b0262ad7f5aa21f195c5ece6.
 //
 // Solidity: event BidRefundAllocated(address indexed bidder, uint256 couponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) FilterBidRefundAllocated(opts *bind.FilterOpts, bidder []common.Address) (*PlazaSdkBidRefundAllocatedIterator, error) {
+func (_Auction *AuctionFilterer) FilterBidRefundAllocated(opts *bind.FilterOpts, bidder []common.Address) (*AuctionBidRefundAllocatedIterator, error) {
 
 	var bidderRule []interface{}
 	for _, bidderItem := range bidder {
 		bidderRule = append(bidderRule, bidderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "BidRefundAllocated", bidderRule)
+	logs, sub, err := _Auction.contract.FilterLogs(opts, "BidRefundAllocated", bidderRule)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkBidRefundAllocatedIterator{contract: _PlazaSdk.contract, event: "BidRefundAllocated", logs: logs, sub: sub}, nil
+	return &AuctionBidRefundAllocatedIterator{contract: _Auction.contract, event: "BidRefundAllocated", logs: logs, sub: sub}, nil
 }
 
 // WatchBidRefundAllocated is a free log subscription operation binding the contract event 0x1ab15874f0b1e2a964800d35f4bdd4a8e9c9f102b0262ad7f5aa21f195c5ece6.
 //
 // Solidity: event BidRefundAllocated(address indexed bidder, uint256 couponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) WatchBidRefundAllocated(opts *bind.WatchOpts, sink chan<- *PlazaSdkBidRefundAllocated, bidder []common.Address) (event.Subscription, error) {
+func (_Auction *AuctionFilterer) WatchBidRefundAllocated(opts *bind.WatchOpts, sink chan<- *AuctionBidRefundAllocated, bidder []common.Address) (event.Subscription, error) {
 
 	var bidderRule []interface{}
 	for _, bidderItem := range bidder {
 		bidderRule = append(bidderRule, bidderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "BidRefundAllocated", bidderRule)
+	logs, sub, err := _Auction.contract.WatchLogs(opts, "BidRefundAllocated", bidderRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1796,8 +1796,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchBidRefundAllocated(opts *bind.WatchOpts,
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkBidRefundAllocated)
-				if err := _PlazaSdk.contract.UnpackLog(event, "BidRefundAllocated", log); err != nil {
+				event := new(AuctionBidRefundAllocated)
+				if err := _Auction.contract.UnpackLog(event, "BidRefundAllocated", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1821,18 +1821,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchBidRefundAllocated(opts *bind.WatchOpts,
 // ParseBidRefundAllocated is a log parse operation binding the contract event 0x1ab15874f0b1e2a964800d35f4bdd4a8e9c9f102b0262ad7f5aa21f195c5ece6.
 //
 // Solidity: event BidRefundAllocated(address indexed bidder, uint256 couponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) ParseBidRefundAllocated(log types.Log) (*PlazaSdkBidRefundAllocated, error) {
-	event := new(PlazaSdkBidRefundAllocated)
-	if err := _PlazaSdk.contract.UnpackLog(event, "BidRefundAllocated", log); err != nil {
+func (_Auction *AuctionFilterer) ParseBidRefundAllocated(log types.Log) (*AuctionBidRefundAllocated, error) {
+	event := new(AuctionBidRefundAllocated)
+	if err := _Auction.contract.UnpackLog(event, "BidRefundAllocated", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkBidRemovedIterator is returned from FilterBidRemoved and is used to iterate over the raw logs and unpacked data for BidRemoved events raised by the PlazaSdk contract.
-type PlazaSdkBidRemovedIterator struct {
-	Event *PlazaSdkBidRemoved // Event containing the contract specifics and raw log
+// AuctionBidRemovedIterator is returned from FilterBidRemoved and is used to iterate over the raw logs and unpacked data for BidRemoved events raised by the Auction contract.
+type AuctionBidRemovedIterator struct {
+	Event *AuctionBidRemoved // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1846,7 +1846,7 @@ type PlazaSdkBidRemovedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkBidRemovedIterator) Next() bool {
+func (it *AuctionBidRemovedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1855,7 +1855,7 @@ func (it *PlazaSdkBidRemovedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkBidRemoved)
+			it.Event = new(AuctionBidRemoved)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1870,7 +1870,7 @@ func (it *PlazaSdkBidRemovedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkBidRemoved)
+		it.Event = new(AuctionBidRemoved)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1886,19 +1886,19 @@ func (it *PlazaSdkBidRemovedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkBidRemovedIterator) Error() error {
+func (it *AuctionBidRemovedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkBidRemovedIterator) Close() error {
+func (it *AuctionBidRemovedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkBidRemoved represents a BidRemoved event raised by the PlazaSdk contract.
-type PlazaSdkBidRemoved struct {
+// AuctionBidRemoved represents a BidRemoved event raised by the Auction contract.
+type AuctionBidRemoved struct {
 	BidIndex         *big.Int
 	Bidder           common.Address
 	BuyReserveAmount *big.Int
@@ -1909,7 +1909,7 @@ type PlazaSdkBidRemoved struct {
 // FilterBidRemoved is a free log retrieval operation binding the contract event 0xc93523f51b5bdae47e5ae3ad4c018c4b8314a458265d3840bbe3ce8ca194e5d1.
 //
 // Solidity: event BidRemoved(uint256 indexed bidIndex, address indexed bidder, uint256 buyReserveAmount, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) FilterBidRemoved(opts *bind.FilterOpts, bidIndex []*big.Int, bidder []common.Address) (*PlazaSdkBidRemovedIterator, error) {
+func (_Auction *AuctionFilterer) FilterBidRemoved(opts *bind.FilterOpts, bidIndex []*big.Int, bidder []common.Address) (*AuctionBidRemovedIterator, error) {
 
 	var bidIndexRule []interface{}
 	for _, bidIndexItem := range bidIndex {
@@ -1920,17 +1920,17 @@ func (_PlazaSdk *PlazaSdkFilterer) FilterBidRemoved(opts *bind.FilterOpts, bidIn
 		bidderRule = append(bidderRule, bidderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "BidRemoved", bidIndexRule, bidderRule)
+	logs, sub, err := _Auction.contract.FilterLogs(opts, "BidRemoved", bidIndexRule, bidderRule)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkBidRemovedIterator{contract: _PlazaSdk.contract, event: "BidRemoved", logs: logs, sub: sub}, nil
+	return &AuctionBidRemovedIterator{contract: _Auction.contract, event: "BidRemoved", logs: logs, sub: sub}, nil
 }
 
 // WatchBidRemoved is a free log subscription operation binding the contract event 0xc93523f51b5bdae47e5ae3ad4c018c4b8314a458265d3840bbe3ce8ca194e5d1.
 //
 // Solidity: event BidRemoved(uint256 indexed bidIndex, address indexed bidder, uint256 buyReserveAmount, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) WatchBidRemoved(opts *bind.WatchOpts, sink chan<- *PlazaSdkBidRemoved, bidIndex []*big.Int, bidder []common.Address) (event.Subscription, error) {
+func (_Auction *AuctionFilterer) WatchBidRemoved(opts *bind.WatchOpts, sink chan<- *AuctionBidRemoved, bidIndex []*big.Int, bidder []common.Address) (event.Subscription, error) {
 
 	var bidIndexRule []interface{}
 	for _, bidIndexItem := range bidIndex {
@@ -1941,7 +1941,7 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchBidRemoved(opts *bind.WatchOpts, sink ch
 		bidderRule = append(bidderRule, bidderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "BidRemoved", bidIndexRule, bidderRule)
+	logs, sub, err := _Auction.contract.WatchLogs(opts, "BidRemoved", bidIndexRule, bidderRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1951,8 +1951,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchBidRemoved(opts *bind.WatchOpts, sink ch
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkBidRemoved)
-				if err := _PlazaSdk.contract.UnpackLog(event, "BidRemoved", log); err != nil {
+				event := new(AuctionBidRemoved)
+				if err := _Auction.contract.UnpackLog(event, "BidRemoved", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1976,18 +1976,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchBidRemoved(opts *bind.WatchOpts, sink ch
 // ParseBidRemoved is a log parse operation binding the contract event 0xc93523f51b5bdae47e5ae3ad4c018c4b8314a458265d3840bbe3ce8ca194e5d1.
 //
 // Solidity: event BidRemoved(uint256 indexed bidIndex, address indexed bidder, uint256 buyReserveAmount, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) ParseBidRemoved(log types.Log) (*PlazaSdkBidRemoved, error) {
-	event := new(PlazaSdkBidRemoved)
-	if err := _PlazaSdk.contract.UnpackLog(event, "BidRemoved", log); err != nil {
+func (_Auction *AuctionFilterer) ParseBidRemoved(log types.Log) (*AuctionBidRemoved, error) {
+	event := new(AuctionBidRemoved)
+	if err := _Auction.contract.UnpackLog(event, "BidRemoved", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkFailedAuctionBidRefundClaimedIterator is returned from FilterFailedAuctionBidRefundClaimed and is used to iterate over the raw logs and unpacked data for FailedAuctionBidRefundClaimed events raised by the PlazaSdk contract.
-type PlazaSdkFailedAuctionBidRefundClaimedIterator struct {
-	Event *PlazaSdkFailedAuctionBidRefundClaimed // Event containing the contract specifics and raw log
+// AuctionFailedAuctionBidRefundClaimedIterator is returned from FilterFailedAuctionBidRefundClaimed and is used to iterate over the raw logs and unpacked data for FailedAuctionBidRefundClaimed events raised by the Auction contract.
+type AuctionFailedAuctionBidRefundClaimedIterator struct {
+	Event *AuctionFailedAuctionBidRefundClaimed // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -2001,7 +2001,7 @@ type PlazaSdkFailedAuctionBidRefundClaimedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkFailedAuctionBidRefundClaimedIterator) Next() bool {
+func (it *AuctionFailedAuctionBidRefundClaimedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -2010,7 +2010,7 @@ func (it *PlazaSdkFailedAuctionBidRefundClaimedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkFailedAuctionBidRefundClaimed)
+			it.Event = new(AuctionFailedAuctionBidRefundClaimed)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -2025,7 +2025,7 @@ func (it *PlazaSdkFailedAuctionBidRefundClaimedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkFailedAuctionBidRefundClaimed)
+		it.Event = new(AuctionFailedAuctionBidRefundClaimed)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -2041,19 +2041,19 @@ func (it *PlazaSdkFailedAuctionBidRefundClaimedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkFailedAuctionBidRefundClaimedIterator) Error() error {
+func (it *AuctionFailedAuctionBidRefundClaimedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkFailedAuctionBidRefundClaimedIterator) Close() error {
+func (it *AuctionFailedAuctionBidRefundClaimedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkFailedAuctionBidRefundClaimed represents a FailedAuctionBidRefundClaimed event raised by the PlazaSdk contract.
-type PlazaSdkFailedAuctionBidRefundClaimed struct {
+// AuctionFailedAuctionBidRefundClaimed represents a FailedAuctionBidRefundClaimed event raised by the Auction contract.
+type AuctionFailedAuctionBidRefundClaimed struct {
 	BidIndex         *big.Int
 	Bidder           common.Address
 	SellCouponAmount *big.Int
@@ -2063,7 +2063,7 @@ type PlazaSdkFailedAuctionBidRefundClaimed struct {
 // FilterFailedAuctionBidRefundClaimed is a free log retrieval operation binding the contract event 0xe53799b6cbe78f2d3592976e014800e6a394c793001be11eb8faf86f68a5de4f.
 //
 // Solidity: event FailedAuctionBidRefundClaimed(uint256 indexed bidIndex, address indexed bidder, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) FilterFailedAuctionBidRefundClaimed(opts *bind.FilterOpts, bidIndex []*big.Int, bidder []common.Address) (*PlazaSdkFailedAuctionBidRefundClaimedIterator, error) {
+func (_Auction *AuctionFilterer) FilterFailedAuctionBidRefundClaimed(opts *bind.FilterOpts, bidIndex []*big.Int, bidder []common.Address) (*AuctionFailedAuctionBidRefundClaimedIterator, error) {
 
 	var bidIndexRule []interface{}
 	for _, bidIndexItem := range bidIndex {
@@ -2074,17 +2074,17 @@ func (_PlazaSdk *PlazaSdkFilterer) FilterFailedAuctionBidRefundClaimed(opts *bin
 		bidderRule = append(bidderRule, bidderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "FailedAuctionBidRefundClaimed", bidIndexRule, bidderRule)
+	logs, sub, err := _Auction.contract.FilterLogs(opts, "FailedAuctionBidRefundClaimed", bidIndexRule, bidderRule)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkFailedAuctionBidRefundClaimedIterator{contract: _PlazaSdk.contract, event: "FailedAuctionBidRefundClaimed", logs: logs, sub: sub}, nil
+	return &AuctionFailedAuctionBidRefundClaimedIterator{contract: _Auction.contract, event: "FailedAuctionBidRefundClaimed", logs: logs, sub: sub}, nil
 }
 
 // WatchFailedAuctionBidRefundClaimed is a free log subscription operation binding the contract event 0xe53799b6cbe78f2d3592976e014800e6a394c793001be11eb8faf86f68a5de4f.
 //
 // Solidity: event FailedAuctionBidRefundClaimed(uint256 indexed bidIndex, address indexed bidder, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) WatchFailedAuctionBidRefundClaimed(opts *bind.WatchOpts, sink chan<- *PlazaSdkFailedAuctionBidRefundClaimed, bidIndex []*big.Int, bidder []common.Address) (event.Subscription, error) {
+func (_Auction *AuctionFilterer) WatchFailedAuctionBidRefundClaimed(opts *bind.WatchOpts, sink chan<- *AuctionFailedAuctionBidRefundClaimed, bidIndex []*big.Int, bidder []common.Address) (event.Subscription, error) {
 
 	var bidIndexRule []interface{}
 	for _, bidIndexItem := range bidIndex {
@@ -2095,7 +2095,7 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchFailedAuctionBidRefundClaimed(opts *bind
 		bidderRule = append(bidderRule, bidderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "FailedAuctionBidRefundClaimed", bidIndexRule, bidderRule)
+	logs, sub, err := _Auction.contract.WatchLogs(opts, "FailedAuctionBidRefundClaimed", bidIndexRule, bidderRule)
 	if err != nil {
 		return nil, err
 	}
@@ -2105,8 +2105,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchFailedAuctionBidRefundClaimed(opts *bind
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkFailedAuctionBidRefundClaimed)
-				if err := _PlazaSdk.contract.UnpackLog(event, "FailedAuctionBidRefundClaimed", log); err != nil {
+				event := new(AuctionFailedAuctionBidRefundClaimed)
+				if err := _Auction.contract.UnpackLog(event, "FailedAuctionBidRefundClaimed", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -2130,18 +2130,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchFailedAuctionBidRefundClaimed(opts *bind
 // ParseFailedAuctionBidRefundClaimed is a log parse operation binding the contract event 0xe53799b6cbe78f2d3592976e014800e6a394c793001be11eb8faf86f68a5de4f.
 //
 // Solidity: event FailedAuctionBidRefundClaimed(uint256 indexed bidIndex, address indexed bidder, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) ParseFailedAuctionBidRefundClaimed(log types.Log) (*PlazaSdkFailedAuctionBidRefundClaimed, error) {
-	event := new(PlazaSdkFailedAuctionBidRefundClaimed)
-	if err := _PlazaSdk.contract.UnpackLog(event, "FailedAuctionBidRefundClaimed", log); err != nil {
+func (_Auction *AuctionFilterer) ParseFailedAuctionBidRefundClaimed(log types.Log) (*AuctionFailedAuctionBidRefundClaimed, error) {
+	event := new(AuctionFailedAuctionBidRefundClaimed)
+	if err := _Auction.contract.UnpackLog(event, "FailedAuctionBidRefundClaimed", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkInitializedIterator is returned from FilterInitialized and is used to iterate over the raw logs and unpacked data for Initialized events raised by the PlazaSdk contract.
-type PlazaSdkInitializedIterator struct {
-	Event *PlazaSdkInitialized // Event containing the contract specifics and raw log
+// AuctionInitializedIterator is returned from FilterInitialized and is used to iterate over the raw logs and unpacked data for Initialized events raised by the Auction contract.
+type AuctionInitializedIterator struct {
+	Event *AuctionInitialized // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -2155,7 +2155,7 @@ type PlazaSdkInitializedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkInitializedIterator) Next() bool {
+func (it *AuctionInitializedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -2164,7 +2164,7 @@ func (it *PlazaSdkInitializedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkInitialized)
+			it.Event = new(AuctionInitialized)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -2179,7 +2179,7 @@ func (it *PlazaSdkInitializedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkInitialized)
+		it.Event = new(AuctionInitialized)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -2195,19 +2195,19 @@ func (it *PlazaSdkInitializedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkInitializedIterator) Error() error {
+func (it *AuctionInitializedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkInitializedIterator) Close() error {
+func (it *AuctionInitializedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkInitialized represents a Initialized event raised by the PlazaSdk contract.
-type PlazaSdkInitialized struct {
+// AuctionInitialized represents a Initialized event raised by the Auction contract.
+type AuctionInitialized struct {
 	Version uint64
 	Raw     types.Log // Blockchain specific contextual infos
 }
@@ -2215,21 +2215,21 @@ type PlazaSdkInitialized struct {
 // FilterInitialized is a free log retrieval operation binding the contract event 0xc7f505b2f371ae2175ee4913f4499e1f2633a7b5936321eed1cdaeb6115181d2.
 //
 // Solidity: event Initialized(uint64 version)
-func (_PlazaSdk *PlazaSdkFilterer) FilterInitialized(opts *bind.FilterOpts) (*PlazaSdkInitializedIterator, error) {
+func (_Auction *AuctionFilterer) FilterInitialized(opts *bind.FilterOpts) (*AuctionInitializedIterator, error) {
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "Initialized")
+	logs, sub, err := _Auction.contract.FilterLogs(opts, "Initialized")
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkInitializedIterator{contract: _PlazaSdk.contract, event: "Initialized", logs: logs, sub: sub}, nil
+	return &AuctionInitializedIterator{contract: _Auction.contract, event: "Initialized", logs: logs, sub: sub}, nil
 }
 
 // WatchInitialized is a free log subscription operation binding the contract event 0xc7f505b2f371ae2175ee4913f4499e1f2633a7b5936321eed1cdaeb6115181d2.
 //
 // Solidity: event Initialized(uint64 version)
-func (_PlazaSdk *PlazaSdkFilterer) WatchInitialized(opts *bind.WatchOpts, sink chan<- *PlazaSdkInitialized) (event.Subscription, error) {
+func (_Auction *AuctionFilterer) WatchInitialized(opts *bind.WatchOpts, sink chan<- *AuctionInitialized) (event.Subscription, error) {
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "Initialized")
+	logs, sub, err := _Auction.contract.WatchLogs(opts, "Initialized")
 	if err != nil {
 		return nil, err
 	}
@@ -2239,8 +2239,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchInitialized(opts *bind.WatchOpts, sink c
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkInitialized)
-				if err := _PlazaSdk.contract.UnpackLog(event, "Initialized", log); err != nil {
+				event := new(AuctionInitialized)
+				if err := _Auction.contract.UnpackLog(event, "Initialized", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -2264,18 +2264,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchInitialized(opts *bind.WatchOpts, sink c
 // ParseInitialized is a log parse operation binding the contract event 0xc7f505b2f371ae2175ee4913f4499e1f2633a7b5936321eed1cdaeb6115181d2.
 //
 // Solidity: event Initialized(uint64 version)
-func (_PlazaSdk *PlazaSdkFilterer) ParseInitialized(log types.Log) (*PlazaSdkInitialized, error) {
-	event := new(PlazaSdkInitialized)
-	if err := _PlazaSdk.contract.UnpackLog(event, "Initialized", log); err != nil {
+func (_Auction *AuctionFilterer) ParseInitialized(log types.Log) (*AuctionInitialized, error) {
+	event := new(AuctionInitialized)
+	if err := _Auction.contract.UnpackLog(event, "Initialized", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkLosingBidRefundClaimedIterator is returned from FilterLosingBidRefundClaimed and is used to iterate over the raw logs and unpacked data for LosingBidRefundClaimed events raised by the PlazaSdk contract.
-type PlazaSdkLosingBidRefundClaimedIterator struct {
-	Event *PlazaSdkLosingBidRefundClaimed // Event containing the contract specifics and raw log
+// AuctionLosingBidRefundClaimedIterator is returned from FilterLosingBidRefundClaimed and is used to iterate over the raw logs and unpacked data for LosingBidRefundClaimed events raised by the Auction contract.
+type AuctionLosingBidRefundClaimedIterator struct {
+	Event *AuctionLosingBidRefundClaimed // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -2289,7 +2289,7 @@ type PlazaSdkLosingBidRefundClaimedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkLosingBidRefundClaimedIterator) Next() bool {
+func (it *AuctionLosingBidRefundClaimedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -2298,7 +2298,7 @@ func (it *PlazaSdkLosingBidRefundClaimedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkLosingBidRefundClaimed)
+			it.Event = new(AuctionLosingBidRefundClaimed)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -2313,7 +2313,7 @@ func (it *PlazaSdkLosingBidRefundClaimedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkLosingBidRefundClaimed)
+		it.Event = new(AuctionLosingBidRefundClaimed)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -2329,19 +2329,19 @@ func (it *PlazaSdkLosingBidRefundClaimedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkLosingBidRefundClaimedIterator) Error() error {
+func (it *AuctionLosingBidRefundClaimedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkLosingBidRefundClaimedIterator) Close() error {
+func (it *AuctionLosingBidRefundClaimedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkLosingBidRefundClaimed represents a LosingBidRefundClaimed event raised by the PlazaSdk contract.
-type PlazaSdkLosingBidRefundClaimed struct {
+// AuctionLosingBidRefundClaimed represents a LosingBidRefundClaimed event raised by the Auction contract.
+type AuctionLosingBidRefundClaimed struct {
 	Bidder           common.Address
 	SellCouponAmount *big.Int
 	Raw              types.Log // Blockchain specific contextual infos
@@ -2350,31 +2350,31 @@ type PlazaSdkLosingBidRefundClaimed struct {
 // FilterLosingBidRefundClaimed is a free log retrieval operation binding the contract event 0xb11b7956ad36f0bf4cee602c022aec98ee0cec801ba8b54def5b23729eb7bfc9.
 //
 // Solidity: event LosingBidRefundClaimed(address indexed bidder, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) FilterLosingBidRefundClaimed(opts *bind.FilterOpts, bidder []common.Address) (*PlazaSdkLosingBidRefundClaimedIterator, error) {
+func (_Auction *AuctionFilterer) FilterLosingBidRefundClaimed(opts *bind.FilterOpts, bidder []common.Address) (*AuctionLosingBidRefundClaimedIterator, error) {
 
 	var bidderRule []interface{}
 	for _, bidderItem := range bidder {
 		bidderRule = append(bidderRule, bidderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "LosingBidRefundClaimed", bidderRule)
+	logs, sub, err := _Auction.contract.FilterLogs(opts, "LosingBidRefundClaimed", bidderRule)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkLosingBidRefundClaimedIterator{contract: _PlazaSdk.contract, event: "LosingBidRefundClaimed", logs: logs, sub: sub}, nil
+	return &AuctionLosingBidRefundClaimedIterator{contract: _Auction.contract, event: "LosingBidRefundClaimed", logs: logs, sub: sub}, nil
 }
 
 // WatchLosingBidRefundClaimed is a free log subscription operation binding the contract event 0xb11b7956ad36f0bf4cee602c022aec98ee0cec801ba8b54def5b23729eb7bfc9.
 //
 // Solidity: event LosingBidRefundClaimed(address indexed bidder, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) WatchLosingBidRefundClaimed(opts *bind.WatchOpts, sink chan<- *PlazaSdkLosingBidRefundClaimed, bidder []common.Address) (event.Subscription, error) {
+func (_Auction *AuctionFilterer) WatchLosingBidRefundClaimed(opts *bind.WatchOpts, sink chan<- *AuctionLosingBidRefundClaimed, bidder []common.Address) (event.Subscription, error) {
 
 	var bidderRule []interface{}
 	for _, bidderItem := range bidder {
 		bidderRule = append(bidderRule, bidderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "LosingBidRefundClaimed", bidderRule)
+	logs, sub, err := _Auction.contract.WatchLogs(opts, "LosingBidRefundClaimed", bidderRule)
 	if err != nil {
 		return nil, err
 	}
@@ -2384,8 +2384,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchLosingBidRefundClaimed(opts *bind.WatchO
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkLosingBidRefundClaimed)
-				if err := _PlazaSdk.contract.UnpackLog(event, "LosingBidRefundClaimed", log); err != nil {
+				event := new(AuctionLosingBidRefundClaimed)
+				if err := _Auction.contract.UnpackLog(event, "LosingBidRefundClaimed", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -2409,18 +2409,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchLosingBidRefundClaimed(opts *bind.WatchO
 // ParseLosingBidRefundClaimed is a log parse operation binding the contract event 0xb11b7956ad36f0bf4cee602c022aec98ee0cec801ba8b54def5b23729eb7bfc9.
 //
 // Solidity: event LosingBidRefundClaimed(address indexed bidder, uint256 sellCouponAmount)
-func (_PlazaSdk *PlazaSdkFilterer) ParseLosingBidRefundClaimed(log types.Log) (*PlazaSdkLosingBidRefundClaimed, error) {
-	event := new(PlazaSdkLosingBidRefundClaimed)
-	if err := _PlazaSdk.contract.UnpackLog(event, "LosingBidRefundClaimed", log); err != nil {
+func (_Auction *AuctionFilterer) ParseLosingBidRefundClaimed(log types.Log) (*AuctionLosingBidRefundClaimed, error) {
+	event := new(AuctionLosingBidRefundClaimed)
+	if err := _Auction.contract.UnpackLog(event, "LosingBidRefundClaimed", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkPausedIterator is returned from FilterPaused and is used to iterate over the raw logs and unpacked data for Paused events raised by the PlazaSdk contract.
-type PlazaSdkPausedIterator struct {
-	Event *PlazaSdkPaused // Event containing the contract specifics and raw log
+// AuctionPausedIterator is returned from FilterPaused and is used to iterate over the raw logs and unpacked data for Paused events raised by the Auction contract.
+type AuctionPausedIterator struct {
+	Event *AuctionPaused // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -2434,7 +2434,7 @@ type PlazaSdkPausedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkPausedIterator) Next() bool {
+func (it *AuctionPausedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -2443,7 +2443,7 @@ func (it *PlazaSdkPausedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkPaused)
+			it.Event = new(AuctionPaused)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -2458,7 +2458,7 @@ func (it *PlazaSdkPausedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkPaused)
+		it.Event = new(AuctionPaused)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -2474,19 +2474,19 @@ func (it *PlazaSdkPausedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkPausedIterator) Error() error {
+func (it *AuctionPausedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkPausedIterator) Close() error {
+func (it *AuctionPausedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkPaused represents a Paused event raised by the PlazaSdk contract.
-type PlazaSdkPaused struct {
+// AuctionPaused represents a Paused event raised by the Auction contract.
+type AuctionPaused struct {
 	Account common.Address
 	Raw     types.Log // Blockchain specific contextual infos
 }
@@ -2494,21 +2494,21 @@ type PlazaSdkPaused struct {
 // FilterPaused is a free log retrieval operation binding the contract event 0x62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a258.
 //
 // Solidity: event Paused(address account)
-func (_PlazaSdk *PlazaSdkFilterer) FilterPaused(opts *bind.FilterOpts) (*PlazaSdkPausedIterator, error) {
+func (_Auction *AuctionFilterer) FilterPaused(opts *bind.FilterOpts) (*AuctionPausedIterator, error) {
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "Paused")
+	logs, sub, err := _Auction.contract.FilterLogs(opts, "Paused")
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkPausedIterator{contract: _PlazaSdk.contract, event: "Paused", logs: logs, sub: sub}, nil
+	return &AuctionPausedIterator{contract: _Auction.contract, event: "Paused", logs: logs, sub: sub}, nil
 }
 
 // WatchPaused is a free log subscription operation binding the contract event 0x62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a258.
 //
 // Solidity: event Paused(address account)
-func (_PlazaSdk *PlazaSdkFilterer) WatchPaused(opts *bind.WatchOpts, sink chan<- *PlazaSdkPaused) (event.Subscription, error) {
+func (_Auction *AuctionFilterer) WatchPaused(opts *bind.WatchOpts, sink chan<- *AuctionPaused) (event.Subscription, error) {
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "Paused")
+	logs, sub, err := _Auction.contract.WatchLogs(opts, "Paused")
 	if err != nil {
 		return nil, err
 	}
@@ -2518,8 +2518,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchPaused(opts *bind.WatchOpts, sink chan<-
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkPaused)
-				if err := _PlazaSdk.contract.UnpackLog(event, "Paused", log); err != nil {
+				event := new(AuctionPaused)
+				if err := _Auction.contract.UnpackLog(event, "Paused", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -2543,18 +2543,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchPaused(opts *bind.WatchOpts, sink chan<-
 // ParsePaused is a log parse operation binding the contract event 0x62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a258.
 //
 // Solidity: event Paused(address account)
-func (_PlazaSdk *PlazaSdkFilterer) ParsePaused(log types.Log) (*PlazaSdkPaused, error) {
-	event := new(PlazaSdkPaused)
-	if err := _PlazaSdk.contract.UnpackLog(event, "Paused", log); err != nil {
+func (_Auction *AuctionFilterer) ParsePaused(log types.Log) (*AuctionPaused, error) {
+	event := new(AuctionPaused)
+	if err := _Auction.contract.UnpackLog(event, "Paused", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkUnpausedIterator is returned from FilterUnpaused and is used to iterate over the raw logs and unpacked data for Unpaused events raised by the PlazaSdk contract.
-type PlazaSdkUnpausedIterator struct {
-	Event *PlazaSdkUnpaused // Event containing the contract specifics and raw log
+// AuctionUnpausedIterator is returned from FilterUnpaused and is used to iterate over the raw logs and unpacked data for Unpaused events raised by the Auction contract.
+type AuctionUnpausedIterator struct {
+	Event *AuctionUnpaused // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -2568,7 +2568,7 @@ type PlazaSdkUnpausedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkUnpausedIterator) Next() bool {
+func (it *AuctionUnpausedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -2577,7 +2577,7 @@ func (it *PlazaSdkUnpausedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkUnpaused)
+			it.Event = new(AuctionUnpaused)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -2592,7 +2592,7 @@ func (it *PlazaSdkUnpausedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkUnpaused)
+		it.Event = new(AuctionUnpaused)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -2608,19 +2608,19 @@ func (it *PlazaSdkUnpausedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkUnpausedIterator) Error() error {
+func (it *AuctionUnpausedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkUnpausedIterator) Close() error {
+func (it *AuctionUnpausedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkUnpaused represents a Unpaused event raised by the PlazaSdk contract.
-type PlazaSdkUnpaused struct {
+// AuctionUnpaused represents a Unpaused event raised by the Auction contract.
+type AuctionUnpaused struct {
 	Account common.Address
 	Raw     types.Log // Blockchain specific contextual infos
 }
@@ -2628,21 +2628,21 @@ type PlazaSdkUnpaused struct {
 // FilterUnpaused is a free log retrieval operation binding the contract event 0x5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa.
 //
 // Solidity: event Unpaused(address account)
-func (_PlazaSdk *PlazaSdkFilterer) FilterUnpaused(opts *bind.FilterOpts) (*PlazaSdkUnpausedIterator, error) {
+func (_Auction *AuctionFilterer) FilterUnpaused(opts *bind.FilterOpts) (*AuctionUnpausedIterator, error) {
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "Unpaused")
+	logs, sub, err := _Auction.contract.FilterLogs(opts, "Unpaused")
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkUnpausedIterator{contract: _PlazaSdk.contract, event: "Unpaused", logs: logs, sub: sub}, nil
+	return &AuctionUnpausedIterator{contract: _Auction.contract, event: "Unpaused", logs: logs, sub: sub}, nil
 }
 
 // WatchUnpaused is a free log subscription operation binding the contract event 0x5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa.
 //
 // Solidity: event Unpaused(address account)
-func (_PlazaSdk *PlazaSdkFilterer) WatchUnpaused(opts *bind.WatchOpts, sink chan<- *PlazaSdkUnpaused) (event.Subscription, error) {
+func (_Auction *AuctionFilterer) WatchUnpaused(opts *bind.WatchOpts, sink chan<- *AuctionUnpaused) (event.Subscription, error) {
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "Unpaused")
+	logs, sub, err := _Auction.contract.WatchLogs(opts, "Unpaused")
 	if err != nil {
 		return nil, err
 	}
@@ -2652,8 +2652,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchUnpaused(opts *bind.WatchOpts, sink chan
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkUnpaused)
-				if err := _PlazaSdk.contract.UnpackLog(event, "Unpaused", log); err != nil {
+				event := new(AuctionUnpaused)
+				if err := _Auction.contract.UnpackLog(event, "Unpaused", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -2677,18 +2677,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchUnpaused(opts *bind.WatchOpts, sink chan
 // ParseUnpaused is a log parse operation binding the contract event 0x5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa.
 //
 // Solidity: event Unpaused(address account)
-func (_PlazaSdk *PlazaSdkFilterer) ParseUnpaused(log types.Log) (*PlazaSdkUnpaused, error) {
-	event := new(PlazaSdkUnpaused)
-	if err := _PlazaSdk.contract.UnpackLog(event, "Unpaused", log); err != nil {
+func (_Auction *AuctionFilterer) ParseUnpaused(log types.Log) (*AuctionUnpaused, error) {
+	event := new(AuctionUnpaused)
+	if err := _Auction.contract.UnpackLog(event, "Unpaused", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkUpgradedIterator is returned from FilterUpgraded and is used to iterate over the raw logs and unpacked data for Upgraded events raised by the PlazaSdk contract.
-type PlazaSdkUpgradedIterator struct {
-	Event *PlazaSdkUpgraded // Event containing the contract specifics and raw log
+// AuctionUpgradedIterator is returned from FilterUpgraded and is used to iterate over the raw logs and unpacked data for Upgraded events raised by the Auction contract.
+type AuctionUpgradedIterator struct {
+	Event *AuctionUpgraded // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -2702,7 +2702,7 @@ type PlazaSdkUpgradedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkUpgradedIterator) Next() bool {
+func (it *AuctionUpgradedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -2711,7 +2711,7 @@ func (it *PlazaSdkUpgradedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkUpgraded)
+			it.Event = new(AuctionUpgraded)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -2726,7 +2726,7 @@ func (it *PlazaSdkUpgradedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkUpgraded)
+		it.Event = new(AuctionUpgraded)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -2742,19 +2742,19 @@ func (it *PlazaSdkUpgradedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkUpgradedIterator) Error() error {
+func (it *AuctionUpgradedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkUpgradedIterator) Close() error {
+func (it *AuctionUpgradedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkUpgraded represents a Upgraded event raised by the PlazaSdk contract.
-type PlazaSdkUpgraded struct {
+// AuctionUpgraded represents a Upgraded event raised by the Auction contract.
+type AuctionUpgraded struct {
 	Implementation common.Address
 	Raw            types.Log // Blockchain specific contextual infos
 }
@@ -2762,31 +2762,31 @@ type PlazaSdkUpgraded struct {
 // FilterUpgraded is a free log retrieval operation binding the contract event 0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b.
 //
 // Solidity: event Upgraded(address indexed implementation)
-func (_PlazaSdk *PlazaSdkFilterer) FilterUpgraded(opts *bind.FilterOpts, implementation []common.Address) (*PlazaSdkUpgradedIterator, error) {
+func (_Auction *AuctionFilterer) FilterUpgraded(opts *bind.FilterOpts, implementation []common.Address) (*AuctionUpgradedIterator, error) {
 
 	var implementationRule []interface{}
 	for _, implementationItem := range implementation {
 		implementationRule = append(implementationRule, implementationItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "Upgraded", implementationRule)
+	logs, sub, err := _Auction.contract.FilterLogs(opts, "Upgraded", implementationRule)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkUpgradedIterator{contract: _PlazaSdk.contract, event: "Upgraded", logs: logs, sub: sub}, nil
+	return &AuctionUpgradedIterator{contract: _Auction.contract, event: "Upgraded", logs: logs, sub: sub}, nil
 }
 
 // WatchUpgraded is a free log subscription operation binding the contract event 0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b.
 //
 // Solidity: event Upgraded(address indexed implementation)
-func (_PlazaSdk *PlazaSdkFilterer) WatchUpgraded(opts *bind.WatchOpts, sink chan<- *PlazaSdkUpgraded, implementation []common.Address) (event.Subscription, error) {
+func (_Auction *AuctionFilterer) WatchUpgraded(opts *bind.WatchOpts, sink chan<- *AuctionUpgraded, implementation []common.Address) (event.Subscription, error) {
 
 	var implementationRule []interface{}
 	for _, implementationItem := range implementation {
 		implementationRule = append(implementationRule, implementationItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "Upgraded", implementationRule)
+	logs, sub, err := _Auction.contract.WatchLogs(opts, "Upgraded", implementationRule)
 	if err != nil {
 		return nil, err
 	}
@@ -2796,8 +2796,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchUpgraded(opts *bind.WatchOpts, sink chan
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkUpgraded)
-				if err := _PlazaSdk.contract.UnpackLog(event, "Upgraded", log); err != nil {
+				event := new(AuctionUpgraded)
+				if err := _Auction.contract.UnpackLog(event, "Upgraded", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -2821,9 +2821,9 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchUpgraded(opts *bind.WatchOpts, sink chan
 // ParseUpgraded is a log parse operation binding the contract event 0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b.
 //
 // Solidity: event Upgraded(address indexed implementation)
-func (_PlazaSdk *PlazaSdkFilterer) ParseUpgraded(log types.Log) (*PlazaSdkUpgraded, error) {
-	event := new(PlazaSdkUpgraded)
-	if err := _PlazaSdk.contract.UnpackLog(event, "Upgraded", log); err != nil {
+func (_Auction *AuctionFilterer) ParseUpgraded(log types.Log) (*AuctionUpgraded, error) {
+	event := new(AuctionUpgraded)
+	if err := _Auction.contract.UnpackLog(event, "Upgraded", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log

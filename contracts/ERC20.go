@@ -1,7 +1,7 @@
 // Code generated - DO NOT EDIT.
 // This file is a generated binding and any manual changes will be lost.
 
-package plaza_sdk
+package contracts
 
 import (
 	"errors"
@@ -29,113 +29,113 @@ var (
 	_ = abi.ConvertType
 )
 
-// PlazaSdkMetaData contains all meta data concerning the PlazaSdk contract.
-var PlazaSdkMetaData = &bind.MetaData{
+// Erc20MetaData contains all meta data concerning the Erc20 contract.
+var Erc20MetaData = &bind.MetaData{
 	ABI: "[{\"type\":\"function\",\"name\":\"allowance\",\"inputs\":[{\"name\":\"owner\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"spender\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"approve\",\"inputs\":[{\"name\":\"spender\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"bool\",\"internalType\":\"bool\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"balanceOf\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"totalSupply\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"transfer\",\"inputs\":[{\"name\":\"to\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"bool\",\"internalType\":\"bool\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"transferFrom\",\"inputs\":[{\"name\":\"from\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"to\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"bool\",\"internalType\":\"bool\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"event\",\"name\":\"Approval\",\"inputs\":[{\"name\":\"owner\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"spender\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"Transfer\",\"inputs\":[{\"name\":\"from\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"to\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"value\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false}]",
 }
 
-// PlazaSdkABI is the input ABI used to generate the binding from.
-// Deprecated: Use PlazaSdkMetaData.ABI instead.
-var PlazaSdkABI = PlazaSdkMetaData.ABI
+// Erc20ABI is the input ABI used to generate the binding from.
+// Deprecated: Use Erc20MetaData.ABI instead.
+var Erc20ABI = Erc20MetaData.ABI
 
-// PlazaSdk is an auto generated Go binding around an Ethereum contract.
-type PlazaSdk struct {
-	PlazaSdkCaller     // Read-only binding to the contract
-	PlazaSdkTransactor // Write-only binding to the contract
-	PlazaSdkFilterer   // Log filterer for contract events
+// Erc20 is an auto generated Go binding around an Ethereum contract.
+type Erc20 struct {
+	Erc20Caller     // Read-only binding to the contract
+	Erc20Transactor // Write-only binding to the contract
+	Erc20Filterer   // Log filterer for contract events
 }
 
-// PlazaSdkCaller is an auto generated read-only Go binding around an Ethereum contract.
-type PlazaSdkCaller struct {
+// Erc20Caller is an auto generated read-only Go binding around an Ethereum contract.
+type Erc20Caller struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// PlazaSdkTransactor is an auto generated write-only Go binding around an Ethereum contract.
-type PlazaSdkTransactor struct {
+// Erc20Transactor is an auto generated write-only Go binding around an Ethereum contract.
+type Erc20Transactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// PlazaSdkFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
-type PlazaSdkFilterer struct {
+// Erc20Filterer is an auto generated log filtering Go binding around an Ethereum contract events.
+type Erc20Filterer struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// PlazaSdkSession is an auto generated Go binding around an Ethereum contract,
+// Erc20Session is an auto generated Go binding around an Ethereum contract,
 // with pre-set call and transact options.
-type PlazaSdkSession struct {
-	Contract     *PlazaSdk         // Generic contract binding to set the session for
+type Erc20Session struct {
+	Contract     *Erc20            // Generic contract binding to set the session for
 	CallOpts     bind.CallOpts     // Call options to use throughout this session
 	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
 
-// PlazaSdkCallerSession is an auto generated read-only Go binding around an Ethereum contract,
+// Erc20CallerSession is an auto generated read-only Go binding around an Ethereum contract,
 // with pre-set call options.
-type PlazaSdkCallerSession struct {
-	Contract *PlazaSdkCaller // Generic contract caller binding to set the session for
-	CallOpts bind.CallOpts   // Call options to use throughout this session
+type Erc20CallerSession struct {
+	Contract *Erc20Caller  // Generic contract caller binding to set the session for
+	CallOpts bind.CallOpts // Call options to use throughout this session
 }
 
-// PlazaSdkTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
+// Erc20TransactorSession is an auto generated write-only Go binding around an Ethereum contract,
 // with pre-set transact options.
-type PlazaSdkTransactorSession struct {
-	Contract     *PlazaSdkTransactor // Generic contract transactor binding to set the session for
-	TransactOpts bind.TransactOpts   // Transaction auth options to use throughout this session
+type Erc20TransactorSession struct {
+	Contract     *Erc20Transactor  // Generic contract transactor binding to set the session for
+	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
 
-// PlazaSdkRaw is an auto generated low-level Go binding around an Ethereum contract.
-type PlazaSdkRaw struct {
-	Contract *PlazaSdk // Generic contract binding to access the raw methods on
+// Erc20Raw is an auto generated low-level Go binding around an Ethereum contract.
+type Erc20Raw struct {
+	Contract *Erc20 // Generic contract binding to access the raw methods on
 }
 
-// PlazaSdkCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
-type PlazaSdkCallerRaw struct {
-	Contract *PlazaSdkCaller // Generic read-only contract binding to access the raw methods on
+// Erc20CallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
+type Erc20CallerRaw struct {
+	Contract *Erc20Caller // Generic read-only contract binding to access the raw methods on
 }
 
-// PlazaSdkTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
-type PlazaSdkTransactorRaw struct {
-	Contract *PlazaSdkTransactor // Generic write-only contract binding to access the raw methods on
+// Erc20TransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
+type Erc20TransactorRaw struct {
+	Contract *Erc20Transactor // Generic write-only contract binding to access the raw methods on
 }
 
-// NewPlazaSdk creates a new instance of PlazaSdk, bound to a specific deployed contract.
-func NewPlazaSdk(address common.Address, backend bind.ContractBackend) (*PlazaSdk, error) {
-	contract, err := bindPlazaSdk(address, backend, backend, backend)
+// NewErc20 creates a new instance of Erc20, bound to a specific deployed contract.
+func NewErc20(address common.Address, backend bind.ContractBackend) (*Erc20, error) {
+	contract, err := bindErc20(address, backend, backend, backend)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdk{PlazaSdkCaller: PlazaSdkCaller{contract: contract}, PlazaSdkTransactor: PlazaSdkTransactor{contract: contract}, PlazaSdkFilterer: PlazaSdkFilterer{contract: contract}}, nil
+	return &Erc20{Erc20Caller: Erc20Caller{contract: contract}, Erc20Transactor: Erc20Transactor{contract: contract}, Erc20Filterer: Erc20Filterer{contract: contract}}, nil
 }
 
-// NewPlazaSdkCaller creates a new read-only instance of PlazaSdk, bound to a specific deployed contract.
-func NewPlazaSdkCaller(address common.Address, caller bind.ContractCaller) (*PlazaSdkCaller, error) {
-	contract, err := bindPlazaSdk(address, caller, nil, nil)
+// NewErc20Caller creates a new read-only instance of Erc20, bound to a specific deployed contract.
+func NewErc20Caller(address common.Address, caller bind.ContractCaller) (*Erc20Caller, error) {
+	contract, err := bindErc20(address, caller, nil, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkCaller{contract: contract}, nil
+	return &Erc20Caller{contract: contract}, nil
 }
 
-// NewPlazaSdkTransactor creates a new write-only instance of PlazaSdk, bound to a specific deployed contract.
-func NewPlazaSdkTransactor(address common.Address, transactor bind.ContractTransactor) (*PlazaSdkTransactor, error) {
-	contract, err := bindPlazaSdk(address, nil, transactor, nil)
+// NewErc20Transactor creates a new write-only instance of Erc20, bound to a specific deployed contract.
+func NewErc20Transactor(address common.Address, transactor bind.ContractTransactor) (*Erc20Transactor, error) {
+	contract, err := bindErc20(address, nil, transactor, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkTransactor{contract: contract}, nil
+	return &Erc20Transactor{contract: contract}, nil
 }
 
-// NewPlazaSdkFilterer creates a new log filterer instance of PlazaSdk, bound to a specific deployed contract.
-func NewPlazaSdkFilterer(address common.Address, filterer bind.ContractFilterer) (*PlazaSdkFilterer, error) {
-	contract, err := bindPlazaSdk(address, nil, nil, filterer)
+// NewErc20Filterer creates a new log filterer instance of Erc20, bound to a specific deployed contract.
+func NewErc20Filterer(address common.Address, filterer bind.ContractFilterer) (*Erc20Filterer, error) {
+	contract, err := bindErc20(address, nil, nil, filterer)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkFilterer{contract: contract}, nil
+	return &Erc20Filterer{contract: contract}, nil
 }
 
-// bindPlazaSdk binds a generic wrapper to an already deployed contract.
-func bindPlazaSdk(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := PlazaSdkMetaData.GetAbi()
+// bindErc20 binds a generic wrapper to an already deployed contract.
+func bindErc20(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
+	parsed, err := Erc20MetaData.GetAbi()
 	if err != nil {
 		return nil, err
 	}
@@ -146,46 +146,46 @@ func bindPlazaSdk(address common.Address, caller bind.ContractCaller, transactor
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_PlazaSdk *PlazaSdkRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
-	return _PlazaSdk.Contract.PlazaSdkCaller.contract.Call(opts, result, method, params...)
+func (_Erc20 *Erc20Raw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+	return _Erc20.Contract.Erc20Caller.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_PlazaSdk *PlazaSdkRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.PlazaSdkTransactor.contract.Transfer(opts)
+func (_Erc20 *Erc20Raw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Erc20.Contract.Erc20Transactor.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_PlazaSdk *PlazaSdkRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.PlazaSdkTransactor.contract.Transact(opts, method, params...)
+func (_Erc20 *Erc20Raw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _Erc20.Contract.Erc20Transactor.contract.Transact(opts, method, params...)
 }
 
 // Call invokes the (constant) contract method with params as input values and
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_PlazaSdk *PlazaSdkCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
-	return _PlazaSdk.Contract.contract.Call(opts, result, method, params...)
+func (_Erc20 *Erc20CallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+	return _Erc20.Contract.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_PlazaSdk *PlazaSdkTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.contract.Transfer(opts)
+func (_Erc20 *Erc20TransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _Erc20.Contract.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_PlazaSdk *PlazaSdkTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.contract.Transact(opts, method, params...)
+func (_Erc20 *Erc20TransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _Erc20.Contract.contract.Transact(opts, method, params...)
 }
 
 // Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
 //
 // Solidity: function allowance(address owner, address spender) view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) Allowance(opts *bind.CallOpts, owner common.Address, spender common.Address) (*big.Int, error) {
+func (_Erc20 *Erc20Caller) Allowance(opts *bind.CallOpts, owner common.Address, spender common.Address) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "allowance", owner, spender)
+	err := _Erc20.contract.Call(opts, &out, "allowance", owner, spender)
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -200,23 +200,23 @@ func (_PlazaSdk *PlazaSdkCaller) Allowance(opts *bind.CallOpts, owner common.Add
 // Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
 //
 // Solidity: function allowance(address owner, address spender) view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) Allowance(owner common.Address, spender common.Address) (*big.Int, error) {
-	return _PlazaSdk.Contract.Allowance(&_PlazaSdk.CallOpts, owner, spender)
+func (_Erc20 *Erc20Session) Allowance(owner common.Address, spender common.Address) (*big.Int, error) {
+	return _Erc20.Contract.Allowance(&_Erc20.CallOpts, owner, spender)
 }
 
 // Allowance is a free data retrieval call binding the contract method 0xdd62ed3e.
 //
 // Solidity: function allowance(address owner, address spender) view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) Allowance(owner common.Address, spender common.Address) (*big.Int, error) {
-	return _PlazaSdk.Contract.Allowance(&_PlazaSdk.CallOpts, owner, spender)
+func (_Erc20 *Erc20CallerSession) Allowance(owner common.Address, spender common.Address) (*big.Int, error) {
+	return _Erc20.Contract.Allowance(&_Erc20.CallOpts, owner, spender)
 }
 
 // BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
 //
 // Solidity: function balanceOf(address account) view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) BalanceOf(opts *bind.CallOpts, account common.Address) (*big.Int, error) {
+func (_Erc20 *Erc20Caller) BalanceOf(opts *bind.CallOpts, account common.Address) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "balanceOf", account)
+	err := _Erc20.contract.Call(opts, &out, "balanceOf", account)
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -231,23 +231,23 @@ func (_PlazaSdk *PlazaSdkCaller) BalanceOf(opts *bind.CallOpts, account common.A
 // BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
 //
 // Solidity: function balanceOf(address account) view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) BalanceOf(account common.Address) (*big.Int, error) {
-	return _PlazaSdk.Contract.BalanceOf(&_PlazaSdk.CallOpts, account)
+func (_Erc20 *Erc20Session) BalanceOf(account common.Address) (*big.Int, error) {
+	return _Erc20.Contract.BalanceOf(&_Erc20.CallOpts, account)
 }
 
 // BalanceOf is a free data retrieval call binding the contract method 0x70a08231.
 //
 // Solidity: function balanceOf(address account) view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) BalanceOf(account common.Address) (*big.Int, error) {
-	return _PlazaSdk.Contract.BalanceOf(&_PlazaSdk.CallOpts, account)
+func (_Erc20 *Erc20CallerSession) BalanceOf(account common.Address) (*big.Int, error) {
+	return _Erc20.Contract.BalanceOf(&_Erc20.CallOpts, account)
 }
 
 // TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
 //
 // Solidity: function totalSupply() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) TotalSupply(opts *bind.CallOpts) (*big.Int, error) {
+func (_Erc20 *Erc20Caller) TotalSupply(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "totalSupply")
+	err := _Erc20.contract.Call(opts, &out, "totalSupply")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -262,83 +262,83 @@ func (_PlazaSdk *PlazaSdkCaller) TotalSupply(opts *bind.CallOpts) (*big.Int, err
 // TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
 //
 // Solidity: function totalSupply() view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) TotalSupply() (*big.Int, error) {
-	return _PlazaSdk.Contract.TotalSupply(&_PlazaSdk.CallOpts)
+func (_Erc20 *Erc20Session) TotalSupply() (*big.Int, error) {
+	return _Erc20.Contract.TotalSupply(&_Erc20.CallOpts)
 }
 
 // TotalSupply is a free data retrieval call binding the contract method 0x18160ddd.
 //
 // Solidity: function totalSupply() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) TotalSupply() (*big.Int, error) {
-	return _PlazaSdk.Contract.TotalSupply(&_PlazaSdk.CallOpts)
+func (_Erc20 *Erc20CallerSession) TotalSupply() (*big.Int, error) {
+	return _Erc20.Contract.TotalSupply(&_Erc20.CallOpts)
 }
 
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
 // Solidity: function approve(address spender, uint256 value) returns(bool)
-func (_PlazaSdk *PlazaSdkTransactor) Approve(opts *bind.TransactOpts, spender common.Address, value *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "approve", spender, value)
+func (_Erc20 *Erc20Transactor) Approve(opts *bind.TransactOpts, spender common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Erc20.contract.Transact(opts, "approve", spender, value)
 }
 
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
 // Solidity: function approve(address spender, uint256 value) returns(bool)
-func (_PlazaSdk *PlazaSdkSession) Approve(spender common.Address, value *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Approve(&_PlazaSdk.TransactOpts, spender, value)
+func (_Erc20 *Erc20Session) Approve(spender common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Erc20.Contract.Approve(&_Erc20.TransactOpts, spender, value)
 }
 
 // Approve is a paid mutator transaction binding the contract method 0x095ea7b3.
 //
 // Solidity: function approve(address spender, uint256 value) returns(bool)
-func (_PlazaSdk *PlazaSdkTransactorSession) Approve(spender common.Address, value *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Approve(&_PlazaSdk.TransactOpts, spender, value)
+func (_Erc20 *Erc20TransactorSession) Approve(spender common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Erc20.Contract.Approve(&_Erc20.TransactOpts, spender, value)
 }
 
 // Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 //
 // Solidity: function transfer(address to, uint256 value) returns(bool)
-func (_PlazaSdk *PlazaSdkTransactor) Transfer(opts *bind.TransactOpts, to common.Address, value *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "transfer", to, value)
+func (_Erc20 *Erc20Transactor) Transfer(opts *bind.TransactOpts, to common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Erc20.contract.Transact(opts, "transfer", to, value)
 }
 
 // Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 //
 // Solidity: function transfer(address to, uint256 value) returns(bool)
-func (_PlazaSdk *PlazaSdkSession) Transfer(to common.Address, value *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Transfer(&_PlazaSdk.TransactOpts, to, value)
+func (_Erc20 *Erc20Session) Transfer(to common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Erc20.Contract.Transfer(&_Erc20.TransactOpts, to, value)
 }
 
 // Transfer is a paid mutator transaction binding the contract method 0xa9059cbb.
 //
 // Solidity: function transfer(address to, uint256 value) returns(bool)
-func (_PlazaSdk *PlazaSdkTransactorSession) Transfer(to common.Address, value *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Transfer(&_PlazaSdk.TransactOpts, to, value)
+func (_Erc20 *Erc20TransactorSession) Transfer(to common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Erc20.Contract.Transfer(&_Erc20.TransactOpts, to, value)
 }
 
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 //
 // Solidity: function transferFrom(address from, address to, uint256 value) returns(bool)
-func (_PlazaSdk *PlazaSdkTransactor) TransferFrom(opts *bind.TransactOpts, from common.Address, to common.Address, value *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "transferFrom", from, to, value)
+func (_Erc20 *Erc20Transactor) TransferFrom(opts *bind.TransactOpts, from common.Address, to common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Erc20.contract.Transact(opts, "transferFrom", from, to, value)
 }
 
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 //
 // Solidity: function transferFrom(address from, address to, uint256 value) returns(bool)
-func (_PlazaSdk *PlazaSdkSession) TransferFrom(from common.Address, to common.Address, value *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.TransferFrom(&_PlazaSdk.TransactOpts, from, to, value)
+func (_Erc20 *Erc20Session) TransferFrom(from common.Address, to common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Erc20.Contract.TransferFrom(&_Erc20.TransactOpts, from, to, value)
 }
 
 // TransferFrom is a paid mutator transaction binding the contract method 0x23b872dd.
 //
 // Solidity: function transferFrom(address from, address to, uint256 value) returns(bool)
-func (_PlazaSdk *PlazaSdkTransactorSession) TransferFrom(from common.Address, to common.Address, value *big.Int) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.TransferFrom(&_PlazaSdk.TransactOpts, from, to, value)
+func (_Erc20 *Erc20TransactorSession) TransferFrom(from common.Address, to common.Address, value *big.Int) (*types.Transaction, error) {
+	return _Erc20.Contract.TransferFrom(&_Erc20.TransactOpts, from, to, value)
 }
 
-// PlazaSdkApprovalIterator is returned from FilterApproval and is used to iterate over the raw logs and unpacked data for Approval events raised by the PlazaSdk contract.
-type PlazaSdkApprovalIterator struct {
-	Event *PlazaSdkApproval // Event containing the contract specifics and raw log
+// Erc20ApprovalIterator is returned from FilterApproval and is used to iterate over the raw logs and unpacked data for Approval events raised by the Erc20 contract.
+type Erc20ApprovalIterator struct {
+	Event *Erc20Approval // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -352,7 +352,7 @@ type PlazaSdkApprovalIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkApprovalIterator) Next() bool {
+func (it *Erc20ApprovalIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -361,7 +361,7 @@ func (it *PlazaSdkApprovalIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkApproval)
+			it.Event = new(Erc20Approval)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -376,7 +376,7 @@ func (it *PlazaSdkApprovalIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkApproval)
+		it.Event = new(Erc20Approval)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -392,19 +392,19 @@ func (it *PlazaSdkApprovalIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkApprovalIterator) Error() error {
+func (it *Erc20ApprovalIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkApprovalIterator) Close() error {
+func (it *Erc20ApprovalIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkApproval represents a Approval event raised by the PlazaSdk contract.
-type PlazaSdkApproval struct {
+// Erc20Approval represents a Approval event raised by the Erc20 contract.
+type Erc20Approval struct {
 	Owner   common.Address
 	Spender common.Address
 	Value   *big.Int
@@ -414,7 +414,7 @@ type PlazaSdkApproval struct {
 // FilterApproval is a free log retrieval operation binding the contract event 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925.
 //
 // Solidity: event Approval(address indexed owner, address indexed spender, uint256 value)
-func (_PlazaSdk *PlazaSdkFilterer) FilterApproval(opts *bind.FilterOpts, owner []common.Address, spender []common.Address) (*PlazaSdkApprovalIterator, error) {
+func (_Erc20 *Erc20Filterer) FilterApproval(opts *bind.FilterOpts, owner []common.Address, spender []common.Address) (*Erc20ApprovalIterator, error) {
 
 	var ownerRule []interface{}
 	for _, ownerItem := range owner {
@@ -425,17 +425,17 @@ func (_PlazaSdk *PlazaSdkFilterer) FilterApproval(opts *bind.FilterOpts, owner [
 		spenderRule = append(spenderRule, spenderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "Approval", ownerRule, spenderRule)
+	logs, sub, err := _Erc20.contract.FilterLogs(opts, "Approval", ownerRule, spenderRule)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkApprovalIterator{contract: _PlazaSdk.contract, event: "Approval", logs: logs, sub: sub}, nil
+	return &Erc20ApprovalIterator{contract: _Erc20.contract, event: "Approval", logs: logs, sub: sub}, nil
 }
 
 // WatchApproval is a free log subscription operation binding the contract event 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925.
 //
 // Solidity: event Approval(address indexed owner, address indexed spender, uint256 value)
-func (_PlazaSdk *PlazaSdkFilterer) WatchApproval(opts *bind.WatchOpts, sink chan<- *PlazaSdkApproval, owner []common.Address, spender []common.Address) (event.Subscription, error) {
+func (_Erc20 *Erc20Filterer) WatchApproval(opts *bind.WatchOpts, sink chan<- *Erc20Approval, owner []common.Address, spender []common.Address) (event.Subscription, error) {
 
 	var ownerRule []interface{}
 	for _, ownerItem := range owner {
@@ -446,7 +446,7 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchApproval(opts *bind.WatchOpts, sink chan
 		spenderRule = append(spenderRule, spenderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "Approval", ownerRule, spenderRule)
+	logs, sub, err := _Erc20.contract.WatchLogs(opts, "Approval", ownerRule, spenderRule)
 	if err != nil {
 		return nil, err
 	}
@@ -456,8 +456,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchApproval(opts *bind.WatchOpts, sink chan
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkApproval)
-				if err := _PlazaSdk.contract.UnpackLog(event, "Approval", log); err != nil {
+				event := new(Erc20Approval)
+				if err := _Erc20.contract.UnpackLog(event, "Approval", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -481,18 +481,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchApproval(opts *bind.WatchOpts, sink chan
 // ParseApproval is a log parse operation binding the contract event 0x8c5be1e5ebec7d5bd14f71427d1e84f3dd0314c0f7b2291e5b200ac8c7c3b925.
 //
 // Solidity: event Approval(address indexed owner, address indexed spender, uint256 value)
-func (_PlazaSdk *PlazaSdkFilterer) ParseApproval(log types.Log) (*PlazaSdkApproval, error) {
-	event := new(PlazaSdkApproval)
-	if err := _PlazaSdk.contract.UnpackLog(event, "Approval", log); err != nil {
+func (_Erc20 *Erc20Filterer) ParseApproval(log types.Log) (*Erc20Approval, error) {
+	event := new(Erc20Approval)
+	if err := _Erc20.contract.UnpackLog(event, "Approval", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkTransferIterator is returned from FilterTransfer and is used to iterate over the raw logs and unpacked data for Transfer events raised by the PlazaSdk contract.
-type PlazaSdkTransferIterator struct {
-	Event *PlazaSdkTransfer // Event containing the contract specifics and raw log
+// Erc20TransferIterator is returned from FilterTransfer and is used to iterate over the raw logs and unpacked data for Transfer events raised by the Erc20 contract.
+type Erc20TransferIterator struct {
+	Event *Erc20Transfer // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -506,7 +506,7 @@ type PlazaSdkTransferIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkTransferIterator) Next() bool {
+func (it *Erc20TransferIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -515,7 +515,7 @@ func (it *PlazaSdkTransferIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkTransfer)
+			it.Event = new(Erc20Transfer)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -530,7 +530,7 @@ func (it *PlazaSdkTransferIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkTransfer)
+		it.Event = new(Erc20Transfer)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -546,19 +546,19 @@ func (it *PlazaSdkTransferIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkTransferIterator) Error() error {
+func (it *Erc20TransferIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkTransferIterator) Close() error {
+func (it *Erc20TransferIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkTransfer represents a Transfer event raised by the PlazaSdk contract.
-type PlazaSdkTransfer struct {
+// Erc20Transfer represents a Transfer event raised by the Erc20 contract.
+type Erc20Transfer struct {
 	From  common.Address
 	To    common.Address
 	Value *big.Int
@@ -568,7 +568,7 @@ type PlazaSdkTransfer struct {
 // FilterTransfer is a free log retrieval operation binding the contract event 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef.
 //
 // Solidity: event Transfer(address indexed from, address indexed to, uint256 value)
-func (_PlazaSdk *PlazaSdkFilterer) FilterTransfer(opts *bind.FilterOpts, from []common.Address, to []common.Address) (*PlazaSdkTransferIterator, error) {
+func (_Erc20 *Erc20Filterer) FilterTransfer(opts *bind.FilterOpts, from []common.Address, to []common.Address) (*Erc20TransferIterator, error) {
 
 	var fromRule []interface{}
 	for _, fromItem := range from {
@@ -579,17 +579,17 @@ func (_PlazaSdk *PlazaSdkFilterer) FilterTransfer(opts *bind.FilterOpts, from []
 		toRule = append(toRule, toItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "Transfer", fromRule, toRule)
+	logs, sub, err := _Erc20.contract.FilterLogs(opts, "Transfer", fromRule, toRule)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkTransferIterator{contract: _PlazaSdk.contract, event: "Transfer", logs: logs, sub: sub}, nil
+	return &Erc20TransferIterator{contract: _Erc20.contract, event: "Transfer", logs: logs, sub: sub}, nil
 }
 
 // WatchTransfer is a free log subscription operation binding the contract event 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef.
 //
 // Solidity: event Transfer(address indexed from, address indexed to, uint256 value)
-func (_PlazaSdk *PlazaSdkFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan<- *PlazaSdkTransfer, from []common.Address, to []common.Address) (event.Subscription, error) {
+func (_Erc20 *Erc20Filterer) WatchTransfer(opts *bind.WatchOpts, sink chan<- *Erc20Transfer, from []common.Address, to []common.Address) (event.Subscription, error) {
 
 	var fromRule []interface{}
 	for _, fromItem := range from {
@@ -600,7 +600,7 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan
 		toRule = append(toRule, toItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "Transfer", fromRule, toRule)
+	logs, sub, err := _Erc20.contract.WatchLogs(opts, "Transfer", fromRule, toRule)
 	if err != nil {
 		return nil, err
 	}
@@ -610,8 +610,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkTransfer)
-				if err := _PlazaSdk.contract.UnpackLog(event, "Transfer", log); err != nil {
+				event := new(Erc20Transfer)
+				if err := _Erc20.contract.UnpackLog(event, "Transfer", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -635,9 +635,9 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchTransfer(opts *bind.WatchOpts, sink chan
 // ParseTransfer is a log parse operation binding the contract event 0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef.
 //
 // Solidity: event Transfer(address indexed from, address indexed to, uint256 value)
-func (_PlazaSdk *PlazaSdkFilterer) ParseTransfer(log types.Log) (*PlazaSdkTransfer, error) {
-	event := new(PlazaSdkTransfer)
-	if err := _PlazaSdk.contract.UnpackLog(event, "Transfer", log); err != nil {
+func (_Erc20 *Erc20Filterer) ParseTransfer(log types.Log) (*Erc20Transfer, error) {
+	event := new(Erc20Transfer)
+	if err := _Erc20.contract.UnpackLog(event, "Transfer", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
