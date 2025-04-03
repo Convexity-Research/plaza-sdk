@@ -1,7 +1,7 @@
 // Code generated - DO NOT EDIT.
 // This file is a generated binding and any manual changes will be lost.
 
-package plaza_sdk
+package contracts
 
 import (
 	"errors"
@@ -39,113 +39,113 @@ type PoolFactoryPoolParams struct {
 	FeeBeneficiary     common.Address
 }
 
-// PlazaSdkMetaData contains all meta data concerning the PlazaSdk contract.
-var PlazaSdkMetaData = &bind.MetaData{
+// PoolFactoryMetaData contains all meta data concerning the PoolFactory contract.
+var PoolFactoryMetaData = &bind.MetaData{
 	ABI: "[{\"type\":\"constructor\",\"inputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"DEFAULT_ADMIN_ROLE\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"GOV_ROLE\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"MINTER_ROLE\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"POOL_ROLE\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"SECURITY_COUNCIL_ROLE\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"UPGRADE_INTERFACE_VERSION\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"string\",\"internalType\":\"string\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"bondBeacon\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"createPool\",\"inputs\":[{\"name\":\"params\",\"type\":\"tuple\",\"internalType\":\"structPoolFactory.PoolParams\",\"components\":[{\"name\":\"fee\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"reserveToken\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"couponToken\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"distributionPeriod\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"sharesPerToken\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"feeBeneficiary\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"name\":\"reserveAmount\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"bondAmount\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"leverageAmount\",\"type\":\"uint256\",\"internalType\":\"uint256\"},{\"name\":\"bondName\",\"type\":\"string\",\"internalType\":\"string\"},{\"name\":\"bondSymbol\",\"type\":\"string\",\"internalType\":\"string\"},{\"name\":\"leverageName\",\"type\":\"string\",\"internalType\":\"string\"},{\"name\":\"leverageSymbol\",\"type\":\"string\",\"internalType\":\"string\"},{\"name\":\"pauseOnCreation\",\"type\":\"bool\",\"internalType\":\"bool\"}],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"deployer\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"contractDeployer\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"distributorBeacon\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"distributors\",\"inputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"getRoleAdmin\",\"inputs\":[{\"name\":\"role\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}],\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"governance\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"grantRole\",\"inputs\":[{\"name\":\"role\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"},{\"name\":\"account\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"hasRole\",\"inputs\":[{\"name\":\"role\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"},{\"name\":\"account\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[{\"name\":\"\",\"type\":\"bool\",\"internalType\":\"bool\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"initialize\",\"inputs\":[{\"name\":\"_governance\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_deployer\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_oracleFeeds\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_poolImplementation\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_bondImplementation\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_leverageImplementation\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"_distributorImplementation\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"leverageBeacon\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"oracleFeeds\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"pause\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"paused\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"bool\",\"internalType\":\"bool\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"poolBeacon\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"pools\",\"inputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"outputs\":[{\"name\":\"\",\"type\":\"address\",\"internalType\":\"address\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"poolsLength\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"uint256\",\"internalType\":\"uint256\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"proxiableUUID\",\"inputs\":[],\"outputs\":[{\"name\":\"\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"renounceRole\",\"inputs\":[{\"name\":\"role\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"},{\"name\":\"callerConfirmation\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"revokeRole\",\"inputs\":[{\"name\":\"role\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"},{\"name\":\"account\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"setDeployer\",\"inputs\":[{\"name\":\"_deployer\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"setGovernance\",\"inputs\":[{\"name\":\"_governance\",\"type\":\"address\",\"internalType\":\"address\"}],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"supportsInterface\",\"inputs\":[{\"name\":\"interfaceId\",\"type\":\"bytes4\",\"internalType\":\"bytes4\"}],\"outputs\":[{\"name\":\"\",\"type\":\"bool\",\"internalType\":\"bool\"}],\"stateMutability\":\"view\"},{\"type\":\"function\",\"name\":\"unpause\",\"inputs\":[],\"outputs\":[],\"stateMutability\":\"nonpayable\"},{\"type\":\"function\",\"name\":\"upgradeToAndCall\",\"inputs\":[{\"name\":\"newImplementation\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"data\",\"type\":\"bytes\",\"internalType\":\"bytes\"}],\"outputs\":[],\"stateMutability\":\"payable\"},{\"type\":\"event\",\"name\":\"Initialized\",\"inputs\":[{\"name\":\"version\",\"type\":\"uint64\",\"indexed\":false,\"internalType\":\"uint64\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"Paused\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"PoolCreated\",\"inputs\":[{\"name\":\"pool\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"},{\"name\":\"reserveAmount\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"bondAmount\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"},{\"name\":\"leverageAmount\",\"type\":\"uint256\",\"indexed\":false,\"internalType\":\"uint256\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"RoleAdminChanged\",\"inputs\":[{\"name\":\"role\",\"type\":\"bytes32\",\"indexed\":true,\"internalType\":\"bytes32\"},{\"name\":\"previousAdminRole\",\"type\":\"bytes32\",\"indexed\":true,\"internalType\":\"bytes32\"},{\"name\":\"newAdminRole\",\"type\":\"bytes32\",\"indexed\":true,\"internalType\":\"bytes32\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"RoleGranted\",\"inputs\":[{\"name\":\"role\",\"type\":\"bytes32\",\"indexed\":true,\"internalType\":\"bytes32\"},{\"name\":\"account\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"sender\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"RoleRevoked\",\"inputs\":[{\"name\":\"role\",\"type\":\"bytes32\",\"indexed\":true,\"internalType\":\"bytes32\"},{\"name\":\"account\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"},{\"name\":\"sender\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"Unpaused\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"indexed\":false,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"event\",\"name\":\"Upgraded\",\"inputs\":[{\"name\":\"implementation\",\"type\":\"address\",\"indexed\":true,\"internalType\":\"address\"}],\"anonymous\":false},{\"type\":\"error\",\"name\":\"AccessControlBadConfirmation\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"AccessControlUnauthorizedAccount\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"internalType\":\"address\"},{\"name\":\"neededRole\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}]},{\"type\":\"error\",\"name\":\"AddressEmptyCode\",\"inputs\":[{\"name\":\"target\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"AddressInsufficientBalance\",\"inputs\":[{\"name\":\"account\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"ERC1967InvalidImplementation\",\"inputs\":[{\"name\":\"implementation\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"ERC1967NonPayable\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"EnforcedPause\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"ErrorCreatingContract\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"ErrorCreatingProxy\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"ExpectedPause\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"FailedInnerCall\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"InvalidInitialization\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"NotInitializing\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"SafeERC20FailedOperation\",\"inputs\":[{\"name\":\"token\",\"type\":\"address\",\"internalType\":\"address\"}]},{\"type\":\"error\",\"name\":\"TargetAlreadyExists\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"UUPSUnauthorizedCallContext\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"UUPSUnsupportedProxiableUUID\",\"inputs\":[{\"name\":\"slot\",\"type\":\"bytes32\",\"internalType\":\"bytes32\"}]},{\"type\":\"error\",\"name\":\"ZeroDebtAmount\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"ZeroLeverageAmount\",\"inputs\":[]},{\"type\":\"error\",\"name\":\"ZeroReserveAmount\",\"inputs\":[]}]",
 }
 
-// PlazaSdkABI is the input ABI used to generate the binding from.
-// Deprecated: Use PlazaSdkMetaData.ABI instead.
-var PlazaSdkABI = PlazaSdkMetaData.ABI
+// PoolFactoryABI is the input ABI used to generate the binding from.
+// Deprecated: Use PoolFactoryMetaData.ABI instead.
+var PoolFactoryABI = PoolFactoryMetaData.ABI
 
-// PlazaSdk is an auto generated Go binding around an Ethereum contract.
-type PlazaSdk struct {
-	PlazaSdkCaller     // Read-only binding to the contract
-	PlazaSdkTransactor // Write-only binding to the contract
-	PlazaSdkFilterer   // Log filterer for contract events
+// PoolFactory is an auto generated Go binding around an Ethereum contract.
+type PoolFactory struct {
+	PoolFactoryCaller     // Read-only binding to the contract
+	PoolFactoryTransactor // Write-only binding to the contract
+	PoolFactoryFilterer   // Log filterer for contract events
 }
 
-// PlazaSdkCaller is an auto generated read-only Go binding around an Ethereum contract.
-type PlazaSdkCaller struct {
+// PoolFactoryCaller is an auto generated read-only Go binding around an Ethereum contract.
+type PoolFactoryCaller struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// PlazaSdkTransactor is an auto generated write-only Go binding around an Ethereum contract.
-type PlazaSdkTransactor struct {
+// PoolFactoryTransactor is an auto generated write-only Go binding around an Ethereum contract.
+type PoolFactoryTransactor struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// PlazaSdkFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
-type PlazaSdkFilterer struct {
+// PoolFactoryFilterer is an auto generated log filtering Go binding around an Ethereum contract events.
+type PoolFactoryFilterer struct {
 	contract *bind.BoundContract // Generic contract wrapper for the low level calls
 }
 
-// PlazaSdkSession is an auto generated Go binding around an Ethereum contract,
+// PoolFactorySession is an auto generated Go binding around an Ethereum contract,
 // with pre-set call and transact options.
-type PlazaSdkSession struct {
-	Contract     *PlazaSdk         // Generic contract binding to set the session for
+type PoolFactorySession struct {
+	Contract     *PoolFactory      // Generic contract binding to set the session for
 	CallOpts     bind.CallOpts     // Call options to use throughout this session
 	TransactOpts bind.TransactOpts // Transaction auth options to use throughout this session
 }
 
-// PlazaSdkCallerSession is an auto generated read-only Go binding around an Ethereum contract,
+// PoolFactoryCallerSession is an auto generated read-only Go binding around an Ethereum contract,
 // with pre-set call options.
-type PlazaSdkCallerSession struct {
-	Contract *PlazaSdkCaller // Generic contract caller binding to set the session for
-	CallOpts bind.CallOpts   // Call options to use throughout this session
+type PoolFactoryCallerSession struct {
+	Contract *PoolFactoryCaller // Generic contract caller binding to set the session for
+	CallOpts bind.CallOpts      // Call options to use throughout this session
 }
 
-// PlazaSdkTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
+// PoolFactoryTransactorSession is an auto generated write-only Go binding around an Ethereum contract,
 // with pre-set transact options.
-type PlazaSdkTransactorSession struct {
-	Contract     *PlazaSdkTransactor // Generic contract transactor binding to set the session for
-	TransactOpts bind.TransactOpts   // Transaction auth options to use throughout this session
+type PoolFactoryTransactorSession struct {
+	Contract     *PoolFactoryTransactor // Generic contract transactor binding to set the session for
+	TransactOpts bind.TransactOpts      // Transaction auth options to use throughout this session
 }
 
-// PlazaSdkRaw is an auto generated low-level Go binding around an Ethereum contract.
-type PlazaSdkRaw struct {
-	Contract *PlazaSdk // Generic contract binding to access the raw methods on
+// PoolFactoryRaw is an auto generated low-level Go binding around an Ethereum contract.
+type PoolFactoryRaw struct {
+	Contract *PoolFactory // Generic contract binding to access the raw methods on
 }
 
-// PlazaSdkCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
-type PlazaSdkCallerRaw struct {
-	Contract *PlazaSdkCaller // Generic read-only contract binding to access the raw methods on
+// PoolFactoryCallerRaw is an auto generated low-level read-only Go binding around an Ethereum contract.
+type PoolFactoryCallerRaw struct {
+	Contract *PoolFactoryCaller // Generic read-only contract binding to access the raw methods on
 }
 
-// PlazaSdkTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
-type PlazaSdkTransactorRaw struct {
-	Contract *PlazaSdkTransactor // Generic write-only contract binding to access the raw methods on
+// PoolFactoryTransactorRaw is an auto generated low-level write-only Go binding around an Ethereum contract.
+type PoolFactoryTransactorRaw struct {
+	Contract *PoolFactoryTransactor // Generic write-only contract binding to access the raw methods on
 }
 
-// NewPlazaSdk creates a new instance of PlazaSdk, bound to a specific deployed contract.
-func NewPlazaSdk(address common.Address, backend bind.ContractBackend) (*PlazaSdk, error) {
-	contract, err := bindPlazaSdk(address, backend, backend, backend)
+// NewPoolFactory creates a new instance of PoolFactory, bound to a specific deployed contract.
+func NewPoolFactory(address common.Address, backend bind.ContractBackend) (*PoolFactory, error) {
+	contract, err := bindPoolFactory(address, backend, backend, backend)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdk{PlazaSdkCaller: PlazaSdkCaller{contract: contract}, PlazaSdkTransactor: PlazaSdkTransactor{contract: contract}, PlazaSdkFilterer: PlazaSdkFilterer{contract: contract}}, nil
+	return &PoolFactory{PoolFactoryCaller: PoolFactoryCaller{contract: contract}, PoolFactoryTransactor: PoolFactoryTransactor{contract: contract}, PoolFactoryFilterer: PoolFactoryFilterer{contract: contract}}, nil
 }
 
-// NewPlazaSdkCaller creates a new read-only instance of PlazaSdk, bound to a specific deployed contract.
-func NewPlazaSdkCaller(address common.Address, caller bind.ContractCaller) (*PlazaSdkCaller, error) {
-	contract, err := bindPlazaSdk(address, caller, nil, nil)
+// NewPoolFactoryCaller creates a new read-only instance of PoolFactory, bound to a specific deployed contract.
+func NewPoolFactoryCaller(address common.Address, caller bind.ContractCaller) (*PoolFactoryCaller, error) {
+	contract, err := bindPoolFactory(address, caller, nil, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkCaller{contract: contract}, nil
+	return &PoolFactoryCaller{contract: contract}, nil
 }
 
-// NewPlazaSdkTransactor creates a new write-only instance of PlazaSdk, bound to a specific deployed contract.
-func NewPlazaSdkTransactor(address common.Address, transactor bind.ContractTransactor) (*PlazaSdkTransactor, error) {
-	contract, err := bindPlazaSdk(address, nil, transactor, nil)
+// NewPoolFactoryTransactor creates a new write-only instance of PoolFactory, bound to a specific deployed contract.
+func NewPoolFactoryTransactor(address common.Address, transactor bind.ContractTransactor) (*PoolFactoryTransactor, error) {
+	contract, err := bindPoolFactory(address, nil, transactor, nil)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkTransactor{contract: contract}, nil
+	return &PoolFactoryTransactor{contract: contract}, nil
 }
 
-// NewPlazaSdkFilterer creates a new log filterer instance of PlazaSdk, bound to a specific deployed contract.
-func NewPlazaSdkFilterer(address common.Address, filterer bind.ContractFilterer) (*PlazaSdkFilterer, error) {
-	contract, err := bindPlazaSdk(address, nil, nil, filterer)
+// NewPoolFactoryFilterer creates a new log filterer instance of PoolFactory, bound to a specific deployed contract.
+func NewPoolFactoryFilterer(address common.Address, filterer bind.ContractFilterer) (*PoolFactoryFilterer, error) {
+	contract, err := bindPoolFactory(address, nil, nil, filterer)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkFilterer{contract: contract}, nil
+	return &PoolFactoryFilterer{contract: contract}, nil
 }
 
-// bindPlazaSdk binds a generic wrapper to an already deployed contract.
-func bindPlazaSdk(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
-	parsed, err := PlazaSdkMetaData.GetAbi()
+// bindPoolFactory binds a generic wrapper to an already deployed contract.
+func bindPoolFactory(address common.Address, caller bind.ContractCaller, transactor bind.ContractTransactor, filterer bind.ContractFilterer) (*bind.BoundContract, error) {
+	parsed, err := PoolFactoryMetaData.GetAbi()
 	if err != nil {
 		return nil, err
 	}
@@ -156,46 +156,46 @@ func bindPlazaSdk(address common.Address, caller bind.ContractCaller, transactor
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_PlazaSdk *PlazaSdkRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
-	return _PlazaSdk.Contract.PlazaSdkCaller.contract.Call(opts, result, method, params...)
+func (_PoolFactory *PoolFactoryRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+	return _PoolFactory.Contract.PoolFactoryCaller.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_PlazaSdk *PlazaSdkRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.PlazaSdkTransactor.contract.Transfer(opts)
+func (_PoolFactory *PoolFactoryRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _PoolFactory.Contract.PoolFactoryTransactor.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_PlazaSdk *PlazaSdkRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.PlazaSdkTransactor.contract.Transact(opts, method, params...)
+func (_PoolFactory *PoolFactoryRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _PoolFactory.Contract.PoolFactoryTransactor.contract.Transact(opts, method, params...)
 }
 
 // Call invokes the (constant) contract method with params as input values and
 // sets the output to result. The result type might be a single field for simple
 // returns, a slice of interfaces for anonymous returns and a struct for named
 // returns.
-func (_PlazaSdk *PlazaSdkCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
-	return _PlazaSdk.Contract.contract.Call(opts, result, method, params...)
+func (_PoolFactory *PoolFactoryCallerRaw) Call(opts *bind.CallOpts, result *[]interface{}, method string, params ...interface{}) error {
+	return _PoolFactory.Contract.contract.Call(opts, result, method, params...)
 }
 
 // Transfer initiates a plain transaction to move funds to the contract, calling
 // its default method if one is available.
-func (_PlazaSdk *PlazaSdkTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.contract.Transfer(opts)
+func (_PoolFactory *PoolFactoryTransactorRaw) Transfer(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _PoolFactory.Contract.contract.Transfer(opts)
 }
 
 // Transact invokes the (paid) contract method with params as input values.
-func (_PlazaSdk *PlazaSdkTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.contract.Transact(opts, method, params...)
+func (_PoolFactory *PoolFactoryTransactorRaw) Transact(opts *bind.TransactOpts, method string, params ...interface{}) (*types.Transaction, error) {
+	return _PoolFactory.Contract.contract.Transact(opts, method, params...)
 }
 
 // DEFAULTADMINROLE is a free data retrieval call binding the contract method 0xa217fddf.
 //
 // Solidity: function DEFAULT_ADMIN_ROLE() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkCaller) DEFAULTADMINROLE(opts *bind.CallOpts) ([32]byte, error) {
+func (_PoolFactory *PoolFactoryCaller) DEFAULTADMINROLE(opts *bind.CallOpts) ([32]byte, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "DEFAULT_ADMIN_ROLE")
+	err := _PoolFactory.contract.Call(opts, &out, "DEFAULT_ADMIN_ROLE")
 
 	if err != nil {
 		return *new([32]byte), err
@@ -210,23 +210,23 @@ func (_PlazaSdk *PlazaSdkCaller) DEFAULTADMINROLE(opts *bind.CallOpts) ([32]byte
 // DEFAULTADMINROLE is a free data retrieval call binding the contract method 0xa217fddf.
 //
 // Solidity: function DEFAULT_ADMIN_ROLE() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkSession) DEFAULTADMINROLE() ([32]byte, error) {
-	return _PlazaSdk.Contract.DEFAULTADMINROLE(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactorySession) DEFAULTADMINROLE() ([32]byte, error) {
+	return _PoolFactory.Contract.DEFAULTADMINROLE(&_PoolFactory.CallOpts)
 }
 
 // DEFAULTADMINROLE is a free data retrieval call binding the contract method 0xa217fddf.
 //
 // Solidity: function DEFAULT_ADMIN_ROLE() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkCallerSession) DEFAULTADMINROLE() ([32]byte, error) {
-	return _PlazaSdk.Contract.DEFAULTADMINROLE(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactoryCallerSession) DEFAULTADMINROLE() ([32]byte, error) {
+	return _PoolFactory.Contract.DEFAULTADMINROLE(&_PoolFactory.CallOpts)
 }
 
 // GOVROLE is a free data retrieval call binding the contract method 0xb536818a.
 //
 // Solidity: function GOV_ROLE() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkCaller) GOVROLE(opts *bind.CallOpts) ([32]byte, error) {
+func (_PoolFactory *PoolFactoryCaller) GOVROLE(opts *bind.CallOpts) ([32]byte, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "GOV_ROLE")
+	err := _PoolFactory.contract.Call(opts, &out, "GOV_ROLE")
 
 	if err != nil {
 		return *new([32]byte), err
@@ -241,23 +241,23 @@ func (_PlazaSdk *PlazaSdkCaller) GOVROLE(opts *bind.CallOpts) ([32]byte, error) 
 // GOVROLE is a free data retrieval call binding the contract method 0xb536818a.
 //
 // Solidity: function GOV_ROLE() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkSession) GOVROLE() ([32]byte, error) {
-	return _PlazaSdk.Contract.GOVROLE(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactorySession) GOVROLE() ([32]byte, error) {
+	return _PoolFactory.Contract.GOVROLE(&_PoolFactory.CallOpts)
 }
 
 // GOVROLE is a free data retrieval call binding the contract method 0xb536818a.
 //
 // Solidity: function GOV_ROLE() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkCallerSession) GOVROLE() ([32]byte, error) {
-	return _PlazaSdk.Contract.GOVROLE(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactoryCallerSession) GOVROLE() ([32]byte, error) {
+	return _PoolFactory.Contract.GOVROLE(&_PoolFactory.CallOpts)
 }
 
 // MINTERROLE is a free data retrieval call binding the contract method 0xd5391393.
 //
 // Solidity: function MINTER_ROLE() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkCaller) MINTERROLE(opts *bind.CallOpts) ([32]byte, error) {
+func (_PoolFactory *PoolFactoryCaller) MINTERROLE(opts *bind.CallOpts) ([32]byte, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "MINTER_ROLE")
+	err := _PoolFactory.contract.Call(opts, &out, "MINTER_ROLE")
 
 	if err != nil {
 		return *new([32]byte), err
@@ -272,23 +272,23 @@ func (_PlazaSdk *PlazaSdkCaller) MINTERROLE(opts *bind.CallOpts) ([32]byte, erro
 // MINTERROLE is a free data retrieval call binding the contract method 0xd5391393.
 //
 // Solidity: function MINTER_ROLE() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkSession) MINTERROLE() ([32]byte, error) {
-	return _PlazaSdk.Contract.MINTERROLE(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactorySession) MINTERROLE() ([32]byte, error) {
+	return _PoolFactory.Contract.MINTERROLE(&_PoolFactory.CallOpts)
 }
 
 // MINTERROLE is a free data retrieval call binding the contract method 0xd5391393.
 //
 // Solidity: function MINTER_ROLE() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkCallerSession) MINTERROLE() ([32]byte, error) {
-	return _PlazaSdk.Contract.MINTERROLE(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactoryCallerSession) MINTERROLE() ([32]byte, error) {
+	return _PoolFactory.Contract.MINTERROLE(&_PoolFactory.CallOpts)
 }
 
 // POOLROLE is a free data retrieval call binding the contract method 0x404ccd07.
 //
 // Solidity: function POOL_ROLE() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkCaller) POOLROLE(opts *bind.CallOpts) ([32]byte, error) {
+func (_PoolFactory *PoolFactoryCaller) POOLROLE(opts *bind.CallOpts) ([32]byte, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "POOL_ROLE")
+	err := _PoolFactory.contract.Call(opts, &out, "POOL_ROLE")
 
 	if err != nil {
 		return *new([32]byte), err
@@ -303,23 +303,23 @@ func (_PlazaSdk *PlazaSdkCaller) POOLROLE(opts *bind.CallOpts) ([32]byte, error)
 // POOLROLE is a free data retrieval call binding the contract method 0x404ccd07.
 //
 // Solidity: function POOL_ROLE() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkSession) POOLROLE() ([32]byte, error) {
-	return _PlazaSdk.Contract.POOLROLE(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactorySession) POOLROLE() ([32]byte, error) {
+	return _PoolFactory.Contract.POOLROLE(&_PoolFactory.CallOpts)
 }
 
 // POOLROLE is a free data retrieval call binding the contract method 0x404ccd07.
 //
 // Solidity: function POOL_ROLE() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkCallerSession) POOLROLE() ([32]byte, error) {
-	return _PlazaSdk.Contract.POOLROLE(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactoryCallerSession) POOLROLE() ([32]byte, error) {
+	return _PoolFactory.Contract.POOLROLE(&_PoolFactory.CallOpts)
 }
 
 // SECURITYCOUNCILROLE is a free data retrieval call binding the contract method 0xb9fe5cf7.
 //
 // Solidity: function SECURITY_COUNCIL_ROLE() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkCaller) SECURITYCOUNCILROLE(opts *bind.CallOpts) ([32]byte, error) {
+func (_PoolFactory *PoolFactoryCaller) SECURITYCOUNCILROLE(opts *bind.CallOpts) ([32]byte, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "SECURITY_COUNCIL_ROLE")
+	err := _PoolFactory.contract.Call(opts, &out, "SECURITY_COUNCIL_ROLE")
 
 	if err != nil {
 		return *new([32]byte), err
@@ -334,23 +334,23 @@ func (_PlazaSdk *PlazaSdkCaller) SECURITYCOUNCILROLE(opts *bind.CallOpts) ([32]b
 // SECURITYCOUNCILROLE is a free data retrieval call binding the contract method 0xb9fe5cf7.
 //
 // Solidity: function SECURITY_COUNCIL_ROLE() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkSession) SECURITYCOUNCILROLE() ([32]byte, error) {
-	return _PlazaSdk.Contract.SECURITYCOUNCILROLE(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactorySession) SECURITYCOUNCILROLE() ([32]byte, error) {
+	return _PoolFactory.Contract.SECURITYCOUNCILROLE(&_PoolFactory.CallOpts)
 }
 
 // SECURITYCOUNCILROLE is a free data retrieval call binding the contract method 0xb9fe5cf7.
 //
 // Solidity: function SECURITY_COUNCIL_ROLE() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkCallerSession) SECURITYCOUNCILROLE() ([32]byte, error) {
-	return _PlazaSdk.Contract.SECURITYCOUNCILROLE(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactoryCallerSession) SECURITYCOUNCILROLE() ([32]byte, error) {
+	return _PoolFactory.Contract.SECURITYCOUNCILROLE(&_PoolFactory.CallOpts)
 }
 
 // UPGRADEINTERFACEVERSION is a free data retrieval call binding the contract method 0xad3cb1cc.
 //
 // Solidity: function UPGRADE_INTERFACE_VERSION() view returns(string)
-func (_PlazaSdk *PlazaSdkCaller) UPGRADEINTERFACEVERSION(opts *bind.CallOpts) (string, error) {
+func (_PoolFactory *PoolFactoryCaller) UPGRADEINTERFACEVERSION(opts *bind.CallOpts) (string, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "UPGRADE_INTERFACE_VERSION")
+	err := _PoolFactory.contract.Call(opts, &out, "UPGRADE_INTERFACE_VERSION")
 
 	if err != nil {
 		return *new(string), err
@@ -365,23 +365,23 @@ func (_PlazaSdk *PlazaSdkCaller) UPGRADEINTERFACEVERSION(opts *bind.CallOpts) (s
 // UPGRADEINTERFACEVERSION is a free data retrieval call binding the contract method 0xad3cb1cc.
 //
 // Solidity: function UPGRADE_INTERFACE_VERSION() view returns(string)
-func (_PlazaSdk *PlazaSdkSession) UPGRADEINTERFACEVERSION() (string, error) {
-	return _PlazaSdk.Contract.UPGRADEINTERFACEVERSION(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactorySession) UPGRADEINTERFACEVERSION() (string, error) {
+	return _PoolFactory.Contract.UPGRADEINTERFACEVERSION(&_PoolFactory.CallOpts)
 }
 
 // UPGRADEINTERFACEVERSION is a free data retrieval call binding the contract method 0xad3cb1cc.
 //
 // Solidity: function UPGRADE_INTERFACE_VERSION() view returns(string)
-func (_PlazaSdk *PlazaSdkCallerSession) UPGRADEINTERFACEVERSION() (string, error) {
-	return _PlazaSdk.Contract.UPGRADEINTERFACEVERSION(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactoryCallerSession) UPGRADEINTERFACEVERSION() (string, error) {
+	return _PoolFactory.Contract.UPGRADEINTERFACEVERSION(&_PoolFactory.CallOpts)
 }
 
 // BondBeacon is a free data retrieval call binding the contract method 0xc8f12bde.
 //
 // Solidity: function bondBeacon() view returns(address)
-func (_PlazaSdk *PlazaSdkCaller) BondBeacon(opts *bind.CallOpts) (common.Address, error) {
+func (_PoolFactory *PoolFactoryCaller) BondBeacon(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "bondBeacon")
+	err := _PoolFactory.contract.Call(opts, &out, "bondBeacon")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -396,23 +396,23 @@ func (_PlazaSdk *PlazaSdkCaller) BondBeacon(opts *bind.CallOpts) (common.Address
 // BondBeacon is a free data retrieval call binding the contract method 0xc8f12bde.
 //
 // Solidity: function bondBeacon() view returns(address)
-func (_PlazaSdk *PlazaSdkSession) BondBeacon() (common.Address, error) {
-	return _PlazaSdk.Contract.BondBeacon(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactorySession) BondBeacon() (common.Address, error) {
+	return _PoolFactory.Contract.BondBeacon(&_PoolFactory.CallOpts)
 }
 
 // BondBeacon is a free data retrieval call binding the contract method 0xc8f12bde.
 //
 // Solidity: function bondBeacon() view returns(address)
-func (_PlazaSdk *PlazaSdkCallerSession) BondBeacon() (common.Address, error) {
-	return _PlazaSdk.Contract.BondBeacon(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactoryCallerSession) BondBeacon() (common.Address, error) {
+	return _PoolFactory.Contract.BondBeacon(&_PoolFactory.CallOpts)
 }
 
 // Deployer is a free data retrieval call binding the contract method 0xd5f39488.
 //
 // Solidity: function deployer() view returns(address)
-func (_PlazaSdk *PlazaSdkCaller) Deployer(opts *bind.CallOpts) (common.Address, error) {
+func (_PoolFactory *PoolFactoryCaller) Deployer(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "deployer")
+	err := _PoolFactory.contract.Call(opts, &out, "deployer")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -427,23 +427,23 @@ func (_PlazaSdk *PlazaSdkCaller) Deployer(opts *bind.CallOpts) (common.Address, 
 // Deployer is a free data retrieval call binding the contract method 0xd5f39488.
 //
 // Solidity: function deployer() view returns(address)
-func (_PlazaSdk *PlazaSdkSession) Deployer() (common.Address, error) {
-	return _PlazaSdk.Contract.Deployer(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactorySession) Deployer() (common.Address, error) {
+	return _PoolFactory.Contract.Deployer(&_PoolFactory.CallOpts)
 }
 
 // Deployer is a free data retrieval call binding the contract method 0xd5f39488.
 //
 // Solidity: function deployer() view returns(address)
-func (_PlazaSdk *PlazaSdkCallerSession) Deployer() (common.Address, error) {
-	return _PlazaSdk.Contract.Deployer(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactoryCallerSession) Deployer() (common.Address, error) {
+	return _PoolFactory.Contract.Deployer(&_PoolFactory.CallOpts)
 }
 
 // DistributorBeacon is a free data retrieval call binding the contract method 0x22a06f46.
 //
 // Solidity: function distributorBeacon() view returns(address)
-func (_PlazaSdk *PlazaSdkCaller) DistributorBeacon(opts *bind.CallOpts) (common.Address, error) {
+func (_PoolFactory *PoolFactoryCaller) DistributorBeacon(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "distributorBeacon")
+	err := _PoolFactory.contract.Call(opts, &out, "distributorBeacon")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -458,23 +458,23 @@ func (_PlazaSdk *PlazaSdkCaller) DistributorBeacon(opts *bind.CallOpts) (common.
 // DistributorBeacon is a free data retrieval call binding the contract method 0x22a06f46.
 //
 // Solidity: function distributorBeacon() view returns(address)
-func (_PlazaSdk *PlazaSdkSession) DistributorBeacon() (common.Address, error) {
-	return _PlazaSdk.Contract.DistributorBeacon(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactorySession) DistributorBeacon() (common.Address, error) {
+	return _PoolFactory.Contract.DistributorBeacon(&_PoolFactory.CallOpts)
 }
 
 // DistributorBeacon is a free data retrieval call binding the contract method 0x22a06f46.
 //
 // Solidity: function distributorBeacon() view returns(address)
-func (_PlazaSdk *PlazaSdkCallerSession) DistributorBeacon() (common.Address, error) {
-	return _PlazaSdk.Contract.DistributorBeacon(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactoryCallerSession) DistributorBeacon() (common.Address, error) {
+	return _PoolFactory.Contract.DistributorBeacon(&_PoolFactory.CallOpts)
 }
 
 // Distributors is a free data retrieval call binding the contract method 0xcc642784.
 //
 // Solidity: function distributors(address ) view returns(address)
-func (_PlazaSdk *PlazaSdkCaller) Distributors(opts *bind.CallOpts, arg0 common.Address) (common.Address, error) {
+func (_PoolFactory *PoolFactoryCaller) Distributors(opts *bind.CallOpts, arg0 common.Address) (common.Address, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "distributors", arg0)
+	err := _PoolFactory.contract.Call(opts, &out, "distributors", arg0)
 
 	if err != nil {
 		return *new(common.Address), err
@@ -489,23 +489,23 @@ func (_PlazaSdk *PlazaSdkCaller) Distributors(opts *bind.CallOpts, arg0 common.A
 // Distributors is a free data retrieval call binding the contract method 0xcc642784.
 //
 // Solidity: function distributors(address ) view returns(address)
-func (_PlazaSdk *PlazaSdkSession) Distributors(arg0 common.Address) (common.Address, error) {
-	return _PlazaSdk.Contract.Distributors(&_PlazaSdk.CallOpts, arg0)
+func (_PoolFactory *PoolFactorySession) Distributors(arg0 common.Address) (common.Address, error) {
+	return _PoolFactory.Contract.Distributors(&_PoolFactory.CallOpts, arg0)
 }
 
 // Distributors is a free data retrieval call binding the contract method 0xcc642784.
 //
 // Solidity: function distributors(address ) view returns(address)
-func (_PlazaSdk *PlazaSdkCallerSession) Distributors(arg0 common.Address) (common.Address, error) {
-	return _PlazaSdk.Contract.Distributors(&_PlazaSdk.CallOpts, arg0)
+func (_PoolFactory *PoolFactoryCallerSession) Distributors(arg0 common.Address) (common.Address, error) {
+	return _PoolFactory.Contract.Distributors(&_PoolFactory.CallOpts, arg0)
 }
 
 // GetRoleAdmin is a free data retrieval call binding the contract method 0x248a9ca3.
 //
 // Solidity: function getRoleAdmin(bytes32 role) view returns(bytes32)
-func (_PlazaSdk *PlazaSdkCaller) GetRoleAdmin(opts *bind.CallOpts, role [32]byte) ([32]byte, error) {
+func (_PoolFactory *PoolFactoryCaller) GetRoleAdmin(opts *bind.CallOpts, role [32]byte) ([32]byte, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "getRoleAdmin", role)
+	err := _PoolFactory.contract.Call(opts, &out, "getRoleAdmin", role)
 
 	if err != nil {
 		return *new([32]byte), err
@@ -520,23 +520,23 @@ func (_PlazaSdk *PlazaSdkCaller) GetRoleAdmin(opts *bind.CallOpts, role [32]byte
 // GetRoleAdmin is a free data retrieval call binding the contract method 0x248a9ca3.
 //
 // Solidity: function getRoleAdmin(bytes32 role) view returns(bytes32)
-func (_PlazaSdk *PlazaSdkSession) GetRoleAdmin(role [32]byte) ([32]byte, error) {
-	return _PlazaSdk.Contract.GetRoleAdmin(&_PlazaSdk.CallOpts, role)
+func (_PoolFactory *PoolFactorySession) GetRoleAdmin(role [32]byte) ([32]byte, error) {
+	return _PoolFactory.Contract.GetRoleAdmin(&_PoolFactory.CallOpts, role)
 }
 
 // GetRoleAdmin is a free data retrieval call binding the contract method 0x248a9ca3.
 //
 // Solidity: function getRoleAdmin(bytes32 role) view returns(bytes32)
-func (_PlazaSdk *PlazaSdkCallerSession) GetRoleAdmin(role [32]byte) ([32]byte, error) {
-	return _PlazaSdk.Contract.GetRoleAdmin(&_PlazaSdk.CallOpts, role)
+func (_PoolFactory *PoolFactoryCallerSession) GetRoleAdmin(role [32]byte) ([32]byte, error) {
+	return _PoolFactory.Contract.GetRoleAdmin(&_PoolFactory.CallOpts, role)
 }
 
 // Governance is a free data retrieval call binding the contract method 0x5aa6e675.
 //
 // Solidity: function governance() view returns(address)
-func (_PlazaSdk *PlazaSdkCaller) Governance(opts *bind.CallOpts) (common.Address, error) {
+func (_PoolFactory *PoolFactoryCaller) Governance(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "governance")
+	err := _PoolFactory.contract.Call(opts, &out, "governance")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -551,23 +551,23 @@ func (_PlazaSdk *PlazaSdkCaller) Governance(opts *bind.CallOpts) (common.Address
 // Governance is a free data retrieval call binding the contract method 0x5aa6e675.
 //
 // Solidity: function governance() view returns(address)
-func (_PlazaSdk *PlazaSdkSession) Governance() (common.Address, error) {
-	return _PlazaSdk.Contract.Governance(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactorySession) Governance() (common.Address, error) {
+	return _PoolFactory.Contract.Governance(&_PoolFactory.CallOpts)
 }
 
 // Governance is a free data retrieval call binding the contract method 0x5aa6e675.
 //
 // Solidity: function governance() view returns(address)
-func (_PlazaSdk *PlazaSdkCallerSession) Governance() (common.Address, error) {
-	return _PlazaSdk.Contract.Governance(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactoryCallerSession) Governance() (common.Address, error) {
+	return _PoolFactory.Contract.Governance(&_PoolFactory.CallOpts)
 }
 
 // HasRole is a free data retrieval call binding the contract method 0x91d14854.
 //
 // Solidity: function hasRole(bytes32 role, address account) view returns(bool)
-func (_PlazaSdk *PlazaSdkCaller) HasRole(opts *bind.CallOpts, role [32]byte, account common.Address) (bool, error) {
+func (_PoolFactory *PoolFactoryCaller) HasRole(opts *bind.CallOpts, role [32]byte, account common.Address) (bool, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "hasRole", role, account)
+	err := _PoolFactory.contract.Call(opts, &out, "hasRole", role, account)
 
 	if err != nil {
 		return *new(bool), err
@@ -582,23 +582,23 @@ func (_PlazaSdk *PlazaSdkCaller) HasRole(opts *bind.CallOpts, role [32]byte, acc
 // HasRole is a free data retrieval call binding the contract method 0x91d14854.
 //
 // Solidity: function hasRole(bytes32 role, address account) view returns(bool)
-func (_PlazaSdk *PlazaSdkSession) HasRole(role [32]byte, account common.Address) (bool, error) {
-	return _PlazaSdk.Contract.HasRole(&_PlazaSdk.CallOpts, role, account)
+func (_PoolFactory *PoolFactorySession) HasRole(role [32]byte, account common.Address) (bool, error) {
+	return _PoolFactory.Contract.HasRole(&_PoolFactory.CallOpts, role, account)
 }
 
 // HasRole is a free data retrieval call binding the contract method 0x91d14854.
 //
 // Solidity: function hasRole(bytes32 role, address account) view returns(bool)
-func (_PlazaSdk *PlazaSdkCallerSession) HasRole(role [32]byte, account common.Address) (bool, error) {
-	return _PlazaSdk.Contract.HasRole(&_PlazaSdk.CallOpts, role, account)
+func (_PoolFactory *PoolFactoryCallerSession) HasRole(role [32]byte, account common.Address) (bool, error) {
+	return _PoolFactory.Contract.HasRole(&_PoolFactory.CallOpts, role, account)
 }
 
 // LeverageBeacon is a free data retrieval call binding the contract method 0x2808df1f.
 //
 // Solidity: function leverageBeacon() view returns(address)
-func (_PlazaSdk *PlazaSdkCaller) LeverageBeacon(opts *bind.CallOpts) (common.Address, error) {
+func (_PoolFactory *PoolFactoryCaller) LeverageBeacon(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "leverageBeacon")
+	err := _PoolFactory.contract.Call(opts, &out, "leverageBeacon")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -613,23 +613,23 @@ func (_PlazaSdk *PlazaSdkCaller) LeverageBeacon(opts *bind.CallOpts) (common.Add
 // LeverageBeacon is a free data retrieval call binding the contract method 0x2808df1f.
 //
 // Solidity: function leverageBeacon() view returns(address)
-func (_PlazaSdk *PlazaSdkSession) LeverageBeacon() (common.Address, error) {
-	return _PlazaSdk.Contract.LeverageBeacon(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactorySession) LeverageBeacon() (common.Address, error) {
+	return _PoolFactory.Contract.LeverageBeacon(&_PoolFactory.CallOpts)
 }
 
 // LeverageBeacon is a free data retrieval call binding the contract method 0x2808df1f.
 //
 // Solidity: function leverageBeacon() view returns(address)
-func (_PlazaSdk *PlazaSdkCallerSession) LeverageBeacon() (common.Address, error) {
-	return _PlazaSdk.Contract.LeverageBeacon(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactoryCallerSession) LeverageBeacon() (common.Address, error) {
+	return _PoolFactory.Contract.LeverageBeacon(&_PoolFactory.CallOpts)
 }
 
 // OracleFeeds is a free data retrieval call binding the contract method 0x2bbc2643.
 //
 // Solidity: function oracleFeeds() view returns(address)
-func (_PlazaSdk *PlazaSdkCaller) OracleFeeds(opts *bind.CallOpts) (common.Address, error) {
+func (_PoolFactory *PoolFactoryCaller) OracleFeeds(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "oracleFeeds")
+	err := _PoolFactory.contract.Call(opts, &out, "oracleFeeds")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -644,23 +644,23 @@ func (_PlazaSdk *PlazaSdkCaller) OracleFeeds(opts *bind.CallOpts) (common.Addres
 // OracleFeeds is a free data retrieval call binding the contract method 0x2bbc2643.
 //
 // Solidity: function oracleFeeds() view returns(address)
-func (_PlazaSdk *PlazaSdkSession) OracleFeeds() (common.Address, error) {
-	return _PlazaSdk.Contract.OracleFeeds(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactorySession) OracleFeeds() (common.Address, error) {
+	return _PoolFactory.Contract.OracleFeeds(&_PoolFactory.CallOpts)
 }
 
 // OracleFeeds is a free data retrieval call binding the contract method 0x2bbc2643.
 //
 // Solidity: function oracleFeeds() view returns(address)
-func (_PlazaSdk *PlazaSdkCallerSession) OracleFeeds() (common.Address, error) {
-	return _PlazaSdk.Contract.OracleFeeds(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactoryCallerSession) OracleFeeds() (common.Address, error) {
+	return _PoolFactory.Contract.OracleFeeds(&_PoolFactory.CallOpts)
 }
 
 // Paused is a free data retrieval call binding the contract method 0x5c975abb.
 //
 // Solidity: function paused() view returns(bool)
-func (_PlazaSdk *PlazaSdkCaller) Paused(opts *bind.CallOpts) (bool, error) {
+func (_PoolFactory *PoolFactoryCaller) Paused(opts *bind.CallOpts) (bool, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "paused")
+	err := _PoolFactory.contract.Call(opts, &out, "paused")
 
 	if err != nil {
 		return *new(bool), err
@@ -675,23 +675,23 @@ func (_PlazaSdk *PlazaSdkCaller) Paused(opts *bind.CallOpts) (bool, error) {
 // Paused is a free data retrieval call binding the contract method 0x5c975abb.
 //
 // Solidity: function paused() view returns(bool)
-func (_PlazaSdk *PlazaSdkSession) Paused() (bool, error) {
-	return _PlazaSdk.Contract.Paused(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactorySession) Paused() (bool, error) {
+	return _PoolFactory.Contract.Paused(&_PoolFactory.CallOpts)
 }
 
 // Paused is a free data retrieval call binding the contract method 0x5c975abb.
 //
 // Solidity: function paused() view returns(bool)
-func (_PlazaSdk *PlazaSdkCallerSession) Paused() (bool, error) {
-	return _PlazaSdk.Contract.Paused(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactoryCallerSession) Paused() (bool, error) {
+	return _PoolFactory.Contract.Paused(&_PoolFactory.CallOpts)
 }
 
 // PoolBeacon is a free data retrieval call binding the contract method 0xc5a7b2ea.
 //
 // Solidity: function poolBeacon() view returns(address)
-func (_PlazaSdk *PlazaSdkCaller) PoolBeacon(opts *bind.CallOpts) (common.Address, error) {
+func (_PoolFactory *PoolFactoryCaller) PoolBeacon(opts *bind.CallOpts) (common.Address, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "poolBeacon")
+	err := _PoolFactory.contract.Call(opts, &out, "poolBeacon")
 
 	if err != nil {
 		return *new(common.Address), err
@@ -706,23 +706,23 @@ func (_PlazaSdk *PlazaSdkCaller) PoolBeacon(opts *bind.CallOpts) (common.Address
 // PoolBeacon is a free data retrieval call binding the contract method 0xc5a7b2ea.
 //
 // Solidity: function poolBeacon() view returns(address)
-func (_PlazaSdk *PlazaSdkSession) PoolBeacon() (common.Address, error) {
-	return _PlazaSdk.Contract.PoolBeacon(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactorySession) PoolBeacon() (common.Address, error) {
+	return _PoolFactory.Contract.PoolBeacon(&_PoolFactory.CallOpts)
 }
 
 // PoolBeacon is a free data retrieval call binding the contract method 0xc5a7b2ea.
 //
 // Solidity: function poolBeacon() view returns(address)
-func (_PlazaSdk *PlazaSdkCallerSession) PoolBeacon() (common.Address, error) {
-	return _PlazaSdk.Contract.PoolBeacon(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactoryCallerSession) PoolBeacon() (common.Address, error) {
+	return _PoolFactory.Contract.PoolBeacon(&_PoolFactory.CallOpts)
 }
 
 // Pools is a free data retrieval call binding the contract method 0xac4afa38.
 //
 // Solidity: function pools(uint256 ) view returns(address)
-func (_PlazaSdk *PlazaSdkCaller) Pools(opts *bind.CallOpts, arg0 *big.Int) (common.Address, error) {
+func (_PoolFactory *PoolFactoryCaller) Pools(opts *bind.CallOpts, arg0 *big.Int) (common.Address, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "pools", arg0)
+	err := _PoolFactory.contract.Call(opts, &out, "pools", arg0)
 
 	if err != nil {
 		return *new(common.Address), err
@@ -737,23 +737,23 @@ func (_PlazaSdk *PlazaSdkCaller) Pools(opts *bind.CallOpts, arg0 *big.Int) (comm
 // Pools is a free data retrieval call binding the contract method 0xac4afa38.
 //
 // Solidity: function pools(uint256 ) view returns(address)
-func (_PlazaSdk *PlazaSdkSession) Pools(arg0 *big.Int) (common.Address, error) {
-	return _PlazaSdk.Contract.Pools(&_PlazaSdk.CallOpts, arg0)
+func (_PoolFactory *PoolFactorySession) Pools(arg0 *big.Int) (common.Address, error) {
+	return _PoolFactory.Contract.Pools(&_PoolFactory.CallOpts, arg0)
 }
 
 // Pools is a free data retrieval call binding the contract method 0xac4afa38.
 //
 // Solidity: function pools(uint256 ) view returns(address)
-func (_PlazaSdk *PlazaSdkCallerSession) Pools(arg0 *big.Int) (common.Address, error) {
-	return _PlazaSdk.Contract.Pools(&_PlazaSdk.CallOpts, arg0)
+func (_PoolFactory *PoolFactoryCallerSession) Pools(arg0 *big.Int) (common.Address, error) {
+	return _PoolFactory.Contract.Pools(&_PoolFactory.CallOpts, arg0)
 }
 
 // PoolsLength is a free data retrieval call binding the contract method 0x2716ae66.
 //
 // Solidity: function poolsLength() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCaller) PoolsLength(opts *bind.CallOpts) (*big.Int, error) {
+func (_PoolFactory *PoolFactoryCaller) PoolsLength(opts *bind.CallOpts) (*big.Int, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "poolsLength")
+	err := _PoolFactory.contract.Call(opts, &out, "poolsLength")
 
 	if err != nil {
 		return *new(*big.Int), err
@@ -768,23 +768,23 @@ func (_PlazaSdk *PlazaSdkCaller) PoolsLength(opts *bind.CallOpts) (*big.Int, err
 // PoolsLength is a free data retrieval call binding the contract method 0x2716ae66.
 //
 // Solidity: function poolsLength() view returns(uint256)
-func (_PlazaSdk *PlazaSdkSession) PoolsLength() (*big.Int, error) {
-	return _PlazaSdk.Contract.PoolsLength(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactorySession) PoolsLength() (*big.Int, error) {
+	return _PoolFactory.Contract.PoolsLength(&_PoolFactory.CallOpts)
 }
 
 // PoolsLength is a free data retrieval call binding the contract method 0x2716ae66.
 //
 // Solidity: function poolsLength() view returns(uint256)
-func (_PlazaSdk *PlazaSdkCallerSession) PoolsLength() (*big.Int, error) {
-	return _PlazaSdk.Contract.PoolsLength(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactoryCallerSession) PoolsLength() (*big.Int, error) {
+	return _PoolFactory.Contract.PoolsLength(&_PoolFactory.CallOpts)
 }
 
 // ProxiableUUID is a free data retrieval call binding the contract method 0x52d1902d.
 //
 // Solidity: function proxiableUUID() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkCaller) ProxiableUUID(opts *bind.CallOpts) ([32]byte, error) {
+func (_PoolFactory *PoolFactoryCaller) ProxiableUUID(opts *bind.CallOpts) ([32]byte, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "proxiableUUID")
+	err := _PoolFactory.contract.Call(opts, &out, "proxiableUUID")
 
 	if err != nil {
 		return *new([32]byte), err
@@ -799,23 +799,23 @@ func (_PlazaSdk *PlazaSdkCaller) ProxiableUUID(opts *bind.CallOpts) ([32]byte, e
 // ProxiableUUID is a free data retrieval call binding the contract method 0x52d1902d.
 //
 // Solidity: function proxiableUUID() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkSession) ProxiableUUID() ([32]byte, error) {
-	return _PlazaSdk.Contract.ProxiableUUID(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactorySession) ProxiableUUID() ([32]byte, error) {
+	return _PoolFactory.Contract.ProxiableUUID(&_PoolFactory.CallOpts)
 }
 
 // ProxiableUUID is a free data retrieval call binding the contract method 0x52d1902d.
 //
 // Solidity: function proxiableUUID() view returns(bytes32)
-func (_PlazaSdk *PlazaSdkCallerSession) ProxiableUUID() ([32]byte, error) {
-	return _PlazaSdk.Contract.ProxiableUUID(&_PlazaSdk.CallOpts)
+func (_PoolFactory *PoolFactoryCallerSession) ProxiableUUID() ([32]byte, error) {
+	return _PoolFactory.Contract.ProxiableUUID(&_PoolFactory.CallOpts)
 }
 
 // SupportsInterface is a free data retrieval call binding the contract method 0x01ffc9a7.
 //
 // Solidity: function supportsInterface(bytes4 interfaceId) view returns(bool)
-func (_PlazaSdk *PlazaSdkCaller) SupportsInterface(opts *bind.CallOpts, interfaceId [4]byte) (bool, error) {
+func (_PoolFactory *PoolFactoryCaller) SupportsInterface(opts *bind.CallOpts, interfaceId [4]byte) (bool, error) {
 	var out []interface{}
-	err := _PlazaSdk.contract.Call(opts, &out, "supportsInterface", interfaceId)
+	err := _PoolFactory.contract.Call(opts, &out, "supportsInterface", interfaceId)
 
 	if err != nil {
 		return *new(bool), err
@@ -830,230 +830,230 @@ func (_PlazaSdk *PlazaSdkCaller) SupportsInterface(opts *bind.CallOpts, interfac
 // SupportsInterface is a free data retrieval call binding the contract method 0x01ffc9a7.
 //
 // Solidity: function supportsInterface(bytes4 interfaceId) view returns(bool)
-func (_PlazaSdk *PlazaSdkSession) SupportsInterface(interfaceId [4]byte) (bool, error) {
-	return _PlazaSdk.Contract.SupportsInterface(&_PlazaSdk.CallOpts, interfaceId)
+func (_PoolFactory *PoolFactorySession) SupportsInterface(interfaceId [4]byte) (bool, error) {
+	return _PoolFactory.Contract.SupportsInterface(&_PoolFactory.CallOpts, interfaceId)
 }
 
 // SupportsInterface is a free data retrieval call binding the contract method 0x01ffc9a7.
 //
 // Solidity: function supportsInterface(bytes4 interfaceId) view returns(bool)
-func (_PlazaSdk *PlazaSdkCallerSession) SupportsInterface(interfaceId [4]byte) (bool, error) {
-	return _PlazaSdk.Contract.SupportsInterface(&_PlazaSdk.CallOpts, interfaceId)
+func (_PoolFactory *PoolFactoryCallerSession) SupportsInterface(interfaceId [4]byte) (bool, error) {
+	return _PoolFactory.Contract.SupportsInterface(&_PoolFactory.CallOpts, interfaceId)
 }
 
 // CreatePool is a paid mutator transaction binding the contract method 0xa3c31dd5.
 //
 // Solidity: function createPool((uint256,address,address,uint256,uint256,address) params, uint256 reserveAmount, uint256 bondAmount, uint256 leverageAmount, string bondName, string bondSymbol, string leverageName, string leverageSymbol, bool pauseOnCreation) returns(address)
-func (_PlazaSdk *PlazaSdkTransactor) CreatePool(opts *bind.TransactOpts, params PoolFactoryPoolParams, reserveAmount *big.Int, bondAmount *big.Int, leverageAmount *big.Int, bondName string, bondSymbol string, leverageName string, leverageSymbol string, pauseOnCreation bool) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "createPool", params, reserveAmount, bondAmount, leverageAmount, bondName, bondSymbol, leverageName, leverageSymbol, pauseOnCreation)
+func (_PoolFactory *PoolFactoryTransactor) CreatePool(opts *bind.TransactOpts, params PoolFactoryPoolParams, reserveAmount *big.Int, bondAmount *big.Int, leverageAmount *big.Int, bondName string, bondSymbol string, leverageName string, leverageSymbol string, pauseOnCreation bool) (*types.Transaction, error) {
+	return _PoolFactory.contract.Transact(opts, "createPool", params, reserveAmount, bondAmount, leverageAmount, bondName, bondSymbol, leverageName, leverageSymbol, pauseOnCreation)
 }
 
 // CreatePool is a paid mutator transaction binding the contract method 0xa3c31dd5.
 //
 // Solidity: function createPool((uint256,address,address,uint256,uint256,address) params, uint256 reserveAmount, uint256 bondAmount, uint256 leverageAmount, string bondName, string bondSymbol, string leverageName, string leverageSymbol, bool pauseOnCreation) returns(address)
-func (_PlazaSdk *PlazaSdkSession) CreatePool(params PoolFactoryPoolParams, reserveAmount *big.Int, bondAmount *big.Int, leverageAmount *big.Int, bondName string, bondSymbol string, leverageName string, leverageSymbol string, pauseOnCreation bool) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.CreatePool(&_PlazaSdk.TransactOpts, params, reserveAmount, bondAmount, leverageAmount, bondName, bondSymbol, leverageName, leverageSymbol, pauseOnCreation)
+func (_PoolFactory *PoolFactorySession) CreatePool(params PoolFactoryPoolParams, reserveAmount *big.Int, bondAmount *big.Int, leverageAmount *big.Int, bondName string, bondSymbol string, leverageName string, leverageSymbol string, pauseOnCreation bool) (*types.Transaction, error) {
+	return _PoolFactory.Contract.CreatePool(&_PoolFactory.TransactOpts, params, reserveAmount, bondAmount, leverageAmount, bondName, bondSymbol, leverageName, leverageSymbol, pauseOnCreation)
 }
 
 // CreatePool is a paid mutator transaction binding the contract method 0xa3c31dd5.
 //
 // Solidity: function createPool((uint256,address,address,uint256,uint256,address) params, uint256 reserveAmount, uint256 bondAmount, uint256 leverageAmount, string bondName, string bondSymbol, string leverageName, string leverageSymbol, bool pauseOnCreation) returns(address)
-func (_PlazaSdk *PlazaSdkTransactorSession) CreatePool(params PoolFactoryPoolParams, reserveAmount *big.Int, bondAmount *big.Int, leverageAmount *big.Int, bondName string, bondSymbol string, leverageName string, leverageSymbol string, pauseOnCreation bool) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.CreatePool(&_PlazaSdk.TransactOpts, params, reserveAmount, bondAmount, leverageAmount, bondName, bondSymbol, leverageName, leverageSymbol, pauseOnCreation)
+func (_PoolFactory *PoolFactoryTransactorSession) CreatePool(params PoolFactoryPoolParams, reserveAmount *big.Int, bondAmount *big.Int, leverageAmount *big.Int, bondName string, bondSymbol string, leverageName string, leverageSymbol string, pauseOnCreation bool) (*types.Transaction, error) {
+	return _PoolFactory.Contract.CreatePool(&_PoolFactory.TransactOpts, params, reserveAmount, bondAmount, leverageAmount, bondName, bondSymbol, leverageName, leverageSymbol, pauseOnCreation)
 }
 
 // GrantRole is a paid mutator transaction binding the contract method 0x2f2ff15d.
 //
 // Solidity: function grantRole(bytes32 role, address account) returns()
-func (_PlazaSdk *PlazaSdkTransactor) GrantRole(opts *bind.TransactOpts, role [32]byte, account common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "grantRole", role, account)
+func (_PoolFactory *PoolFactoryTransactor) GrantRole(opts *bind.TransactOpts, role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _PoolFactory.contract.Transact(opts, "grantRole", role, account)
 }
 
 // GrantRole is a paid mutator transaction binding the contract method 0x2f2ff15d.
 //
 // Solidity: function grantRole(bytes32 role, address account) returns()
-func (_PlazaSdk *PlazaSdkSession) GrantRole(role [32]byte, account common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.GrantRole(&_PlazaSdk.TransactOpts, role, account)
+func (_PoolFactory *PoolFactorySession) GrantRole(role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _PoolFactory.Contract.GrantRole(&_PoolFactory.TransactOpts, role, account)
 }
 
 // GrantRole is a paid mutator transaction binding the contract method 0x2f2ff15d.
 //
 // Solidity: function grantRole(bytes32 role, address account) returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) GrantRole(role [32]byte, account common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.GrantRole(&_PlazaSdk.TransactOpts, role, account)
+func (_PoolFactory *PoolFactoryTransactorSession) GrantRole(role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _PoolFactory.Contract.GrantRole(&_PoolFactory.TransactOpts, role, account)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0x35876476.
 //
 // Solidity: function initialize(address _governance, address _deployer, address _oracleFeeds, address _poolImplementation, address _bondImplementation, address _leverageImplementation, address _distributorImplementation) returns()
-func (_PlazaSdk *PlazaSdkTransactor) Initialize(opts *bind.TransactOpts, _governance common.Address, _deployer common.Address, _oracleFeeds common.Address, _poolImplementation common.Address, _bondImplementation common.Address, _leverageImplementation common.Address, _distributorImplementation common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "initialize", _governance, _deployer, _oracleFeeds, _poolImplementation, _bondImplementation, _leverageImplementation, _distributorImplementation)
+func (_PoolFactory *PoolFactoryTransactor) Initialize(opts *bind.TransactOpts, _governance common.Address, _deployer common.Address, _oracleFeeds common.Address, _poolImplementation common.Address, _bondImplementation common.Address, _leverageImplementation common.Address, _distributorImplementation common.Address) (*types.Transaction, error) {
+	return _PoolFactory.contract.Transact(opts, "initialize", _governance, _deployer, _oracleFeeds, _poolImplementation, _bondImplementation, _leverageImplementation, _distributorImplementation)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0x35876476.
 //
 // Solidity: function initialize(address _governance, address _deployer, address _oracleFeeds, address _poolImplementation, address _bondImplementation, address _leverageImplementation, address _distributorImplementation) returns()
-func (_PlazaSdk *PlazaSdkSession) Initialize(_governance common.Address, _deployer common.Address, _oracleFeeds common.Address, _poolImplementation common.Address, _bondImplementation common.Address, _leverageImplementation common.Address, _distributorImplementation common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Initialize(&_PlazaSdk.TransactOpts, _governance, _deployer, _oracleFeeds, _poolImplementation, _bondImplementation, _leverageImplementation, _distributorImplementation)
+func (_PoolFactory *PoolFactorySession) Initialize(_governance common.Address, _deployer common.Address, _oracleFeeds common.Address, _poolImplementation common.Address, _bondImplementation common.Address, _leverageImplementation common.Address, _distributorImplementation common.Address) (*types.Transaction, error) {
+	return _PoolFactory.Contract.Initialize(&_PoolFactory.TransactOpts, _governance, _deployer, _oracleFeeds, _poolImplementation, _bondImplementation, _leverageImplementation, _distributorImplementation)
 }
 
 // Initialize is a paid mutator transaction binding the contract method 0x35876476.
 //
 // Solidity: function initialize(address _governance, address _deployer, address _oracleFeeds, address _poolImplementation, address _bondImplementation, address _leverageImplementation, address _distributorImplementation) returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) Initialize(_governance common.Address, _deployer common.Address, _oracleFeeds common.Address, _poolImplementation common.Address, _bondImplementation common.Address, _leverageImplementation common.Address, _distributorImplementation common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Initialize(&_PlazaSdk.TransactOpts, _governance, _deployer, _oracleFeeds, _poolImplementation, _bondImplementation, _leverageImplementation, _distributorImplementation)
+func (_PoolFactory *PoolFactoryTransactorSession) Initialize(_governance common.Address, _deployer common.Address, _oracleFeeds common.Address, _poolImplementation common.Address, _bondImplementation common.Address, _leverageImplementation common.Address, _distributorImplementation common.Address) (*types.Transaction, error) {
+	return _PoolFactory.Contract.Initialize(&_PoolFactory.TransactOpts, _governance, _deployer, _oracleFeeds, _poolImplementation, _bondImplementation, _leverageImplementation, _distributorImplementation)
 }
 
 // Pause is a paid mutator transaction binding the contract method 0x8456cb59.
 //
 // Solidity: function pause() returns()
-func (_PlazaSdk *PlazaSdkTransactor) Pause(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "pause")
+func (_PoolFactory *PoolFactoryTransactor) Pause(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _PoolFactory.contract.Transact(opts, "pause")
 }
 
 // Pause is a paid mutator transaction binding the contract method 0x8456cb59.
 //
 // Solidity: function pause() returns()
-func (_PlazaSdk *PlazaSdkSession) Pause() (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Pause(&_PlazaSdk.TransactOpts)
+func (_PoolFactory *PoolFactorySession) Pause() (*types.Transaction, error) {
+	return _PoolFactory.Contract.Pause(&_PoolFactory.TransactOpts)
 }
 
 // Pause is a paid mutator transaction binding the contract method 0x8456cb59.
 //
 // Solidity: function pause() returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) Pause() (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Pause(&_PlazaSdk.TransactOpts)
+func (_PoolFactory *PoolFactoryTransactorSession) Pause() (*types.Transaction, error) {
+	return _PoolFactory.Contract.Pause(&_PoolFactory.TransactOpts)
 }
 
 // RenounceRole is a paid mutator transaction binding the contract method 0x36568abe.
 //
 // Solidity: function renounceRole(bytes32 role, address callerConfirmation) returns()
-func (_PlazaSdk *PlazaSdkTransactor) RenounceRole(opts *bind.TransactOpts, role [32]byte, callerConfirmation common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "renounceRole", role, callerConfirmation)
+func (_PoolFactory *PoolFactoryTransactor) RenounceRole(opts *bind.TransactOpts, role [32]byte, callerConfirmation common.Address) (*types.Transaction, error) {
+	return _PoolFactory.contract.Transact(opts, "renounceRole", role, callerConfirmation)
 }
 
 // RenounceRole is a paid mutator transaction binding the contract method 0x36568abe.
 //
 // Solidity: function renounceRole(bytes32 role, address callerConfirmation) returns()
-func (_PlazaSdk *PlazaSdkSession) RenounceRole(role [32]byte, callerConfirmation common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.RenounceRole(&_PlazaSdk.TransactOpts, role, callerConfirmation)
+func (_PoolFactory *PoolFactorySession) RenounceRole(role [32]byte, callerConfirmation common.Address) (*types.Transaction, error) {
+	return _PoolFactory.Contract.RenounceRole(&_PoolFactory.TransactOpts, role, callerConfirmation)
 }
 
 // RenounceRole is a paid mutator transaction binding the contract method 0x36568abe.
 //
 // Solidity: function renounceRole(bytes32 role, address callerConfirmation) returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) RenounceRole(role [32]byte, callerConfirmation common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.RenounceRole(&_PlazaSdk.TransactOpts, role, callerConfirmation)
+func (_PoolFactory *PoolFactoryTransactorSession) RenounceRole(role [32]byte, callerConfirmation common.Address) (*types.Transaction, error) {
+	return _PoolFactory.Contract.RenounceRole(&_PoolFactory.TransactOpts, role, callerConfirmation)
 }
 
 // RevokeRole is a paid mutator transaction binding the contract method 0xd547741f.
 //
 // Solidity: function revokeRole(bytes32 role, address account) returns()
-func (_PlazaSdk *PlazaSdkTransactor) RevokeRole(opts *bind.TransactOpts, role [32]byte, account common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "revokeRole", role, account)
+func (_PoolFactory *PoolFactoryTransactor) RevokeRole(opts *bind.TransactOpts, role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _PoolFactory.contract.Transact(opts, "revokeRole", role, account)
 }
 
 // RevokeRole is a paid mutator transaction binding the contract method 0xd547741f.
 //
 // Solidity: function revokeRole(bytes32 role, address account) returns()
-func (_PlazaSdk *PlazaSdkSession) RevokeRole(role [32]byte, account common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.RevokeRole(&_PlazaSdk.TransactOpts, role, account)
+func (_PoolFactory *PoolFactorySession) RevokeRole(role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _PoolFactory.Contract.RevokeRole(&_PoolFactory.TransactOpts, role, account)
 }
 
 // RevokeRole is a paid mutator transaction binding the contract method 0xd547741f.
 //
 // Solidity: function revokeRole(bytes32 role, address account) returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) RevokeRole(role [32]byte, account common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.RevokeRole(&_PlazaSdk.TransactOpts, role, account)
+func (_PoolFactory *PoolFactoryTransactorSession) RevokeRole(role [32]byte, account common.Address) (*types.Transaction, error) {
+	return _PoolFactory.Contract.RevokeRole(&_PoolFactory.TransactOpts, role, account)
 }
 
 // SetDeployer is a paid mutator transaction binding the contract method 0x96214735.
 //
 // Solidity: function setDeployer(address _deployer) returns()
-func (_PlazaSdk *PlazaSdkTransactor) SetDeployer(opts *bind.TransactOpts, _deployer common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "setDeployer", _deployer)
+func (_PoolFactory *PoolFactoryTransactor) SetDeployer(opts *bind.TransactOpts, _deployer common.Address) (*types.Transaction, error) {
+	return _PoolFactory.contract.Transact(opts, "setDeployer", _deployer)
 }
 
 // SetDeployer is a paid mutator transaction binding the contract method 0x96214735.
 //
 // Solidity: function setDeployer(address _deployer) returns()
-func (_PlazaSdk *PlazaSdkSession) SetDeployer(_deployer common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.SetDeployer(&_PlazaSdk.TransactOpts, _deployer)
+func (_PoolFactory *PoolFactorySession) SetDeployer(_deployer common.Address) (*types.Transaction, error) {
+	return _PoolFactory.Contract.SetDeployer(&_PoolFactory.TransactOpts, _deployer)
 }
 
 // SetDeployer is a paid mutator transaction binding the contract method 0x96214735.
 //
 // Solidity: function setDeployer(address _deployer) returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) SetDeployer(_deployer common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.SetDeployer(&_PlazaSdk.TransactOpts, _deployer)
+func (_PoolFactory *PoolFactoryTransactorSession) SetDeployer(_deployer common.Address) (*types.Transaction, error) {
+	return _PoolFactory.Contract.SetDeployer(&_PoolFactory.TransactOpts, _deployer)
 }
 
 // SetGovernance is a paid mutator transaction binding the contract method 0xab033ea9.
 //
 // Solidity: function setGovernance(address _governance) returns()
-func (_PlazaSdk *PlazaSdkTransactor) SetGovernance(opts *bind.TransactOpts, _governance common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "setGovernance", _governance)
+func (_PoolFactory *PoolFactoryTransactor) SetGovernance(opts *bind.TransactOpts, _governance common.Address) (*types.Transaction, error) {
+	return _PoolFactory.contract.Transact(opts, "setGovernance", _governance)
 }
 
 // SetGovernance is a paid mutator transaction binding the contract method 0xab033ea9.
 //
 // Solidity: function setGovernance(address _governance) returns()
-func (_PlazaSdk *PlazaSdkSession) SetGovernance(_governance common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.SetGovernance(&_PlazaSdk.TransactOpts, _governance)
+func (_PoolFactory *PoolFactorySession) SetGovernance(_governance common.Address) (*types.Transaction, error) {
+	return _PoolFactory.Contract.SetGovernance(&_PoolFactory.TransactOpts, _governance)
 }
 
 // SetGovernance is a paid mutator transaction binding the contract method 0xab033ea9.
 //
 // Solidity: function setGovernance(address _governance) returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) SetGovernance(_governance common.Address) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.SetGovernance(&_PlazaSdk.TransactOpts, _governance)
+func (_PoolFactory *PoolFactoryTransactorSession) SetGovernance(_governance common.Address) (*types.Transaction, error) {
+	return _PoolFactory.Contract.SetGovernance(&_PoolFactory.TransactOpts, _governance)
 }
 
 // Unpause is a paid mutator transaction binding the contract method 0x3f4ba83a.
 //
 // Solidity: function unpause() returns()
-func (_PlazaSdk *PlazaSdkTransactor) Unpause(opts *bind.TransactOpts) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "unpause")
+func (_PoolFactory *PoolFactoryTransactor) Unpause(opts *bind.TransactOpts) (*types.Transaction, error) {
+	return _PoolFactory.contract.Transact(opts, "unpause")
 }
 
 // Unpause is a paid mutator transaction binding the contract method 0x3f4ba83a.
 //
 // Solidity: function unpause() returns()
-func (_PlazaSdk *PlazaSdkSession) Unpause() (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Unpause(&_PlazaSdk.TransactOpts)
+func (_PoolFactory *PoolFactorySession) Unpause() (*types.Transaction, error) {
+	return _PoolFactory.Contract.Unpause(&_PoolFactory.TransactOpts)
 }
 
 // Unpause is a paid mutator transaction binding the contract method 0x3f4ba83a.
 //
 // Solidity: function unpause() returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) Unpause() (*types.Transaction, error) {
-	return _PlazaSdk.Contract.Unpause(&_PlazaSdk.TransactOpts)
+func (_PoolFactory *PoolFactoryTransactorSession) Unpause() (*types.Transaction, error) {
+	return _PoolFactory.Contract.Unpause(&_PoolFactory.TransactOpts)
 }
 
 // UpgradeToAndCall is a paid mutator transaction binding the contract method 0x4f1ef286.
 //
 // Solidity: function upgradeToAndCall(address newImplementation, bytes data) payable returns()
-func (_PlazaSdk *PlazaSdkTransactor) UpgradeToAndCall(opts *bind.TransactOpts, newImplementation common.Address, data []byte) (*types.Transaction, error) {
-	return _PlazaSdk.contract.Transact(opts, "upgradeToAndCall", newImplementation, data)
+func (_PoolFactory *PoolFactoryTransactor) UpgradeToAndCall(opts *bind.TransactOpts, newImplementation common.Address, data []byte) (*types.Transaction, error) {
+	return _PoolFactory.contract.Transact(opts, "upgradeToAndCall", newImplementation, data)
 }
 
 // UpgradeToAndCall is a paid mutator transaction binding the contract method 0x4f1ef286.
 //
 // Solidity: function upgradeToAndCall(address newImplementation, bytes data) payable returns()
-func (_PlazaSdk *PlazaSdkSession) UpgradeToAndCall(newImplementation common.Address, data []byte) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.UpgradeToAndCall(&_PlazaSdk.TransactOpts, newImplementation, data)
+func (_PoolFactory *PoolFactorySession) UpgradeToAndCall(newImplementation common.Address, data []byte) (*types.Transaction, error) {
+	return _PoolFactory.Contract.UpgradeToAndCall(&_PoolFactory.TransactOpts, newImplementation, data)
 }
 
 // UpgradeToAndCall is a paid mutator transaction binding the contract method 0x4f1ef286.
 //
 // Solidity: function upgradeToAndCall(address newImplementation, bytes data) payable returns()
-func (_PlazaSdk *PlazaSdkTransactorSession) UpgradeToAndCall(newImplementation common.Address, data []byte) (*types.Transaction, error) {
-	return _PlazaSdk.Contract.UpgradeToAndCall(&_PlazaSdk.TransactOpts, newImplementation, data)
+func (_PoolFactory *PoolFactoryTransactorSession) UpgradeToAndCall(newImplementation common.Address, data []byte) (*types.Transaction, error) {
+	return _PoolFactory.Contract.UpgradeToAndCall(&_PoolFactory.TransactOpts, newImplementation, data)
 }
 
-// PlazaSdkInitializedIterator is returned from FilterInitialized and is used to iterate over the raw logs and unpacked data for Initialized events raised by the PlazaSdk contract.
-type PlazaSdkInitializedIterator struct {
-	Event *PlazaSdkInitialized // Event containing the contract specifics and raw log
+// PoolFactoryInitializedIterator is returned from FilterInitialized and is used to iterate over the raw logs and unpacked data for Initialized events raised by the PoolFactory contract.
+type PoolFactoryInitializedIterator struct {
+	Event *PoolFactoryInitialized // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1067,7 +1067,7 @@ type PlazaSdkInitializedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkInitializedIterator) Next() bool {
+func (it *PoolFactoryInitializedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1076,7 +1076,7 @@ func (it *PlazaSdkInitializedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkInitialized)
+			it.Event = new(PoolFactoryInitialized)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1091,7 +1091,7 @@ func (it *PlazaSdkInitializedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkInitialized)
+		it.Event = new(PoolFactoryInitialized)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1107,19 +1107,19 @@ func (it *PlazaSdkInitializedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkInitializedIterator) Error() error {
+func (it *PoolFactoryInitializedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkInitializedIterator) Close() error {
+func (it *PoolFactoryInitializedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkInitialized represents a Initialized event raised by the PlazaSdk contract.
-type PlazaSdkInitialized struct {
+// PoolFactoryInitialized represents a Initialized event raised by the PoolFactory contract.
+type PoolFactoryInitialized struct {
 	Version uint64
 	Raw     types.Log // Blockchain specific contextual infos
 }
@@ -1127,21 +1127,21 @@ type PlazaSdkInitialized struct {
 // FilterInitialized is a free log retrieval operation binding the contract event 0xc7f505b2f371ae2175ee4913f4499e1f2633a7b5936321eed1cdaeb6115181d2.
 //
 // Solidity: event Initialized(uint64 version)
-func (_PlazaSdk *PlazaSdkFilterer) FilterInitialized(opts *bind.FilterOpts) (*PlazaSdkInitializedIterator, error) {
+func (_PoolFactory *PoolFactoryFilterer) FilterInitialized(opts *bind.FilterOpts) (*PoolFactoryInitializedIterator, error) {
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "Initialized")
+	logs, sub, err := _PoolFactory.contract.FilterLogs(opts, "Initialized")
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkInitializedIterator{contract: _PlazaSdk.contract, event: "Initialized", logs: logs, sub: sub}, nil
+	return &PoolFactoryInitializedIterator{contract: _PoolFactory.contract, event: "Initialized", logs: logs, sub: sub}, nil
 }
 
 // WatchInitialized is a free log subscription operation binding the contract event 0xc7f505b2f371ae2175ee4913f4499e1f2633a7b5936321eed1cdaeb6115181d2.
 //
 // Solidity: event Initialized(uint64 version)
-func (_PlazaSdk *PlazaSdkFilterer) WatchInitialized(opts *bind.WatchOpts, sink chan<- *PlazaSdkInitialized) (event.Subscription, error) {
+func (_PoolFactory *PoolFactoryFilterer) WatchInitialized(opts *bind.WatchOpts, sink chan<- *PoolFactoryInitialized) (event.Subscription, error) {
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "Initialized")
+	logs, sub, err := _PoolFactory.contract.WatchLogs(opts, "Initialized")
 	if err != nil {
 		return nil, err
 	}
@@ -1151,8 +1151,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchInitialized(opts *bind.WatchOpts, sink c
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkInitialized)
-				if err := _PlazaSdk.contract.UnpackLog(event, "Initialized", log); err != nil {
+				event := new(PoolFactoryInitialized)
+				if err := _PoolFactory.contract.UnpackLog(event, "Initialized", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1176,18 +1176,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchInitialized(opts *bind.WatchOpts, sink c
 // ParseInitialized is a log parse operation binding the contract event 0xc7f505b2f371ae2175ee4913f4499e1f2633a7b5936321eed1cdaeb6115181d2.
 //
 // Solidity: event Initialized(uint64 version)
-func (_PlazaSdk *PlazaSdkFilterer) ParseInitialized(log types.Log) (*PlazaSdkInitialized, error) {
-	event := new(PlazaSdkInitialized)
-	if err := _PlazaSdk.contract.UnpackLog(event, "Initialized", log); err != nil {
+func (_PoolFactory *PoolFactoryFilterer) ParseInitialized(log types.Log) (*PoolFactoryInitialized, error) {
+	event := new(PoolFactoryInitialized)
+	if err := _PoolFactory.contract.UnpackLog(event, "Initialized", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkPausedIterator is returned from FilterPaused and is used to iterate over the raw logs and unpacked data for Paused events raised by the PlazaSdk contract.
-type PlazaSdkPausedIterator struct {
-	Event *PlazaSdkPaused // Event containing the contract specifics and raw log
+// PoolFactoryPausedIterator is returned from FilterPaused and is used to iterate over the raw logs and unpacked data for Paused events raised by the PoolFactory contract.
+type PoolFactoryPausedIterator struct {
+	Event *PoolFactoryPaused // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1201,7 +1201,7 @@ type PlazaSdkPausedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkPausedIterator) Next() bool {
+func (it *PoolFactoryPausedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1210,7 +1210,7 @@ func (it *PlazaSdkPausedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkPaused)
+			it.Event = new(PoolFactoryPaused)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1225,7 +1225,7 @@ func (it *PlazaSdkPausedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkPaused)
+		it.Event = new(PoolFactoryPaused)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1241,19 +1241,19 @@ func (it *PlazaSdkPausedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkPausedIterator) Error() error {
+func (it *PoolFactoryPausedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkPausedIterator) Close() error {
+func (it *PoolFactoryPausedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkPaused represents a Paused event raised by the PlazaSdk contract.
-type PlazaSdkPaused struct {
+// PoolFactoryPaused represents a Paused event raised by the PoolFactory contract.
+type PoolFactoryPaused struct {
 	Account common.Address
 	Raw     types.Log // Blockchain specific contextual infos
 }
@@ -1261,21 +1261,21 @@ type PlazaSdkPaused struct {
 // FilterPaused is a free log retrieval operation binding the contract event 0x62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a258.
 //
 // Solidity: event Paused(address account)
-func (_PlazaSdk *PlazaSdkFilterer) FilterPaused(opts *bind.FilterOpts) (*PlazaSdkPausedIterator, error) {
+func (_PoolFactory *PoolFactoryFilterer) FilterPaused(opts *bind.FilterOpts) (*PoolFactoryPausedIterator, error) {
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "Paused")
+	logs, sub, err := _PoolFactory.contract.FilterLogs(opts, "Paused")
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkPausedIterator{contract: _PlazaSdk.contract, event: "Paused", logs: logs, sub: sub}, nil
+	return &PoolFactoryPausedIterator{contract: _PoolFactory.contract, event: "Paused", logs: logs, sub: sub}, nil
 }
 
 // WatchPaused is a free log subscription operation binding the contract event 0x62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a258.
 //
 // Solidity: event Paused(address account)
-func (_PlazaSdk *PlazaSdkFilterer) WatchPaused(opts *bind.WatchOpts, sink chan<- *PlazaSdkPaused) (event.Subscription, error) {
+func (_PoolFactory *PoolFactoryFilterer) WatchPaused(opts *bind.WatchOpts, sink chan<- *PoolFactoryPaused) (event.Subscription, error) {
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "Paused")
+	logs, sub, err := _PoolFactory.contract.WatchLogs(opts, "Paused")
 	if err != nil {
 		return nil, err
 	}
@@ -1285,8 +1285,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchPaused(opts *bind.WatchOpts, sink chan<-
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkPaused)
-				if err := _PlazaSdk.contract.UnpackLog(event, "Paused", log); err != nil {
+				event := new(PoolFactoryPaused)
+				if err := _PoolFactory.contract.UnpackLog(event, "Paused", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1310,18 +1310,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchPaused(opts *bind.WatchOpts, sink chan<-
 // ParsePaused is a log parse operation binding the contract event 0x62e78cea01bee320cd4e420270b5ea74000d11b0c9f74754ebdbfc544b05a258.
 //
 // Solidity: event Paused(address account)
-func (_PlazaSdk *PlazaSdkFilterer) ParsePaused(log types.Log) (*PlazaSdkPaused, error) {
-	event := new(PlazaSdkPaused)
-	if err := _PlazaSdk.contract.UnpackLog(event, "Paused", log); err != nil {
+func (_PoolFactory *PoolFactoryFilterer) ParsePaused(log types.Log) (*PoolFactoryPaused, error) {
+	event := new(PoolFactoryPaused)
+	if err := _PoolFactory.contract.UnpackLog(event, "Paused", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkPoolCreatedIterator is returned from FilterPoolCreated and is used to iterate over the raw logs and unpacked data for PoolCreated events raised by the PlazaSdk contract.
-type PlazaSdkPoolCreatedIterator struct {
-	Event *PlazaSdkPoolCreated // Event containing the contract specifics and raw log
+// PoolFactoryPoolCreatedIterator is returned from FilterPoolCreated and is used to iterate over the raw logs and unpacked data for PoolCreated events raised by the PoolFactory contract.
+type PoolFactoryPoolCreatedIterator struct {
+	Event *PoolFactoryPoolCreated // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1335,7 +1335,7 @@ type PlazaSdkPoolCreatedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkPoolCreatedIterator) Next() bool {
+func (it *PoolFactoryPoolCreatedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1344,7 +1344,7 @@ func (it *PlazaSdkPoolCreatedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkPoolCreated)
+			it.Event = new(PoolFactoryPoolCreated)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1359,7 +1359,7 @@ func (it *PlazaSdkPoolCreatedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkPoolCreated)
+		it.Event = new(PoolFactoryPoolCreated)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1375,19 +1375,19 @@ func (it *PlazaSdkPoolCreatedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkPoolCreatedIterator) Error() error {
+func (it *PoolFactoryPoolCreatedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkPoolCreatedIterator) Close() error {
+func (it *PoolFactoryPoolCreatedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkPoolCreated represents a PoolCreated event raised by the PlazaSdk contract.
-type PlazaSdkPoolCreated struct {
+// PoolFactoryPoolCreated represents a PoolCreated event raised by the PoolFactory contract.
+type PoolFactoryPoolCreated struct {
 	Pool           common.Address
 	ReserveAmount  *big.Int
 	BondAmount     *big.Int
@@ -1398,21 +1398,21 @@ type PlazaSdkPoolCreated struct {
 // FilterPoolCreated is a free log retrieval operation binding the contract event 0xc8e774967d7f45e5814dbb800335ed47014999568397f08e79b0f322047f743f.
 //
 // Solidity: event PoolCreated(address pool, uint256 reserveAmount, uint256 bondAmount, uint256 leverageAmount)
-func (_PlazaSdk *PlazaSdkFilterer) FilterPoolCreated(opts *bind.FilterOpts) (*PlazaSdkPoolCreatedIterator, error) {
+func (_PoolFactory *PoolFactoryFilterer) FilterPoolCreated(opts *bind.FilterOpts) (*PoolFactoryPoolCreatedIterator, error) {
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "PoolCreated")
+	logs, sub, err := _PoolFactory.contract.FilterLogs(opts, "PoolCreated")
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkPoolCreatedIterator{contract: _PlazaSdk.contract, event: "PoolCreated", logs: logs, sub: sub}, nil
+	return &PoolFactoryPoolCreatedIterator{contract: _PoolFactory.contract, event: "PoolCreated", logs: logs, sub: sub}, nil
 }
 
 // WatchPoolCreated is a free log subscription operation binding the contract event 0xc8e774967d7f45e5814dbb800335ed47014999568397f08e79b0f322047f743f.
 //
 // Solidity: event PoolCreated(address pool, uint256 reserveAmount, uint256 bondAmount, uint256 leverageAmount)
-func (_PlazaSdk *PlazaSdkFilterer) WatchPoolCreated(opts *bind.WatchOpts, sink chan<- *PlazaSdkPoolCreated) (event.Subscription, error) {
+func (_PoolFactory *PoolFactoryFilterer) WatchPoolCreated(opts *bind.WatchOpts, sink chan<- *PoolFactoryPoolCreated) (event.Subscription, error) {
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "PoolCreated")
+	logs, sub, err := _PoolFactory.contract.WatchLogs(opts, "PoolCreated")
 	if err != nil {
 		return nil, err
 	}
@@ -1422,8 +1422,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchPoolCreated(opts *bind.WatchOpts, sink c
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkPoolCreated)
-				if err := _PlazaSdk.contract.UnpackLog(event, "PoolCreated", log); err != nil {
+				event := new(PoolFactoryPoolCreated)
+				if err := _PoolFactory.contract.UnpackLog(event, "PoolCreated", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1447,18 +1447,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchPoolCreated(opts *bind.WatchOpts, sink c
 // ParsePoolCreated is a log parse operation binding the contract event 0xc8e774967d7f45e5814dbb800335ed47014999568397f08e79b0f322047f743f.
 //
 // Solidity: event PoolCreated(address pool, uint256 reserveAmount, uint256 bondAmount, uint256 leverageAmount)
-func (_PlazaSdk *PlazaSdkFilterer) ParsePoolCreated(log types.Log) (*PlazaSdkPoolCreated, error) {
-	event := new(PlazaSdkPoolCreated)
-	if err := _PlazaSdk.contract.UnpackLog(event, "PoolCreated", log); err != nil {
+func (_PoolFactory *PoolFactoryFilterer) ParsePoolCreated(log types.Log) (*PoolFactoryPoolCreated, error) {
+	event := new(PoolFactoryPoolCreated)
+	if err := _PoolFactory.contract.UnpackLog(event, "PoolCreated", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkRoleAdminChangedIterator is returned from FilterRoleAdminChanged and is used to iterate over the raw logs and unpacked data for RoleAdminChanged events raised by the PlazaSdk contract.
-type PlazaSdkRoleAdminChangedIterator struct {
-	Event *PlazaSdkRoleAdminChanged // Event containing the contract specifics and raw log
+// PoolFactoryRoleAdminChangedIterator is returned from FilterRoleAdminChanged and is used to iterate over the raw logs and unpacked data for RoleAdminChanged events raised by the PoolFactory contract.
+type PoolFactoryRoleAdminChangedIterator struct {
+	Event *PoolFactoryRoleAdminChanged // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1472,7 +1472,7 @@ type PlazaSdkRoleAdminChangedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkRoleAdminChangedIterator) Next() bool {
+func (it *PoolFactoryRoleAdminChangedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1481,7 +1481,7 @@ func (it *PlazaSdkRoleAdminChangedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkRoleAdminChanged)
+			it.Event = new(PoolFactoryRoleAdminChanged)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1496,7 +1496,7 @@ func (it *PlazaSdkRoleAdminChangedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkRoleAdminChanged)
+		it.Event = new(PoolFactoryRoleAdminChanged)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1512,19 +1512,19 @@ func (it *PlazaSdkRoleAdminChangedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkRoleAdminChangedIterator) Error() error {
+func (it *PoolFactoryRoleAdminChangedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkRoleAdminChangedIterator) Close() error {
+func (it *PoolFactoryRoleAdminChangedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkRoleAdminChanged represents a RoleAdminChanged event raised by the PlazaSdk contract.
-type PlazaSdkRoleAdminChanged struct {
+// PoolFactoryRoleAdminChanged represents a RoleAdminChanged event raised by the PoolFactory contract.
+type PoolFactoryRoleAdminChanged struct {
 	Role              [32]byte
 	PreviousAdminRole [32]byte
 	NewAdminRole      [32]byte
@@ -1534,7 +1534,7 @@ type PlazaSdkRoleAdminChanged struct {
 // FilterRoleAdminChanged is a free log retrieval operation binding the contract event 0xbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff.
 //
 // Solidity: event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
-func (_PlazaSdk *PlazaSdkFilterer) FilterRoleAdminChanged(opts *bind.FilterOpts, role [][32]byte, previousAdminRole [][32]byte, newAdminRole [][32]byte) (*PlazaSdkRoleAdminChangedIterator, error) {
+func (_PoolFactory *PoolFactoryFilterer) FilterRoleAdminChanged(opts *bind.FilterOpts, role [][32]byte, previousAdminRole [][32]byte, newAdminRole [][32]byte) (*PoolFactoryRoleAdminChangedIterator, error) {
 
 	var roleRule []interface{}
 	for _, roleItem := range role {
@@ -1549,17 +1549,17 @@ func (_PlazaSdk *PlazaSdkFilterer) FilterRoleAdminChanged(opts *bind.FilterOpts,
 		newAdminRoleRule = append(newAdminRoleRule, newAdminRoleItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "RoleAdminChanged", roleRule, previousAdminRoleRule, newAdminRoleRule)
+	logs, sub, err := _PoolFactory.contract.FilterLogs(opts, "RoleAdminChanged", roleRule, previousAdminRoleRule, newAdminRoleRule)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkRoleAdminChangedIterator{contract: _PlazaSdk.contract, event: "RoleAdminChanged", logs: logs, sub: sub}, nil
+	return &PoolFactoryRoleAdminChangedIterator{contract: _PoolFactory.contract, event: "RoleAdminChanged", logs: logs, sub: sub}, nil
 }
 
 // WatchRoleAdminChanged is a free log subscription operation binding the contract event 0xbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff.
 //
 // Solidity: event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
-func (_PlazaSdk *PlazaSdkFilterer) WatchRoleAdminChanged(opts *bind.WatchOpts, sink chan<- *PlazaSdkRoleAdminChanged, role [][32]byte, previousAdminRole [][32]byte, newAdminRole [][32]byte) (event.Subscription, error) {
+func (_PoolFactory *PoolFactoryFilterer) WatchRoleAdminChanged(opts *bind.WatchOpts, sink chan<- *PoolFactoryRoleAdminChanged, role [][32]byte, previousAdminRole [][32]byte, newAdminRole [][32]byte) (event.Subscription, error) {
 
 	var roleRule []interface{}
 	for _, roleItem := range role {
@@ -1574,7 +1574,7 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchRoleAdminChanged(opts *bind.WatchOpts, s
 		newAdminRoleRule = append(newAdminRoleRule, newAdminRoleItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "RoleAdminChanged", roleRule, previousAdminRoleRule, newAdminRoleRule)
+	logs, sub, err := _PoolFactory.contract.WatchLogs(opts, "RoleAdminChanged", roleRule, previousAdminRoleRule, newAdminRoleRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1584,8 +1584,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchRoleAdminChanged(opts *bind.WatchOpts, s
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkRoleAdminChanged)
-				if err := _PlazaSdk.contract.UnpackLog(event, "RoleAdminChanged", log); err != nil {
+				event := new(PoolFactoryRoleAdminChanged)
+				if err := _PoolFactory.contract.UnpackLog(event, "RoleAdminChanged", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1609,18 +1609,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchRoleAdminChanged(opts *bind.WatchOpts, s
 // ParseRoleAdminChanged is a log parse operation binding the contract event 0xbd79b86ffe0ab8e8776151514217cd7cacd52c909f66475c3af44e129f0b00ff.
 //
 // Solidity: event RoleAdminChanged(bytes32 indexed role, bytes32 indexed previousAdminRole, bytes32 indexed newAdminRole)
-func (_PlazaSdk *PlazaSdkFilterer) ParseRoleAdminChanged(log types.Log) (*PlazaSdkRoleAdminChanged, error) {
-	event := new(PlazaSdkRoleAdminChanged)
-	if err := _PlazaSdk.contract.UnpackLog(event, "RoleAdminChanged", log); err != nil {
+func (_PoolFactory *PoolFactoryFilterer) ParseRoleAdminChanged(log types.Log) (*PoolFactoryRoleAdminChanged, error) {
+	event := new(PoolFactoryRoleAdminChanged)
+	if err := _PoolFactory.contract.UnpackLog(event, "RoleAdminChanged", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkRoleGrantedIterator is returned from FilterRoleGranted and is used to iterate over the raw logs and unpacked data for RoleGranted events raised by the PlazaSdk contract.
-type PlazaSdkRoleGrantedIterator struct {
-	Event *PlazaSdkRoleGranted // Event containing the contract specifics and raw log
+// PoolFactoryRoleGrantedIterator is returned from FilterRoleGranted and is used to iterate over the raw logs and unpacked data for RoleGranted events raised by the PoolFactory contract.
+type PoolFactoryRoleGrantedIterator struct {
+	Event *PoolFactoryRoleGranted // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1634,7 +1634,7 @@ type PlazaSdkRoleGrantedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkRoleGrantedIterator) Next() bool {
+func (it *PoolFactoryRoleGrantedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1643,7 +1643,7 @@ func (it *PlazaSdkRoleGrantedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkRoleGranted)
+			it.Event = new(PoolFactoryRoleGranted)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1658,7 +1658,7 @@ func (it *PlazaSdkRoleGrantedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkRoleGranted)
+		it.Event = new(PoolFactoryRoleGranted)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1674,19 +1674,19 @@ func (it *PlazaSdkRoleGrantedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkRoleGrantedIterator) Error() error {
+func (it *PoolFactoryRoleGrantedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkRoleGrantedIterator) Close() error {
+func (it *PoolFactoryRoleGrantedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkRoleGranted represents a RoleGranted event raised by the PlazaSdk contract.
-type PlazaSdkRoleGranted struct {
+// PoolFactoryRoleGranted represents a RoleGranted event raised by the PoolFactory contract.
+type PoolFactoryRoleGranted struct {
 	Role    [32]byte
 	Account common.Address
 	Sender  common.Address
@@ -1696,7 +1696,7 @@ type PlazaSdkRoleGranted struct {
 // FilterRoleGranted is a free log retrieval operation binding the contract event 0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d.
 //
 // Solidity: event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
-func (_PlazaSdk *PlazaSdkFilterer) FilterRoleGranted(opts *bind.FilterOpts, role [][32]byte, account []common.Address, sender []common.Address) (*PlazaSdkRoleGrantedIterator, error) {
+func (_PoolFactory *PoolFactoryFilterer) FilterRoleGranted(opts *bind.FilterOpts, role [][32]byte, account []common.Address, sender []common.Address) (*PoolFactoryRoleGrantedIterator, error) {
 
 	var roleRule []interface{}
 	for _, roleItem := range role {
@@ -1711,17 +1711,17 @@ func (_PlazaSdk *PlazaSdkFilterer) FilterRoleGranted(opts *bind.FilterOpts, role
 		senderRule = append(senderRule, senderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "RoleGranted", roleRule, accountRule, senderRule)
+	logs, sub, err := _PoolFactory.contract.FilterLogs(opts, "RoleGranted", roleRule, accountRule, senderRule)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkRoleGrantedIterator{contract: _PlazaSdk.contract, event: "RoleGranted", logs: logs, sub: sub}, nil
+	return &PoolFactoryRoleGrantedIterator{contract: _PoolFactory.contract, event: "RoleGranted", logs: logs, sub: sub}, nil
 }
 
 // WatchRoleGranted is a free log subscription operation binding the contract event 0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d.
 //
 // Solidity: event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
-func (_PlazaSdk *PlazaSdkFilterer) WatchRoleGranted(opts *bind.WatchOpts, sink chan<- *PlazaSdkRoleGranted, role [][32]byte, account []common.Address, sender []common.Address) (event.Subscription, error) {
+func (_PoolFactory *PoolFactoryFilterer) WatchRoleGranted(opts *bind.WatchOpts, sink chan<- *PoolFactoryRoleGranted, role [][32]byte, account []common.Address, sender []common.Address) (event.Subscription, error) {
 
 	var roleRule []interface{}
 	for _, roleItem := range role {
@@ -1736,7 +1736,7 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchRoleGranted(opts *bind.WatchOpts, sink c
 		senderRule = append(senderRule, senderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "RoleGranted", roleRule, accountRule, senderRule)
+	logs, sub, err := _PoolFactory.contract.WatchLogs(opts, "RoleGranted", roleRule, accountRule, senderRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1746,8 +1746,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchRoleGranted(opts *bind.WatchOpts, sink c
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkRoleGranted)
-				if err := _PlazaSdk.contract.UnpackLog(event, "RoleGranted", log); err != nil {
+				event := new(PoolFactoryRoleGranted)
+				if err := _PoolFactory.contract.UnpackLog(event, "RoleGranted", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1771,18 +1771,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchRoleGranted(opts *bind.WatchOpts, sink c
 // ParseRoleGranted is a log parse operation binding the contract event 0x2f8788117e7eff1d82e926ec794901d17c78024a50270940304540a733656f0d.
 //
 // Solidity: event RoleGranted(bytes32 indexed role, address indexed account, address indexed sender)
-func (_PlazaSdk *PlazaSdkFilterer) ParseRoleGranted(log types.Log) (*PlazaSdkRoleGranted, error) {
-	event := new(PlazaSdkRoleGranted)
-	if err := _PlazaSdk.contract.UnpackLog(event, "RoleGranted", log); err != nil {
+func (_PoolFactory *PoolFactoryFilterer) ParseRoleGranted(log types.Log) (*PoolFactoryRoleGranted, error) {
+	event := new(PoolFactoryRoleGranted)
+	if err := _PoolFactory.contract.UnpackLog(event, "RoleGranted", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkRoleRevokedIterator is returned from FilterRoleRevoked and is used to iterate over the raw logs and unpacked data for RoleRevoked events raised by the PlazaSdk contract.
-type PlazaSdkRoleRevokedIterator struct {
-	Event *PlazaSdkRoleRevoked // Event containing the contract specifics and raw log
+// PoolFactoryRoleRevokedIterator is returned from FilterRoleRevoked and is used to iterate over the raw logs and unpacked data for RoleRevoked events raised by the PoolFactory contract.
+type PoolFactoryRoleRevokedIterator struct {
+	Event *PoolFactoryRoleRevoked // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1796,7 +1796,7 @@ type PlazaSdkRoleRevokedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkRoleRevokedIterator) Next() bool {
+func (it *PoolFactoryRoleRevokedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1805,7 +1805,7 @@ func (it *PlazaSdkRoleRevokedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkRoleRevoked)
+			it.Event = new(PoolFactoryRoleRevoked)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1820,7 +1820,7 @@ func (it *PlazaSdkRoleRevokedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkRoleRevoked)
+		it.Event = new(PoolFactoryRoleRevoked)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1836,19 +1836,19 @@ func (it *PlazaSdkRoleRevokedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkRoleRevokedIterator) Error() error {
+func (it *PoolFactoryRoleRevokedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkRoleRevokedIterator) Close() error {
+func (it *PoolFactoryRoleRevokedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkRoleRevoked represents a RoleRevoked event raised by the PlazaSdk contract.
-type PlazaSdkRoleRevoked struct {
+// PoolFactoryRoleRevoked represents a RoleRevoked event raised by the PoolFactory contract.
+type PoolFactoryRoleRevoked struct {
 	Role    [32]byte
 	Account common.Address
 	Sender  common.Address
@@ -1858,7 +1858,7 @@ type PlazaSdkRoleRevoked struct {
 // FilterRoleRevoked is a free log retrieval operation binding the contract event 0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b.
 //
 // Solidity: event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
-func (_PlazaSdk *PlazaSdkFilterer) FilterRoleRevoked(opts *bind.FilterOpts, role [][32]byte, account []common.Address, sender []common.Address) (*PlazaSdkRoleRevokedIterator, error) {
+func (_PoolFactory *PoolFactoryFilterer) FilterRoleRevoked(opts *bind.FilterOpts, role [][32]byte, account []common.Address, sender []common.Address) (*PoolFactoryRoleRevokedIterator, error) {
 
 	var roleRule []interface{}
 	for _, roleItem := range role {
@@ -1873,17 +1873,17 @@ func (_PlazaSdk *PlazaSdkFilterer) FilterRoleRevoked(opts *bind.FilterOpts, role
 		senderRule = append(senderRule, senderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "RoleRevoked", roleRule, accountRule, senderRule)
+	logs, sub, err := _PoolFactory.contract.FilterLogs(opts, "RoleRevoked", roleRule, accountRule, senderRule)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkRoleRevokedIterator{contract: _PlazaSdk.contract, event: "RoleRevoked", logs: logs, sub: sub}, nil
+	return &PoolFactoryRoleRevokedIterator{contract: _PoolFactory.contract, event: "RoleRevoked", logs: logs, sub: sub}, nil
 }
 
 // WatchRoleRevoked is a free log subscription operation binding the contract event 0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b.
 //
 // Solidity: event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
-func (_PlazaSdk *PlazaSdkFilterer) WatchRoleRevoked(opts *bind.WatchOpts, sink chan<- *PlazaSdkRoleRevoked, role [][32]byte, account []common.Address, sender []common.Address) (event.Subscription, error) {
+func (_PoolFactory *PoolFactoryFilterer) WatchRoleRevoked(opts *bind.WatchOpts, sink chan<- *PoolFactoryRoleRevoked, role [][32]byte, account []common.Address, sender []common.Address) (event.Subscription, error) {
 
 	var roleRule []interface{}
 	for _, roleItem := range role {
@@ -1898,7 +1898,7 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchRoleRevoked(opts *bind.WatchOpts, sink c
 		senderRule = append(senderRule, senderItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "RoleRevoked", roleRule, accountRule, senderRule)
+	logs, sub, err := _PoolFactory.contract.WatchLogs(opts, "RoleRevoked", roleRule, accountRule, senderRule)
 	if err != nil {
 		return nil, err
 	}
@@ -1908,8 +1908,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchRoleRevoked(opts *bind.WatchOpts, sink c
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkRoleRevoked)
-				if err := _PlazaSdk.contract.UnpackLog(event, "RoleRevoked", log); err != nil {
+				event := new(PoolFactoryRoleRevoked)
+				if err := _PoolFactory.contract.UnpackLog(event, "RoleRevoked", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -1933,18 +1933,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchRoleRevoked(opts *bind.WatchOpts, sink c
 // ParseRoleRevoked is a log parse operation binding the contract event 0xf6391f5c32d9c69d2a47ea670b442974b53935d1edc7fd64eb21e047a839171b.
 //
 // Solidity: event RoleRevoked(bytes32 indexed role, address indexed account, address indexed sender)
-func (_PlazaSdk *PlazaSdkFilterer) ParseRoleRevoked(log types.Log) (*PlazaSdkRoleRevoked, error) {
-	event := new(PlazaSdkRoleRevoked)
-	if err := _PlazaSdk.contract.UnpackLog(event, "RoleRevoked", log); err != nil {
+func (_PoolFactory *PoolFactoryFilterer) ParseRoleRevoked(log types.Log) (*PoolFactoryRoleRevoked, error) {
+	event := new(PoolFactoryRoleRevoked)
+	if err := _PoolFactory.contract.UnpackLog(event, "RoleRevoked", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkUnpausedIterator is returned from FilterUnpaused and is used to iterate over the raw logs and unpacked data for Unpaused events raised by the PlazaSdk contract.
-type PlazaSdkUnpausedIterator struct {
-	Event *PlazaSdkUnpaused // Event containing the contract specifics and raw log
+// PoolFactoryUnpausedIterator is returned from FilterUnpaused and is used to iterate over the raw logs and unpacked data for Unpaused events raised by the PoolFactory contract.
+type PoolFactoryUnpausedIterator struct {
+	Event *PoolFactoryUnpaused // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -1958,7 +1958,7 @@ type PlazaSdkUnpausedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkUnpausedIterator) Next() bool {
+func (it *PoolFactoryUnpausedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -1967,7 +1967,7 @@ func (it *PlazaSdkUnpausedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkUnpaused)
+			it.Event = new(PoolFactoryUnpaused)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -1982,7 +1982,7 @@ func (it *PlazaSdkUnpausedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkUnpaused)
+		it.Event = new(PoolFactoryUnpaused)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -1998,19 +1998,19 @@ func (it *PlazaSdkUnpausedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkUnpausedIterator) Error() error {
+func (it *PoolFactoryUnpausedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkUnpausedIterator) Close() error {
+func (it *PoolFactoryUnpausedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkUnpaused represents a Unpaused event raised by the PlazaSdk contract.
-type PlazaSdkUnpaused struct {
+// PoolFactoryUnpaused represents a Unpaused event raised by the PoolFactory contract.
+type PoolFactoryUnpaused struct {
 	Account common.Address
 	Raw     types.Log // Blockchain specific contextual infos
 }
@@ -2018,21 +2018,21 @@ type PlazaSdkUnpaused struct {
 // FilterUnpaused is a free log retrieval operation binding the contract event 0x5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa.
 //
 // Solidity: event Unpaused(address account)
-func (_PlazaSdk *PlazaSdkFilterer) FilterUnpaused(opts *bind.FilterOpts) (*PlazaSdkUnpausedIterator, error) {
+func (_PoolFactory *PoolFactoryFilterer) FilterUnpaused(opts *bind.FilterOpts) (*PoolFactoryUnpausedIterator, error) {
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "Unpaused")
+	logs, sub, err := _PoolFactory.contract.FilterLogs(opts, "Unpaused")
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkUnpausedIterator{contract: _PlazaSdk.contract, event: "Unpaused", logs: logs, sub: sub}, nil
+	return &PoolFactoryUnpausedIterator{contract: _PoolFactory.contract, event: "Unpaused", logs: logs, sub: sub}, nil
 }
 
 // WatchUnpaused is a free log subscription operation binding the contract event 0x5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa.
 //
 // Solidity: event Unpaused(address account)
-func (_PlazaSdk *PlazaSdkFilterer) WatchUnpaused(opts *bind.WatchOpts, sink chan<- *PlazaSdkUnpaused) (event.Subscription, error) {
+func (_PoolFactory *PoolFactoryFilterer) WatchUnpaused(opts *bind.WatchOpts, sink chan<- *PoolFactoryUnpaused) (event.Subscription, error) {
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "Unpaused")
+	logs, sub, err := _PoolFactory.contract.WatchLogs(opts, "Unpaused")
 	if err != nil {
 		return nil, err
 	}
@@ -2042,8 +2042,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchUnpaused(opts *bind.WatchOpts, sink chan
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkUnpaused)
-				if err := _PlazaSdk.contract.UnpackLog(event, "Unpaused", log); err != nil {
+				event := new(PoolFactoryUnpaused)
+				if err := _PoolFactory.contract.UnpackLog(event, "Unpaused", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -2067,18 +2067,18 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchUnpaused(opts *bind.WatchOpts, sink chan
 // ParseUnpaused is a log parse operation binding the contract event 0x5db9ee0a495bf2e6ff9c91a7834c1ba4fdd244a5e8aa4e537bd38aeae4b073aa.
 //
 // Solidity: event Unpaused(address account)
-func (_PlazaSdk *PlazaSdkFilterer) ParseUnpaused(log types.Log) (*PlazaSdkUnpaused, error) {
-	event := new(PlazaSdkUnpaused)
-	if err := _PlazaSdk.contract.UnpackLog(event, "Unpaused", log); err != nil {
+func (_PoolFactory *PoolFactoryFilterer) ParseUnpaused(log types.Log) (*PoolFactoryUnpaused, error) {
+	event := new(PoolFactoryUnpaused)
+	if err := _PoolFactory.contract.UnpackLog(event, "Unpaused", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log
 	return event, nil
 }
 
-// PlazaSdkUpgradedIterator is returned from FilterUpgraded and is used to iterate over the raw logs and unpacked data for Upgraded events raised by the PlazaSdk contract.
-type PlazaSdkUpgradedIterator struct {
-	Event *PlazaSdkUpgraded // Event containing the contract specifics and raw log
+// PoolFactoryUpgradedIterator is returned from FilterUpgraded and is used to iterate over the raw logs and unpacked data for Upgraded events raised by the PoolFactory contract.
+type PoolFactoryUpgradedIterator struct {
+	Event *PoolFactoryUpgraded // Event containing the contract specifics and raw log
 
 	contract *bind.BoundContract // Generic contract to use for unpacking event data
 	event    string              // Event name to use for unpacking event data
@@ -2092,7 +2092,7 @@ type PlazaSdkUpgradedIterator struct {
 // Next advances the iterator to the subsequent event, returning whether there
 // are any more events found. In case of a retrieval or parsing error, false is
 // returned and Error() can be queried for the exact failure.
-func (it *PlazaSdkUpgradedIterator) Next() bool {
+func (it *PoolFactoryUpgradedIterator) Next() bool {
 	// If the iterator failed, stop iterating
 	if it.fail != nil {
 		return false
@@ -2101,7 +2101,7 @@ func (it *PlazaSdkUpgradedIterator) Next() bool {
 	if it.done {
 		select {
 		case log := <-it.logs:
-			it.Event = new(PlazaSdkUpgraded)
+			it.Event = new(PoolFactoryUpgraded)
 			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 				it.fail = err
 				return false
@@ -2116,7 +2116,7 @@ func (it *PlazaSdkUpgradedIterator) Next() bool {
 	// Iterator still in progress, wait for either a data or an error event
 	select {
 	case log := <-it.logs:
-		it.Event = new(PlazaSdkUpgraded)
+		it.Event = new(PoolFactoryUpgraded)
 		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
 			it.fail = err
 			return false
@@ -2132,19 +2132,19 @@ func (it *PlazaSdkUpgradedIterator) Next() bool {
 }
 
 // Error returns any retrieval or parsing error occurred during filtering.
-func (it *PlazaSdkUpgradedIterator) Error() error {
+func (it *PoolFactoryUpgradedIterator) Error() error {
 	return it.fail
 }
 
 // Close terminates the iteration process, releasing any pending underlying
 // resources.
-func (it *PlazaSdkUpgradedIterator) Close() error {
+func (it *PoolFactoryUpgradedIterator) Close() error {
 	it.sub.Unsubscribe()
 	return nil
 }
 
-// PlazaSdkUpgraded represents a Upgraded event raised by the PlazaSdk contract.
-type PlazaSdkUpgraded struct {
+// PoolFactoryUpgraded represents a Upgraded event raised by the PoolFactory contract.
+type PoolFactoryUpgraded struct {
 	Implementation common.Address
 	Raw            types.Log // Blockchain specific contextual infos
 }
@@ -2152,31 +2152,31 @@ type PlazaSdkUpgraded struct {
 // FilterUpgraded is a free log retrieval operation binding the contract event 0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b.
 //
 // Solidity: event Upgraded(address indexed implementation)
-func (_PlazaSdk *PlazaSdkFilterer) FilterUpgraded(opts *bind.FilterOpts, implementation []common.Address) (*PlazaSdkUpgradedIterator, error) {
+func (_PoolFactory *PoolFactoryFilterer) FilterUpgraded(opts *bind.FilterOpts, implementation []common.Address) (*PoolFactoryUpgradedIterator, error) {
 
 	var implementationRule []interface{}
 	for _, implementationItem := range implementation {
 		implementationRule = append(implementationRule, implementationItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.FilterLogs(opts, "Upgraded", implementationRule)
+	logs, sub, err := _PoolFactory.contract.FilterLogs(opts, "Upgraded", implementationRule)
 	if err != nil {
 		return nil, err
 	}
-	return &PlazaSdkUpgradedIterator{contract: _PlazaSdk.contract, event: "Upgraded", logs: logs, sub: sub}, nil
+	return &PoolFactoryUpgradedIterator{contract: _PoolFactory.contract, event: "Upgraded", logs: logs, sub: sub}, nil
 }
 
 // WatchUpgraded is a free log subscription operation binding the contract event 0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b.
 //
 // Solidity: event Upgraded(address indexed implementation)
-func (_PlazaSdk *PlazaSdkFilterer) WatchUpgraded(opts *bind.WatchOpts, sink chan<- *PlazaSdkUpgraded, implementation []common.Address) (event.Subscription, error) {
+func (_PoolFactory *PoolFactoryFilterer) WatchUpgraded(opts *bind.WatchOpts, sink chan<- *PoolFactoryUpgraded, implementation []common.Address) (event.Subscription, error) {
 
 	var implementationRule []interface{}
 	for _, implementationItem := range implementation {
 		implementationRule = append(implementationRule, implementationItem)
 	}
 
-	logs, sub, err := _PlazaSdk.contract.WatchLogs(opts, "Upgraded", implementationRule)
+	logs, sub, err := _PoolFactory.contract.WatchLogs(opts, "Upgraded", implementationRule)
 	if err != nil {
 		return nil, err
 	}
@@ -2186,8 +2186,8 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchUpgraded(opts *bind.WatchOpts, sink chan
 			select {
 			case log := <-logs:
 				// New log arrived, parse the event and forward to the user
-				event := new(PlazaSdkUpgraded)
-				if err := _PlazaSdk.contract.UnpackLog(event, "Upgraded", log); err != nil {
+				event := new(PoolFactoryUpgraded)
+				if err := _PoolFactory.contract.UnpackLog(event, "Upgraded", log); err != nil {
 					return err
 				}
 				event.Raw = log
@@ -2211,9 +2211,9 @@ func (_PlazaSdk *PlazaSdkFilterer) WatchUpgraded(opts *bind.WatchOpts, sink chan
 // ParseUpgraded is a log parse operation binding the contract event 0xbc7cd75a20ee27fd9adebab32041f755214dbc6bffa90cc0225b39da2e5c2d3b.
 //
 // Solidity: event Upgraded(address indexed implementation)
-func (_PlazaSdk *PlazaSdkFilterer) ParseUpgraded(log types.Log) (*PlazaSdkUpgraded, error) {
-	event := new(PlazaSdkUpgraded)
-	if err := _PlazaSdk.contract.UnpackLog(event, "Upgraded", log); err != nil {
+func (_PoolFactory *PoolFactoryFilterer) ParseUpgraded(log types.Log) (*PoolFactoryUpgraded, error) {
+	event := new(PoolFactoryUpgraded)
+	if err := _PoolFactory.contract.UnpackLog(event, "Upgraded", log); err != nil {
 		return nil, err
 	}
 	event.Raw = log

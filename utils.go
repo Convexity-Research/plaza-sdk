@@ -1,4 +1,4 @@
-package plaza_sdk
+package plazasdk
 
 import (
 	"github.com/joho/godotenv"
