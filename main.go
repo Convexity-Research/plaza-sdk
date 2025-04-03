@@ -6,6 +6,7 @@ import (
 	"errors"
 	"math/big"
 	"os"
+	"strconv"
 	"strings"
 
 	"github.com/ethereum/go-ethereum/accounts/abi/bind"
@@ -51,8 +52,20 @@ func LoadSDK() (*ethclient.Client, common.Address, *bind.TransactOpts, error) {
 		return nil, common.Address{}, nil, err
 	}
 
+	var chainId *big.Int
+	if os.Getenv("CHAIN_ID") != "" {
+		chainIdStr := os.Getenv("CHAIN_ID")
+		chainIdInt, err := strconv.ParseInt(chainIdStr, 10, 64)
+		if err != nil {
+			return nil, common.Address{}, nil, err
+		}
+		chainId = big.NewInt(chainIdInt)
+	} else {
+		chainId = big.NewInt(ChainId)
+	}
+
 	// Create auth
-	auth, err := bind.NewKeyedTransactorWithChainID(privateKey, big.NewInt(ChainId))
+	auth, err := bind.NewKeyedTransactorWithChainID(privateKey, chainId)
 	if err != nil {
 		return nil, common.Address{}, nil, err
 	}
