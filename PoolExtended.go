@@ -1,4 +1,4 @@
-package plazasdk
+package main
 
 import (
 	"math/big"
