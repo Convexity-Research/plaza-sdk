@@ -4,6 +4,8 @@ Repository Overview
 
 This is a Go-based SDK for interacting with the Plaza protocol, which appears to be a DeFi protocol built on Ethereum that handles pools, bonds, leverage tokens, and auctions.
 
+Usage guide: https://github.com/Convexity-Research/plaza-sdk-examples
+
 Repository Structure
 
 plaza-sdk/
