@@ -1,4 +1,4 @@
-package plazasdk
+package main
 
 import (
 	"context"
@@ -105,3 +105,5 @@ func GetNextNonce(client *ethclient.Client, address common.Address) (uint64, err
 	}
 	return nonce, nil
 }
+
+func main() {}
