@@ -41,4 +41,4 @@ jobs:
         with:
           hooks: goreleaser
         env:
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
