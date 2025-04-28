@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-go@v3
         with:
-          go-version: 1.19
+          go-version: 1.24.2
       - run: go test -v ./...
   release:
     environment: prod
@@ -36,7 +36,7 @@ jobs:
       - uses: actions/checkout@v3
       - uses: actions/setup-go@v3
         with:
-          go-version: 1.19
+          go-version: 1.24.2
       - uses: go-semantic-release/action@v1
         with:
           hooks: goreleaser
