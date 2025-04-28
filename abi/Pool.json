@@ -464,19 +464,6 @@
   },
   {
     "type": "function",
-    "name": "lastAuctionStart",
-    "inputs": [],
-    "outputs": [
-      {
-        "name": "",
-        "type": "uint256",
-        "internalType": "uint256"
-      }
-    ],
-    "stateMutability": "view"
-  },
-  {
-    "type": "function",
     "name": "name",
     "inputs": [],
     "outputs": [
@@ -853,6 +840,12 @@
         "type": "address",
         "indexed": false,
         "internalType": "address"
+      },
+      {
+        "name": "distributorAdapter",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
       }
     ],
     "anonymous": false
@@ -1135,11 +1128,6 @@
   {
     "type": "error",
     "name": "AuctionPeriodPassed",
-    "inputs": []
-  },
-  {
-    "type": "error",
-    "name": "AuctionRecentlyStarted",
     "inputs": []
   },
   {
