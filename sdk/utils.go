@@ -1,11 +1,13 @@
 package sdk
 
 import (
+	"os"
+
 	"github.com/joho/godotenv"
 )
 
 func loadEnv() {
-	if err := godotenv.Load(".env"); err != nil {
-		panic("Error loading .env file")
+	if _, err := os.Stat(".env"); err == nil {
+		godotenv.Load()
 	}
 }
