@@ -4,6 +4,7 @@ import (
 	"context"
 	"crypto/ecdsa"
 	"errors"
+	"fmt"
 	"math/big"
 	"os"
 	"strconv"
@@ -18,10 +19,16 @@ import (
 func LoadSDK() (*ethclient.Client, common.Address, *bind.TransactOpts, error) {
 	loadEnv()
 
+	fmt.Println("PRIVATE_KEY", os.Getenv("PRIVATE_KEY"))
+
 	// Connect to an Ethereum client
 	client, err := ethclient.Dial(os.Getenv("RPC_URL"))
 	if err != nil {
 		return nil, common.Address{}, nil, err
+	}
+
+	if os.Getenv("PRIVATE_KEY") == "" {
+		return client, common.Address{}, nil, nil
 	}
 
 	// Load private key

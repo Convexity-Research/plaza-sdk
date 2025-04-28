@@ -1,869 +1,877 @@
 [
   {
+    "type": "constructor",
     "inputs": [],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
+    "stateMutability": "nonpayable"
   },
   {
-    "inputs": [],
-    "type": "error",
-    "name": "AccessDenied"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "target",
-        "type": "address"
-      }
-    ],
-    "type": "error",
-    "name": "AddressEmptyCode"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "account",
-        "type": "address"
-      }
-    ],
-    "type": "error",
-    "name": "AddressInsufficientBalance"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "AlreadyClaimed"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "AuctionAlreadyEnded"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "AuctionFailed"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "AuctionHasEnded"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "AuctionStillOngoing"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "AuctionSucceededOrOngoing"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "BidAmountTooHigh"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "BidAmountTooLow"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "implementation",
-        "type": "address"
-      }
-    ],
-    "type": "error",
-    "name": "ERC1967InvalidImplementation"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "ERC1967NonPayable"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "EnforcedPause"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "ExpectedPause"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "FailedInnerCall"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "InvalidInitialization"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "InvalidSellAmount"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "NotInitializing"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "NothingToClaim"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "token",
-        "type": "address"
-      }
-    ],
-    "type": "error",
-    "name": "SafeERC20FailedOperation"
-  },
-  {
-    "inputs": [],
-    "type": "error",
-    "name": "UUPSUnauthorizedCallContext"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "bytes32",
-        "name": "slot",
-        "type": "bytes32"
-      }
-    ],
-    "type": "error",
-    "name": "UUPSUnsupportedProxiableUUID"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "enum Auction.State",
-        "name": "state",
-        "type": "uint8",
-        "indexed": false
-      },
-      {
-        "internalType": "uint256",
-        "name": "totalSellReserveAmount",
-        "type": "uint256",
-        "indexed": false
-      },
-      {
-        "internalType": "uint256",
-        "name": "totalBuyCouponAmount",
-        "type": "uint256",
-        "indexed": false
-      }
-    ],
-    "type": "event",
-    "name": "AuctionEnded",
-    "anonymous": false
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "bidIndex",
-        "type": "uint256",
-        "indexed": true
-      },
-      {
-        "internalType": "address",
-        "name": "bidder",
-        "type": "address",
-        "indexed": true
-      },
-      {
-        "internalType": "uint256",
-        "name": "sellCouponAmount",
-        "type": "uint256",
-        "indexed": false
-      }
-    ],
-    "type": "event",
-    "name": "BidClaimed",
-    "anonymous": false
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "bidIndex",
-        "type": "uint256",
-        "indexed": true
-      },
-      {
-        "internalType": "address",
-        "name": "bidder",
-        "type": "address",
-        "indexed": true
-      },
-      {
-        "internalType": "uint256",
-        "name": "buyReserveAmount",
-        "type": "uint256",
-        "indexed": false
-      },
-      {
-        "internalType": "uint256",
-        "name": "sellCouponAmount",
-        "type": "uint256",
-        "indexed": false
-      }
-    ],
-    "type": "event",
-    "name": "BidPlaced",
-    "anonymous": false
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "bidIndex",
-        "type": "uint256",
-        "indexed": true
-      },
-      {
-        "internalType": "address",
-        "name": "bidder",
-        "type": "address",
-        "indexed": true
-      },
-      {
-        "internalType": "uint256",
-        "name": "buyReserveAmount",
-        "type": "uint256",
-        "indexed": false
-      },
-      {
-        "internalType": "uint256",
-        "name": "sellCouponAmount",
-        "type": "uint256",
-        "indexed": false
-      }
-    ],
-    "type": "event",
-    "name": "BidReduced",
-    "anonymous": false
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "bidder",
-        "type": "address",
-        "indexed": true
-      },
-      {
-        "internalType": "uint256",
-        "name": "couponAmount",
-        "type": "uint256",
-        "indexed": false
-      }
-    ],
-    "type": "event",
-    "name": "BidRefundAllocated",
-    "anonymous": false
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "bidIndex",
-        "type": "uint256",
-        "indexed": true
-      },
-      {
-        "internalType": "address",
-        "name": "bidder",
-        "type": "address",
-        "indexed": true
-      },
-      {
-        "internalType": "uint256",
-        "name": "buyReserveAmount",
-        "type": "uint256",
-        "indexed": false
-      },
-      {
-        "internalType": "uint256",
-        "name": "sellCouponAmount",
-        "type": "uint256",
-        "indexed": false
-      }
-    ],
-    "type": "event",
-    "name": "BidRemoved",
-    "anonymous": false
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "bidIndex",
-        "type": "uint256",
-        "indexed": true
-      },
-      {
-        "internalType": "address",
-        "name": "bidder",
-        "type": "address",
-        "indexed": true
-      },
-      {
-        "internalType": "uint256",
-        "name": "sellCouponAmount",
-        "type": "uint256",
-        "indexed": false
-      }
-    ],
-    "type": "event",
-    "name": "FailedAuctionBidRefundClaimed",
-    "anonymous": false
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint64",
-        "name": "version",
-        "type": "uint64",
-        "indexed": false
-      }
-    ],
-    "type": "event",
-    "name": "Initialized",
-    "anonymous": false
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "bidder",
-        "type": "address",
-        "indexed": true
-      },
-      {
-        "internalType": "uint256",
-        "name": "sellCouponAmount",
-        "type": "uint256",
-        "indexed": false
-      }
-    ],
-    "type": "event",
-    "name": "LosingBidRefundClaimed",
-    "anonymous": false
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "account",
-        "type": "address",
-        "indexed": false
-      }
-    ],
-    "type": "event",
-    "name": "Paused",
-    "anonymous": false
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "account",
-        "type": "address",
-        "indexed": false
-      }
-    ],
-    "type": "event",
-    "name": "Unpaused",
-    "anonymous": false
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "implementation",
-        "type": "address",
-        "indexed": true
-      }
-    ],
-    "type": "event",
-    "name": "Upgraded",
-    "anonymous": false
-  },
-  {
-    "inputs": [],
-    "stateMutability": "view",
     "type": "function",
     "name": "MAX_BID_AMOUNT",
+    "inputs": [],
     "outputs": [
       {
-        "internalType": "uint256",
         "name": "",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "uint256"
       }
-    ]
+    ],
+    "stateMutability": "view"
   },
   {
-    "inputs": [],
-    "stateMutability": "view",
     "type": "function",
     "name": "UPGRADE_INTERFACE_VERSION",
+    "inputs": [],
     "outputs": [
       {
-        "internalType": "string",
         "name": "",
-        "type": "string"
+        "type": "string",
+        "internalType": "string"
       }
-    ]
+    ],
+    "stateMutability": "view"
   },
   {
-    "inputs": [],
-    "stateMutability": "view",
     "type": "function",
     "name": "beneficiary",
+    "inputs": [],
     "outputs": [
       {
-        "internalType": "address",
         "name": "",
-        "type": "address"
-      }
-    ]
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "buyReserveAmount",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "sellCouponAmount",
-        "type": "uint256"
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    "stateMutability": "nonpayable",
+    "stateMutability": "view"
+  },
+  {
     "type": "function",
     "name": "bid",
+    "inputs": [
+      {
+        "name": "buyReserveAmount",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "sellCouponAmount",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
     "outputs": [
       {
-        "internalType": "uint256",
         "name": "",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "uint256"
       }
-    ]
+    ],
+    "stateMutability": "nonpayable"
   },
   {
-    "inputs": [],
-    "stateMutability": "view",
     "type": "function",
     "name": "bidCount",
+    "inputs": [],
     "outputs": [
       {
-        "internalType": "uint256",
         "name": "",
-        "type": "uint256"
-      }
-    ]
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    "stateMutability": "view",
+    "stateMutability": "view"
+  },
+  {
     "type": "function",
     "name": "bids",
+    "inputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
     "outputs": [
       {
-        "internalType": "address",
         "name": "bidder",
-        "type": "address"
+        "type": "address",
+        "internalType": "address"
       },
       {
-        "internalType": "uint256",
         "name": "buyReserveAmount",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "uint256"
       },
       {
-        "internalType": "uint256",
         "name": "sellCouponAmount",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "uint256"
       },
       {
-        "internalType": "uint256",
         "name": "nextBidIndex",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "uint256"
       },
       {
-        "internalType": "uint256",
         "name": "prevBidIndex",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "uint256"
       },
       {
-        "internalType": "bool",
         "name": "claimed",
-        "type": "bool"
+        "type": "bool",
+        "internalType": "bool"
       }
-    ]
+    ],
+    "stateMutability": "view"
   },
   {
-    "inputs": [],
-    "stateMutability": "view",
     "type": "function",
     "name": "buyCouponToken",
+    "inputs": [],
     "outputs": [
       {
-        "internalType": "address",
         "name": "",
-        "type": "address"
-      }
-    ]
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "bidIndex",
-        "type": "uint256"
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "function",
-    "name": "claimBid"
+    "stateMutability": "view"
   },
   {
+    "type": "function",
+    "name": "claimBid",
     "inputs": [
       {
-        "internalType": "uint256",
         "name": "bidIndex",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "function",
-    "name": "claimRefund"
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    "inputs": [],
-    "stateMutability": "nonpayable",
     "type": "function",
-    "name": "claimRefund"
+    "name": "claimRefund",
+    "inputs": [
+      {
+        "name": "bidIndex",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
+    "type": "function",
+    "name": "claimRefund",
     "inputs": [],
-    "stateMutability": "view",
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
     "type": "function",
     "name": "currentCouponAmount",
+    "inputs": [],
     "outputs": [
       {
-        "internalType": "uint256",
         "name": "",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "uint256"
       }
-    ]
+    ],
+    "stateMutability": "view"
   },
   {
-    "inputs": [],
-    "stateMutability": "nonpayable",
     "type": "function",
-    "name": "endAuction"
+    "name": "endAuction",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    "inputs": [],
-    "stateMutability": "view",
     "type": "function",
     "name": "endTime",
+    "inputs": [],
     "outputs": [
       {
-        "internalType": "uint256",
         "name": "",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "uint256"
       }
-    ]
+    ],
+    "stateMutability": "view"
   },
   {
-    "inputs": [],
-    "stateMutability": "view",
     "type": "function",
     "name": "highestBidIndex",
+    "inputs": [],
     "outputs": [
       {
-        "internalType": "uint256",
         "name": "",
-        "type": "uint256"
-      }
-    ]
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_pool",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_buyCouponToken",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_sellReserveToken",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_totalBuyCouponAmount",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_endTime",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_maxBids",
-        "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "_beneficiary",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_poolSaleLimit",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "uint256"
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "function",
-    "name": "initialize"
+    "stateMutability": "view"
   },
   {
-    "inputs": [],
-    "stateMutability": "view",
+    "type": "function",
+    "name": "initialize",
+    "inputs": [
+      {
+        "name": "_pool",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_buyCouponToken",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_sellReserveToken",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_totalBuyCouponAmount",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "_endTime",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "_maxBids",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "_beneficiary",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "_poolSaleLimit",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
     "type": "function",
     "name": "lastBidIndex",
+    "inputs": [],
     "outputs": [
       {
-        "internalType": "uint256",
         "name": "",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "uint256"
       }
-    ]
+    ],
+    "stateMutability": "view"
   },
   {
-    "inputs": [],
-    "stateMutability": "view",
     "type": "function",
     "name": "lowestBidIndex",
+    "inputs": [],
     "outputs": [
       {
-        "internalType": "uint256",
         "name": "",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "uint256"
       }
-    ]
+    ],
+    "stateMutability": "view"
   },
   {
-    "inputs": [],
-    "stateMutability": "view",
     "type": "function",
     "name": "maxBids",
+    "inputs": [],
     "outputs": [
       {
-        "internalType": "uint256",
         "name": "",
-        "type": "uint256"
+        "type": "uint256",
+        "internalType": "uint256"
       }
-    ]
+    ],
+    "stateMutability": "view"
   },
   {
-    "inputs": [],
-    "stateMutability": "nonpayable",
     "type": "function",
-    "name": "pause"
+    "name": "pause",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
   },
   {
-    "inputs": [],
-    "stateMutability": "view",
     "type": "function",
     "name": "paused",
+    "inputs": [],
     "outputs": [
       {
-        "internalType": "bool",
         "name": "",
-        "type": "bool"
-      }
-    ]
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
+        "type": "bool",
+        "internalType": "bool"
       }
     ],
-    "stateMutability": "view",
+    "stateMutability": "view"
+  },
+  {
     "type": "function",
     "name": "pendingRefunds",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ]
-  },
-  {
-    "inputs": [],
-    "stateMutability": "view",
-    "type": "function",
-    "name": "pool",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ]
-  },
-  {
-    "inputs": [],
-    "stateMutability": "view",
-    "type": "function",
-    "name": "poolSaleLimit",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ]
-  },
-  {
-    "inputs": [],
-    "stateMutability": "view",
-    "type": "function",
-    "name": "proxiableUUID",
-    "outputs": [
-      {
-        "internalType": "bytes32",
-        "name": "",
-        "type": "bytes32"
-      }
-    ]
-  },
-  {
-    "inputs": [],
-    "stateMutability": "view",
-    "type": "function",
-    "name": "sellReserveToken",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ]
-  },
-  {
-    "inputs": [],
-    "stateMutability": "view",
-    "type": "function",
-    "name": "slotSize",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ]
-  },
-  {
-    "inputs": [],
-    "stateMutability": "view",
-    "type": "function",
-    "name": "state",
-    "outputs": [
-      {
-        "internalType": "enum Auction.State",
-        "name": "",
-        "type": "uint8"
-      }
-    ]
-  },
-  {
-    "inputs": [],
-    "stateMutability": "view",
-    "type": "function",
-    "name": "totalBuyCouponAmount",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ]
-  },
-  {
-    "inputs": [],
-    "stateMutability": "view",
-    "type": "function",
-    "name": "totalSellReserveAmount",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ]
-  },
-  {
-    "inputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function",
-    "name": "unpause"
-  },
-  {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "newImplementation",
-        "type": "address"
-      },
-      {
-        "internalType": "bytes",
-        "name": "data",
-        "type": "bytes"
+        "name": "",
+        "type": "address",
+        "internalType": "address"
       }
     ],
-    "stateMutability": "payable",
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
     "type": "function",
-    "name": "upgradeToAndCall"
+    "name": "pool",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "poolSaleLimit",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "proxiableUUID",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "sellReserveToken",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "slotSize",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "state",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "enum Auction.State"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "totalBuyCouponAmount",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "totalSellReserveAmount",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "unpause",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "upgradeToAndCall",
+    "inputs": [
+      {
+        "name": "newImplementation",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "data",
+        "type": "bytes",
+        "internalType": "bytes"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "payable"
+  },
+  {
+    "type": "event",
+    "name": "AuctionEnded",
+    "inputs": [
+      {
+        "name": "state",
+        "type": "uint8",
+        "indexed": false,
+        "internalType": "enum Auction.State"
+      },
+      {
+        "name": "totalSellReserveAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "totalBuyCouponAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "BidClaimed",
+    "inputs": [
+      {
+        "name": "bidIndex",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "bidder",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "sellCouponAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "BidPlaced",
+    "inputs": [
+      {
+        "name": "bidIndex",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "bidder",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "buyReserveAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "sellCouponAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "BidReduced",
+    "inputs": [
+      {
+        "name": "bidIndex",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "bidder",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "buyReserveAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "sellCouponAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "BidRefundAllocated",
+    "inputs": [
+      {
+        "name": "bidder",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "couponAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "BidRemoved",
+    "inputs": [
+      {
+        "name": "bidIndex",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "bidder",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "buyReserveAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "name": "sellCouponAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "FailedAuctionBidRefundClaimed",
+    "inputs": [
+      {
+        "name": "bidIndex",
+        "type": "uint256",
+        "indexed": true,
+        "internalType": "uint256"
+      },
+      {
+        "name": "bidder",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "sellCouponAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Initialized",
+    "inputs": [
+      {
+        "name": "version",
+        "type": "uint64",
+        "indexed": false,
+        "internalType": "uint64"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "LosingBidRefundClaimed",
+    "inputs": [
+      {
+        "name": "bidder",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "sellCouponAmount",
+        "type": "uint256",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Paused",
+    "inputs": [
+      {
+        "name": "account",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Unpaused",
+    "inputs": [
+      {
+        "name": "account",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "Upgraded",
+    "inputs": [
+      {
+        "name": "implementation",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "type": "error",
+    "name": "AccessDenied",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "AddressEmptyCode",
+    "inputs": [
+      {
+        "name": "target",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "AddressInsufficientBalance",
+    "inputs": [
+      {
+        "name": "account",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "AlreadyClaimed",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "AuctionAlreadyEnded",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "AuctionFailed",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "AuctionHasEnded",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "AuctionStillOngoing",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "AuctionSucceededOrOngoing",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "BidAmountTooHigh",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "BidAmountTooLow",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "ERC1967InvalidImplementation",
+    "inputs": [
+      {
+        "name": "implementation",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "ERC1967NonPayable",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "EnforcedPause",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "ExpectedPause",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "FailedInnerCall",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvalidInitialization",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "InvalidSellAmount",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NotInitializing",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "NothingToClaim",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "SafeERC20FailedOperation",
+    "inputs": [
+      {
+        "name": "token",
+        "type": "address",
+        "internalType": "address"
+      }
+    ]
+  },
+  {
+    "type": "error",
+    "name": "UUPSUnauthorizedCallContext",
+    "inputs": []
+  },
+  {
+    "type": "error",
+    "name": "UUPSUnsupportedProxiableUUID",
+    "inputs": [
+      {
+        "name": "slot",
+        "type": "bytes32",
+        "internalType": "bytes32"
+      }
+    ]
   }
 ]

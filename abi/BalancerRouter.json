@@ -6,6 +6,11 @@
         "name": "_balancerVault",
         "type": "address",
         "internalType": "address"
+      },
+      {
+        "name": "_weth",
+        "type": "address",
+        "internalType": "address"
       }
     ],
     "stateMutability": "nonpayable"
@@ -22,6 +27,45 @@
       }
     ],
     "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "deposit",
+    "inputs": [
+      {
+        "name": "plazaPool",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "depositToken",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "tokenType",
+        "type": "uint8",
+        "internalType": "enum Pool.TokenType"
+      },
+      {
+        "name": "minPlazaTokens",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "payable"
   },
   {
     "type": "function",
@@ -126,6 +170,91 @@
     "stateMutability": "nonpayable"
   },
   {
+    "type": "function",
+    "name": "swap",
+    "inputs": [
+      {
+        "name": "_plazaPool",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "tokenType",
+        "type": "uint8",
+        "internalType": "enum Pool.TokenType"
+      },
+      {
+        "name": "tokenAmount",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "minAmountOut",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "deadline",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "weth",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "address",
+        "internalType": "contract IWETH"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "withdraw",
+    "inputs": [
+      {
+        "name": "plazaPool",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "tokenType",
+        "type": "uint8",
+        "internalType": "enum Pool.TokenType"
+      },
+      {
+        "name": "amount",
+        "type": "uint256",
+        "internalType": "uint256"
+      },
+      {
+        "name": "withdrawToken",
+        "type": "address",
+        "internalType": "address"
+      },
+      {
+        "name": "minAmount",
+        "type": "uint256",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
     "type": "event",
     "name": "TokensRedeemed",
     "inputs": [
@@ -210,5 +339,10 @@
         "internalType": "address"
       }
     ]
+  },
+  {
+    "type": "error",
+    "name": "UnexpectedEth",
+    "inputs": []
   }
 ]
