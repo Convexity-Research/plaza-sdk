@@ -1,4 +1,4 @@
-package main
+package sdk
 
 import (
 	"github.com/joho/godotenv"
