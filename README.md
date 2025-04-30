@@ -1,93 +1,163 @@
-# plaza-sdk
+# Plaza SDK Usage Guide
 
-Repository Overview
+The Plaza SDK provides functionality to interact with Plaza pools and perform operations like checking pool information, depositing tokens, and withdrawing tokens.
 
-This is a Go-based SDK for interacting with the Plaza protocol, which appears to be a DeFi protocol built on Ethereum that handles pools, bonds, leverage tokens, and auctions.
+## Installation
 
-Usage guide: https://github.com/Convexity-Research/plaza-sdk-examples
+```go
+go get github.com/Convexity-Research/plaza-sdk
+```
 
-Repository Structure
+## Quick Start
 
-plaza-sdk/
-├── abi/                    # Smart contract ABI definitions
-│   ├── Pool.json
-│   ├── PoolFactory.json
-│   ├── Distributor.json
-│   ├── ERC20.json
-│   ├── OracleFeeds.json
-│   ├── BalancerRouter.json
-│   ├── ChainlinkFeed.json
-│   └── Auction.json
-├── contracts/             # Generated Go bindings for smart contracts
-│   ├── Pool.go
-│   ├── PoolFactory.go
-│   ├── Distributor.go
-│   ├── ERC20.go
-│   ├── OracleFeeds.go
-│   ├── BalancerRouter.go
-│   ├── ChainlinkFeed.go
-│   └── Auction.go
-├── Examples/             # Example usage
-│   └── .env             # Environment configuration example
-├── client.go            # Client initialization
-├── pool.go              # Pool interactions
-├── auction.go           # Auction interactions
-├── router.go            # Balancer router integration
-└── utils.go             # Utility functions
+```go
+import (
+    plazasdk "github.com/Convexity-Research/plaza-sdk"
+    contracts "github.com/Convexity-Research/plaza-sdk/contracts"
+)
 
-Core Components
+// Initialize the SDK
+client, fromAddress, txOpts, err := plazasdk.LoadSDK()
+if err != nil {
+    log.Fatalf("Failed to load SDK: %v", err)
+}
+```
 
-1. Client (client.go)
-    -Handles Ethereum network connection and authentication
-    -Uses environment variables for configuration:
-        -RPC_URL: Ethereum node endpoint
-        -PRIVATE_KEY: User's private key
-    -Initializes the ethclient and transaction authenticator
-2. Pool (pool.go)
-    -The main interface for interacting with Plaza pools.
-    -Key functionalities:
-        -Create/redeem tokens (bonds and leverage tokens)
-        -Get pool information (fees, reserves, supplies, etc.)
-        -Access auction addresses
-3. Auction (auction.go)
-    -Handles auction-related operations.
-    -Key functionalities:
-        -Place bids
-        -Claim bids
-4. Router (router.go)
-    -Integrates with Balancer protocol.
-    -Key functionalities:
-        -Join Balancer pools and Plaza pools in one transaction
-        -Exit from Plaza and Balancer pools in one transaction
+## Core Features
 
-Key Features
+### 1. Getting Pool Information
 
-1. Token Management
-    Create and redeem bond tokens
-    Create and redeem leverage tokens
-    Get token prices and supplies
-2. Pool Operations
-    Get pool information
-    Monitor reserves and fees
-    Track distribution periods
-3. Auction Integration
-    Participate in auctions
-    Place and claim bids
-    Track auction periods
-4. Balancer Integration
-    Seamless integration with Balancer pools
-    Single-transaction operations for both protocols
-    Efficient liquidity management
+#### Check Bond Supply
+```go
+func getPoolBondSupply(client *ethclient.Client) {
+    poolAddress := common.HexToAddress("YOUR_POOL_ADDRESS")
+    pool, err := contracts.NewPool(poolAddress, client)
+    if err != nil {
+        log.Fatalf("Failed to load pool: %v", err)
+    }
 
-Smart Contract Integration
+    poolInfo, err := pool.GetPoolInfo(nil)
+    if err != nil {
+        log.Fatalf("Failed to get pool info: %v", err)
+    }
 
-The SDK uses generated Go bindings (in the contracts/ directory) from Solidity smart contract ABIs (in the abi/ directory). This provides type-safe interactions with the underlying smart contracts.
+    fmt.Printf("Pool BondSupply: %v\n", poolInfo.BondSupply)
+}
+```
 
-Usage Requirements
+#### Get Bond Price
+```go
+func getPoolBondPrice(client *ethclient.Client) {
+    poolAddress := common.HexToAddress("YOUR_POOL_ADDRESS")
+    poolExtended, err := plazasdk.NewPoolExtended(poolAddress, client)
+    if err != nil {
+        log.Fatalf("Failed to load pool: %v", err)
+    }
 
-1. Go 1.22.4 or later
-2. Access to a Base node (via RPC URL)
-3. Valid Ethereum private key
-4. .env file with configuration
+    bondPrice, err := poolExtended.GetBondPrice(nil)
+    if err != nil {
+        log.Fatalf("Failed to get bond price: %v", err)
+    }
+}
+```
 
-This SDK provides a comprehensive interface for interacting with the Plaza protocol, making it easier to integrate Plaza's functionality into Go applications while also providing seamless integration with Balancer protocol operations.
+### 2. Token Operations
+
+#### Deposit Single Token
+```go
+func depositSingleToken(client *ethclient.Client, txOpts *bind.TransactOpts) {
+    // Set up addresses
+    poolAddress := common.HexToAddress("YOUR_POOL_ADDRESS")
+    depositTokenAddress := common.HexToAddress("YOUR_TOKEN_ADDRESS")
+    routerAddress := common.HexToAddress("YOUR_ROUTER_ADDRESS")
+    
+    // Create deposit token instance
+    depositToken, err := contracts.NewErc20(depositTokenAddress, client)
+    
+    // Approve token spending
+    depositAmount := big.NewInt(10000)
+    txReceipt, err := depositToken.Approve(txOpts, routerAddress, depositAmount)
+    
+    // Perform deposit
+    router, err := contracts.NewBalancerRouter(routerAddress, client)
+    txReceipt, err = router.Deposit(txOpts, poolAddress, depositTokenAddress, depositAmount, 0, big.NewInt(0))
+}
+```
+
+#### Withdraw Single Token
+```go
+func withdrawSingleToken(client *ethclient.Client, txOpts *bind.TransactOpts) {
+    poolAddress := common.HexToAddress("YOUR_POOL_ADDRESS")
+    routerAddress := common.HexToAddress("YOUR_ROUTER_ADDRESS")
+    withdrawTokenAddress := common.HexToAddress("YOUR_TOKEN_ADDRESS")
+    withdrawAmount := big.NewInt(10000)
+
+    // Get bond token address and approve
+    pool, err := contracts.NewPool(poolAddress, client)
+    bondTokenAddress, err := pool.BondToken(nil)
+    bondToken, err := contracts.NewErc20(bondTokenAddress, client)
+    txReceipt, err := bondToken.Approve(txOpts, routerAddress, withdrawAmount)
+
+    // Perform withdrawal
+    router, err := contracts.NewBalancerRouter(routerAddress, client)
+    txReceipt, err = router.Withdraw(txOpts, poolAddress, 0, withdrawAmount, withdrawTokenAddress, big.NewInt(0))
+}
+```
+
+### 3. Multi-Token Operations
+
+The SDK supports depositing multiple tokens simultaneously through the Balancer pool interface. See the `depositMultipleTokens` function in the examples for detailed implementation.
+
+### 4. Available Contracts
+
+The Plaza SDK provides interfaces for the following contracts:
+
+1. **Auction** - Handles auction mechanisms for the protocol
+2. **BalancerRouter** - Manages interactions with Plaza Pools using a Balancer LP as reserve asset
+3. **ChainlinkFeed** - Interface for Chainlink price feeds
+4. **Distributor** - Handles token distribution logic
+5. **ERC20** - Standard ERC20 token interface
+6. **OracleFeeds** - Stores oracle price feed list
+7. **Pool** - Core pool contract for Plaza
+8. **PoolFactory** - Factory contract for deploying new pools
+
+Example usage of contract interfaces:
+
+```go
+// Initialize Pool contract
+pool, err := contracts.NewPool(poolAddress, client)
+
+// Initialize BalancerRouter contract
+router, err := contracts.NewBalancerRouter(routerAddress, client)
+
+// Initialize ERC20 contract
+token, err := contracts.NewErc20(tokenAddress, client)
+```
+
+## Environment Configuration
+
+The SDK requires certain environment variables to be set up. Create a `.env` file in your project root with the following variables:
+
+```env
+# Required
+RPC_URL=
+PRIVATE_KEY=
+
+# Optional
+POOL_FACTORY_ADDRESS=
+CHAIN_ID=
+```
+
+### Environment Variables Details:
+- `RPC_URL`: Required for all operations. This is your connection to the blockchain.
+- `PRIVATE_KEY`: Required only if you need to send transactions (deposits, withdrawals, etc.).
+- `POOL_FACTORY_ADDRESS`: Optional. Override this only if you need to use a non-production pool factory address.
+- `CHAIN_ID`: Optional. Defaults to mainnet. Set this when working with testnet or other chain deployments.
+
+## Best Practices
+
+1. Always update nonce and gas price before sending transactions
+2. Wait for transaction receipts to confirm operations
+3. Handle errors appropriately
+4. Use appropriate approval amounts for token operations
+5. Verify pool and token addresses before operations
