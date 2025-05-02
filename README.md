@@ -12,7 +12,7 @@ go get github.com/Convexity-Research/plaza-sdk
 
 ```go
 import (
-    plazasdk "github.com/Convexity-Research/plaza-sdk"
+    plazasdk "github.com/Convexity-Research/plaza-sdk/sdk"
     contracts "github.com/Convexity-Research/plaza-sdk/contracts"
 )
 
